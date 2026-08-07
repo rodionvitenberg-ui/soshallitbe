@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "title": "Lusion — отмеченная наградами 3D и interactive web-студия",
+    "description": "Мы проектируем и создаём 3D-сторителлинг, иммерсивные сайты и интерактивные цифровые опыты, которые помогают брендам выделяться онлайн."
+  },
+  "header": {
+    "logoAria": "На главную",
+    "backAria": "Назад",
+    "back": "назад",
+    "letsTalk": "Связаться",
+    "menuAria": "Меню",
+    "menu": "Меню",
+    "close": "Закрыть",
+    "navHome": "Главная",
+    "navAbout": "О нас",
+    "navProjects": "Проекты",
+    "navContact": "Контакты",
+    "newsletterLine1": "Подпишитесь на",
+    "newsletterLine2": "нашу рассылку",
+    "emailPlaceholder": "Ваш email",
+    "newsletterSendAria": "Отправить форму подписки",
+    "labs": "Labs",
+    "localeEn": "EN",
+    "localeRu": "RU"
+  },
+  "hero": {
+    "title": "Мы создаём 3D-сторителлинг и интерактивные веб-опыты, которые помогают брендам выделяться",
+    "scrollHint": "листайте дальше"
+  },
+  "reel": {
+    "titleLine1": "Смелые идеи,",
+    "titleLine2": "воплощённые в жизнь",
+    "body": "Мы соединяем дизайн, моушн, 3D и разработку, чтобы создавать цифровые опыты, которые выглядят выразительно и работают безупречно. От кампаний до иммерсивных brand-worlds — делаем то, что притягивает взгляд и приглашает к взаимодействию.",
+    "approach": "Наш подход",
+    "playReel": "Смотреть reel",
+    "watchAria": "Смотреть reel"
+  },
+  "featured": {
+    "title": "Избранные работы",
+    "disclaimer": "Подборка иммерсивных цифровых опытов для амбициозных брендов и команд, которые думают наперёд.",
+    "projects": {
+      "oryzo_ai": {
+        "name": "Oryzo AI",
+        "tags": "concept • web • design • development • 3d • animation"
+      },
+      "of_the_oak": {
+        "name": "Of The Oak",
+        "tags": "web • design • development • 3d • animation"
+      },
+      "devin_ai": {
+        "name": "Devin AI",
+        "tags": "web • design • development • 3d"
+      },
+      "porsche_dream_machine": {
+        "name": "Porsche: Dream Machine",
+        "tags": "concept • 3D illustration • mograph • video"
+      },
+      "synthetic_human": {
+        "name": "Synthetic Human",
+        "tags": "web • design • development • 3d"
+      },
+      "spatial_fusion": {
+        "name": "Meta: Spatial Fusion",
+        "tags": "web • design • development • 3d"
+      },
+      "spaace": {
+        "name": "Spaace - NFT Marketplace",
+        "tags": "web • design • development • 3d • web3"
+      },
+      "ddd_2024": {
+        "name": "DDD 2024",
+        "tags": "web • design • development • 3d"
+      },
+      "choo_choo_world": {
+        "name": "Choo Choo World",
+        "tags": "concept • web • game design • 3d"
+      },
+      "soda_experience": {
+        "name": "Soda Experience",
+        "tags": "AR • development • 3d"
+      }
+    }
+  },
+  "end": {
+    "subtitle": "Готовы воплотить большую идею?",
+    "titleLine1": "Давайте работать",
+    "titleLine2": "вместе!"
+  },
+  "footer": {
+    "twitter": "Twitter / X",
+    "instagram": "Instagram",
+    "linkedin": "Linkedin",
+    "enquiriesHeader": "Общие вопросы",
+    "enquiriesEmail": "hello@lusion.co",
+    "businessHeader": "Новый бизнес",
+    "businessEmail": "business@lusion.co",
+    "newsletterLine1": "Подпишитесь на",
+    "newsletterLine2": "нашу рассылку",
+    "emailPlaceholder": "Ваш email",
+    "newsletterSendAria": "Отправить форму подписки",
+    "copyright": "©2026 LUSION Creative Studio",
+    "labs": "R&D: labs.lusion.co",
+    "tagline": "Сделано в Lusion с ❤️"
+  },
+  "videoOverlay": {
+    "play": "PLAY",
+    "mute": "MUTE"
+  }
+}

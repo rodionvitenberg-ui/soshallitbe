@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "title": "As You Dreamed...",
+    "description": "Through optical fibers and bits, your thoughts will flow and find their perfect embodiment. High-performance product engineering and digital architecture."
+  },
+  "header": {
+    "logoAria": "Return to core",
+    "backAria": "Go back",
+    "back": "back",
+    "letsTalk": "Initiate",
+    "menuAria": "Menu",
+    "menu": "Menu",
+    "close": "Close",
+    "navHome": "Core",
+    "navAbout": "Manifesto",
+    "navProjects": "Artifacts",
+    "navContact": "Signal",
+    "newsletterLine1": "Subscribe to",
+    "newsletterLine2": "system updates",
+    "emailPlaceholder": "Your endpoint / email",
+    "newsletterSendAria": "Submit email",
+    "labs": "R&D",
+    "localeEn": "EN",
+    "localeRu": "RU"
+  },
+  "hero": {
+    "title": "Through optical fibers, interwoven with bits, your thoughts will flow into perfect embodiment",
+    "scrollHint": "scroll to observe"
+  },
+  "reel": {
+    "titleLine1": "We obey",
+    "titleLine2": "in all things",
+    "body": "A vision requires form without distortion or friction. We combine full-stack engineering, motion, and cloud infrastructure to turn architectural concepts into living, production-ready web systems with cold precision and absolute dedication.",
+    "approach": "The Doctrine",
+    "playReel": "Unfold Manifesto",
+    "watchAria": "Play manifesto video"
+  },
+  "featured": {
+    "title": "Featured Projects",
+    "disclaimer": "A curated fleet of production systems, SaaS applications, and interactive digital interfaces brought to life.",
+    "projects": {
+      "oryzo_ai": {
+        "name": "Daerdree Bar & Timeclub",
+        "tags": "entertainment • lounge concept • booking • UI/UX • web"
+      },
+      "of_the_oak": {
+        "name": "Dastorkon Ethno-Restaurant",
+        "tags": "gastronomy • restaurant • interactive menu • i18n • web"
+      },
+      "devin_ai": {
+        "name": "Walmgres Investment",
+        "tags": "fintech • investment platform • analytics • web"
+      },
+      "porsche_dream_machine": {
+        "name": "IkSoft Studio",
+        "tags": "software studio • agency showcase • web • 3d"
+      },
+      "synthetic_human": {
+        "name": "Webdoc.life AI",
+        "tags": "healthtech • AI medical parser • saas • next.js"
+      },
+      "spatial_fusion": {
+        "name": "Careyourpet (PetVet)",
+        "tags": "vet CRM • SaaS • postgresql • web • mobile"
+      },
+      "spaace": {
+        "name": "Proffmusic.shop",
+        "tags": "audio stock • music marketplace • e-commerce • digital assets"
+      },
+      "ddd_2024": {
+        "name": "El-Imperia Shop",
+        "tags": "e-commerce • retail • online store • web"
+      },
+      "choo_choo_world": {
+        "name": "GardenHouse Eco-Resort",
+        "tags": "hospitality • garden hotel concept • booking • web"
+      },
+      "soda_experience": {
+        "name": "BiMark Exchange",
+        "tags": "virtual assets • marketplace • digital goods • platform"
+      }
+    }
+  },
+  "end": {
+    "subtitle": "Is Your Vision Ready for Pure Embodiment?",
+    "titleLine1": "Let's build",
+    "titleLine2": "together."
+  },
+  "footer": {
+    "twitter": "X / Twitter (@soshallitbe5)",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn",
+    "enquiriesHeader": "Direct Signal",
+    "enquiriesEmail": "soshallitbe5@email.com",
+    "businessHeader": "",
+    "businessEmail": "",
+    "newsletterLine1": "We are ready to fulfill our role in your play.",
+    "newsletterLine2": "",
+    "decorativeNote": "",
+    "copyright": "©2026 soshallitbe.cyou • All rights reversed",
+    "labs": "",
+    "tagline": ""
+  },
+  "videoOverlay": {
+    "play": "PLAY",
+    "mute": "MUTE"
+  }
+}

@@ -1,0 +1,747 @@
+/*
+ * Load anti-flash (pairs with engine patches: delayed is-ready + light bgColor).
+ * Opaque WebGL (alpha:false) ignores CSS under the buffer, but light html/body
+ * is what shows while #canvas is still display:none during preload.
+ */
+html,
+body {
+  background: var(--color-off-white, #f0f1fa) !important;
+}
+
+#canvas {
+  background: var(--color-off-white, #f0f1fa) !important;
+}
+
+/* Hidden engine stubs (sound/menu/tunnel anchors) — not part of the product UI */
+.engine-stub,
+[hidden].engine-stub {
+  pointer-events: none !important;
+}
+
+/*
+ * Hero: keep original lusion grid layout for #home-hero / title / visual / scroll.
+ * Only fill #home-hero-visual-container (former balloons slot) — no full-hero stretch.
+ */
+#home-hero-visual-container {
+  position: relative !important;
+  min-height: 0 !important; /* allow grid row 1fr to size correctly */
+  overflow: hidden !important;
+  background: #141515 !important;
+  border-radius: var(--global-radius, 0.5rem);
+}
+
+.hero-visual-fx-root {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: auto !important;
+}
+
+.hero-visual-fx-root canvas,
+.floating-lines-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+
+/* ── Header: LET'S TALK only (sound/menu stubs; locale switcher removed) ── */
+#header-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.55em !important;
+  position: relative !important;
+  min-width: 14em !important;
+  justify-content: flex-start !important;
+}
+
+/*
+ * Header wordmark (Aeonik Bold, ~LET'S TALK size).
+ * Lines are position:absolute → must set explicit mask width or it collapses to 0
+ * and overflow:hidden hides all text. Color: white + exclusion like original SVG logo.
+ */
+#header-logo {
+  display: inline-flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  color: #fff !important;
+  mix-blend-mode: exclusion !important;
+  height: 1.86em !important; /* 1.62 × 1.15 */
+  flex-shrink: 0 !important;
+  z-index: 2 !important;
+  overflow: visible !important;
+  pointer-events: auto !important;
+}
+
+#header-logo-sr {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.header-logo-mask {
+  position: relative !important;
+  display: block !important;
+  overflow: hidden !important;
+  height: 1.86em !important;
+  /* explicit width — absolute children do not expand parent (+15% text) */
+  width: 24.8em !important;
+  min-width: 24.8em !important;
+}
+
+.header-logo-line {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  display: block !important;
+  font-family: Aeonik, system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  /* 1.05em × 1.15 ≈ 1.21em */
+  font-size: 1.21em !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  line-height: 1.35 !important;
+  white-space: nowrap !important;
+  color: inherit !important;
+  will-change: transform !important;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.1, 1) !important;
+}
+
+/* start: first line in view, second waiting below */
+#header-logo[data-phrase="start"] #header-logo-line-a {
+  transform: translate3d(0, 0, 0) !important;
+}
+#header-logo[data-phrase="start"] #header-logo-line-b {
+  transform: translate3d(0, 110%, 0) !important;
+}
+
+/* mid: first exits up, second rises from below */
+#header-logo[data-phrase="mid"] #header-logo-line-a {
+  transform: translate3d(0, -110%, 0) !important;
+}
+#header-logo[data-phrase="mid"] #header-logo-line-b {
+  transform: translate3d(0, 0, 0) !important;
+}
+
+/* Sound: invisible spacer (engine may still bind canvas) */
+#header-right-sound-btn {
+  display: block !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: relative !important;
+  font-size: 0.875em !important;
+  height: 3.2em !important;
+  width: 3.2em !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  flex-shrink: 0 !important;
+}
+
+#header-right-sound-btn canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Menu: fully out of layout */
+#header-right-menu-btn,
+#header-menu {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  opacity: 0 !important;
+}
+
+#header-right-talk-btn-placeholder {
+  display: none !important;
+}
+
+/* Talk: flex item next to sound spacer, before locale switcher */
+#header-right-talk-btn {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+  width: auto !important;
+  min-width: 9.5em !important;
+  height: 3.2em !important;
+  padding: 0 1.125em 0 1.625em !important;
+  margin: 0 !important;
+  font-size: 0.875em !important;
+  border-radius: 6.25em !important;
+  border: none !important;
+  background: #0b6c79 !important;
+  color: var(--color-white, #fff) !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  z-index: 2 !important;
+  flex-shrink: 0 !important;
+}
+
+/* ── Reel BGM: header player (before INITIATE) ── */
+#header-audio-player-slot {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+  min-width: 0 !important;
+}
+
+#header-audio-player {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.55em !important;
+  height: 3.2em !important;
+  font-size: 0.875em !important;
+  opacity: 0 !important;
+  transform: translate3d(0.6em, 0, 0) scale(0.92) !important;
+  pointer-events: none !important;
+  transition:
+    opacity 0.45s cubic-bezier(0.4, 0, 0.1, 1),
+    transform 0.45s cubic-bezier(0.4, 0, 0.1, 1) !important;
+  will-change: opacity, transform !important;
+}
+
+#header-audio-player.is-visible {
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) scale(1) !important;
+  pointer-events: auto !important;
+}
+
+#header-audio-player-toggle {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 3.2em !important;
+  height: 3.2em !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 100% !important;
+  background: #0b6c79 !important;
+  color: #fff !important;
+  cursor: pointer !important;
+  flex-shrink: 0 !important;
+  transition: background 0.25s ease !important;
+}
+
+#header-audio-player-toggle:hover {
+  background: #095a65 !important;
+}
+
+#header-audio-player-toggle:focus-visible {
+  outline: 2px solid #0b6c79 !important;
+  outline-offset: 3px !important;
+}
+
+#header-audio-player[data-muted="true"] #header-audio-player-toggle {
+  background: #5c6470 !important;
+}
+
+#header-audio-player-track {
+  position: relative !important;
+  width: 4.5em !important;
+  height: 0.2em !important;
+  border-radius: 1em !important;
+  background: rgba(20, 21, 21, 0.14) !important;
+  cursor: pointer !important;
+  touch-action: none !important;
+  flex-shrink: 0 !important;
+}
+
+#header-audio-player-fill {
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: inherit !important;
+  background: #0b6c79 !important;
+  transform-origin: left center !important;
+  pointer-events: none !important;
+}
+
+#header-audio-player-thumb {
+  position: absolute !important;
+  top: 50% !important;
+  width: 0.7em !important;
+  height: 0.7em !important;
+  margin-left: -0.35em !important;
+  margin-top: -0.35em !important;
+  border-radius: 100% !important;
+  background: #0b6c79 !important;
+  box-shadow: 0 0 0 2px #fff !important;
+  pointer-events: none !important;
+}
+
+#header-audio-player-track:focus-visible {
+  outline: 2px solid #0b6c79 !important;
+  outline-offset: 4px !important;
+}
+
+@media (max-width: 560px) {
+  #header-audio-player-track {
+    width: 3.25em !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #header-audio-player {
+    transition: none !important;
+  }
+}
+
+/* Dead center BGM button removed — keep slot inert if still in fragment */
+#home-reel-bgm-play-slot,
+#home-reel-bgm-play {
+  display: none !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+/* Engine watch / placeholder CTA off everywhere */
+#home-reel-video-watch-btn,
+#home-reel-video-placeholder {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+/* Pointer on reel video hover */
+#home-reel-video-container,
+#home-reel-video-container.--is-visible {
+  cursor: pointer !important;
+}
+
+/*
+ * Mobile: kill PLAY REEL marquee / crosses / title around the video.
+ * Engine still queries nodes; we only hide visually.
+ */
+@media (max-width: 812px) {
+  #home-reel-video-container-decoration,
+  #home-reel-video-container-top,
+  #home-reel-video-container-bottom,
+  #home-reel-video-container-crosses,
+  #home-reel-video-title,
+  .home-reel-video-container-cross,
+  .home-reel-video-container-svg-wrapper {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+ * Footer redesign (impeccable polish)
+ * — Keep all engine ids; hide dead product cuts
+ * — 2-col desktop / stacked mobile, contacts always visible
+ * — Tight type scale, touch targets, focus rings
+ * ═══════════════════════════════════════════════════════════════ */
+
+/* Address + form stubs (engine may still query nodes) */
+#footer-contact-address,
+#footer-newsletter-input,
+#footer-newsletter-form,
+#footer-newsletter-input-field,
+#footer-newsletter-input-arrow,
+#footer-newsletter-feedback-message {
+  display: none !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Hide empty product slots (no layout ghosts) */
+#footer-contact-business:has(#footer-business-header:empty):has(#footer-business-link:empty),
+#footer-bottom-labs:empty {
+  display: none !important;
+}
+
+/*
+ * End section pin length (production = 350vh).
+ * Shorter on mobile so footer appears sooner without nuking the CTA.
+ */
+#end-section {
+  height: calc(var(--vh, 1vh) * 220) !important;
+}
+
+/* ── Shell ── */
+#footer-section {
+  /* Keep scroll room for engine, but don’t force a barren full viewport */
+  min-height: min(100vh, calc(var(--vh, 1vh) * 100)) !important;
+  color: #141515 !important;
+}
+
+#footer-top {
+  /* Less dead air above content on short viewports */
+  margin-top: clamp(2.5rem, 6vh, 5rem) !important;
+  flex-grow: 1 !important;
+  min-height: clamp(1.5rem, 4vh, 3rem) !important;
+}
+
+/* ── Middle: contacts + motto ── */
+#footer-middle {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr) !important;
+  column-gap: clamp(1.75rem, 5vw, 4.5rem) !important;
+  row-gap: 0 !important;
+  align-items: start !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* Contacts — left column, stacked, no legacy 6-col grid */
+#footer-middle-contact {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: clamp(1.35rem, 2.4vw, 2rem) !important;
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  font-size: clamp(0.95rem, 1.05vw, 1.125rem) !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+#footer-contact-socials,
+#footer-contact-enquires,
+#footer-contact-business {
+  grid-column: unset !important;
+  margin-top: 0 !important;
+  width: 100% !important;
+  max-width: 28rem !important;
+  will-change: auto !important;
+}
+
+/* Social list — readable, tappable */
+#footer-contact-socials {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0.15rem !important;
+}
+
+#footer-contact-socials .footer-socials-line {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.4em !important;
+  min-height: 2.5rem !important;
+  padding: 0.15em 0 !important;
+  color: inherit !important;
+  text-decoration: none !important;
+  font-family: Aeonik, system-ui, sans-serif !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.01em !important;
+  transition: opacity 0.25s ease !important;
+}
+
+#footer-contact-socials .footer-socials-line:hover {
+  opacity: 0.55 !important;
+}
+
+#footer-contact-socials .footer-socials-line-svg {
+  width: 1.05em !important;
+  height: 1.05em !important;
+  flex-shrink: 0 !important;
+}
+
+/* Contact labels + mailto */
+#footer-enquires-header,
+#footer-business-header {
+  font-family: Aeonik, system-ui, sans-serif !important;
+  font-size: 0.72em !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  opacity: 0.48 !important;
+  margin-bottom: 0.4em !important;
+  line-height: 1.3 !important;
+}
+
+#footer-enquires-link,
+#footer-business-link {
+  font-family: Aeonik, system-ui, sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 1.05em !important;
+  letter-spacing: -0.015em !important;
+  line-height: 1.35 !important;
+  word-break: break-word !important;
+  overflow-wrap: anywhere !important;
+  max-width: 100% !important;
+}
+
+/* Motto — right column, vertically centered vs contact stack */
+#footer-middle-newsletter {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  padding-top: 0.15em !important;
+  will-change: auto !important;
+}
+
+#footer-newsletter-header {
+  font-family: Aeonik, system-ui, sans-serif !important;
+  font-weight: 500 !important;
+  font-size: clamp(1.65rem, 3.6vw, 3.1rem) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.03em !important;
+  max-width: 11ch !important;
+  margin: 0 !important;
+  color: #141515 !important;
+}
+
+#footer-newsletter-header .footer-newsletter-line {
+  display: inline !important;
+}
+
+/* ── Bottom bar ── */
+#footer-bottom {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  column-gap: clamp(1rem, 2.5vw, 2rem) !important;
+  row-gap: 0.75rem !important;
+  margin-top: clamp(2.25rem, 6vh, 4.5rem) !important;
+  padding-right: 4.25rem !important; /* room for ↑ */
+  position: relative !important;
+  width: 100% !important;
+  font-size: clamp(0.75rem, 0.95vw, 0.9rem) !important;
+  font-family: Aeonik, system-ui, sans-serif !important;
+}
+
+#footer-bottom-copyright,
+#footer-bottom-labs,
+#footer-bottom-tagline {
+  grid-column: unset !important;
+  grid-row: unset !important;
+  position: relative !important;
+  overflow: visible !important;
+  will-change: auto !important;
+  width: auto !important;
+  max-width: 100% !important;
+  line-height: 1.4 !important;
+}
+
+#footer-bottom-labs {
+  text-decoration: none !important;
+}
+
+#footer-bottom-tagline {
+  opacity: 0.55 !important;
+}
+
+/* Back to top — brand teal, always clear of content */
+#footer-bottom-up {
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 50% !important;
+  transform: translateY(50%) !important;
+  width: 3.25em !important;
+  height: 3.25em !important;
+  background: #0b6c79 !important;
+  border-radius: 100% !important;
+  flex-shrink: 0 !important;
+  transition: background 0.25s ease, transform 0.25s ease !important;
+}
+
+#footer-bottom-up:hover {
+  background: #095a65 !important;
+}
+
+#footer-bottom-up:focus-visible {
+  outline: 2px solid #0b6c79 !important;
+  outline-offset: 3px !important;
+}
+
+/* Focus rings for interactive footer chrome */
+#footer-section a:focus-visible {
+  outline: 2px solid #0b6c79 !important;
+  outline-offset: 3px !important;
+  border-radius: 2px !important;
+}
+
+/* ── Tablet / mobile ── */
+@media (max-width: 1000px) {
+  /* Faster path to footer: cut end pin + footer dead space */
+  #end-section {
+    height: calc(var(--vh, 1vh) * 145) !important;
+  }
+
+  #footer-section {
+    min-height: auto !important;
+  }
+
+  #footer-top {
+    flex-grow: 0 !important;
+    margin-top: clamp(1.25rem, 3.5vh, 2.25rem) !important;
+    min-height: 0 !important;
+  }
+
+  #footer-middle {
+    grid-template-columns: 1fr !important;
+    row-gap: clamp(1.75rem, 4vh, 2.75rem) !important;
+  }
+
+  /* Motto first (accent), contacts second (utility) */
+  #footer-middle-newsletter {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    align-items: flex-start !important;
+    padding-top: 0 !important;
+  }
+
+  #footer-middle-contact {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+  }
+
+  #footer-newsletter-header {
+    font-size: clamp(1.85rem, 7.5vw, 2.6rem) !important;
+    max-width: 14ch !important;
+  }
+
+  #footer-bottom {
+    padding-right: 0 !important;
+    padding-bottom: 4.25rem !important; /* ↑ sits below meta on narrow */
+    margin-top: clamp(1.5rem, 4vh, 2.5rem) !important;
+  }
+
+  #footer-bottom-up {
+    bottom: 0 !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even snappier to footer on phones */
+  #end-section {
+    height: calc(var(--vh, 1vh) * 120) !important;
+  }
+
+  #footer-middle-contact {
+    gap: 1.25rem !important;
+  }
+
+  #footer-contact-socials .footer-socials-line {
+    min-height: 2.75rem !important; /* finger-friendly */
+  }
+
+  #footer-newsletter-header {
+    max-width: 12ch !important;
+  }
+
+  #footer-bottom {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.4rem !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #footer-contact-socials .footer-socials-line,
+  #footer-bottom-up {
+    transition: none !important;
+  }
+}
+
+/* ── Goal: kill tunnel scroll spacer (was ~42× viewport height) ── */
+#home-goal {
+  padding-bottom: 0 !important;
+  min-height: 0 !important;
+}
+
+/* Tunnel / tablet frames: no layout, no scroll contribution */
+#home-goal-tunnel-title,
+#home-goal-image-in-outer,
+#home-goal-image-out-outer,
+#home-goal-image-in-inner,
+#home-goal-image-out-inner,
+#home-goal-image-in,
+#home-goal-image-out {
+  display: none !important;
+  position: absolute !important;
+  width: 0 !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* Goal manifesto removed — collapse leftover section chrome */
+#home-goal {
+  display: block !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+#home-goal-context,
+#home-goal-texts {
+  display: none !important;
+}
+
+/* See all projects / CONTINUE TO SCROLL */
+#home-featured-cta,
+#end-bottom {
+  display: none !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Reel: OUR APPROACH button hidden (engine still queries the node) */
+#home-reel-cta {
+  display: none !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Reel: hide "Play Reel" overlay text + round play button (nodes kept for engine) */
+#home-reel-video-placeholder,
+#home-reel-video-watch-btn {
+  display: none !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
