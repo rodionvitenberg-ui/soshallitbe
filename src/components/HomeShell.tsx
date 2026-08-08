@@ -4,6 +4,7 @@ import { EngineBootstrap } from "@/components/EngineBootstrap";
 import { ReelBgmController } from "@/components/audio/ReelBgmController";
 import { HeaderLogoPhrase } from "@/components/chrome/HeaderLogoPhrase";
 import { HeroIridescence } from "@/components/home/HeroIridescence";
+import { FeaturedProjects } from "@/components/home/FeaturedProjects";
 import { IntroOverlay } from "@/components/IntroOverlay";
 
 /**
@@ -25,6 +26,7 @@ export function HomeShell({ uiHtml }: { uiHtml: string }) {
       <EngineBootstrap />
       <ReelBgmController />
       <IntroOverlay />
+      <FeaturedProjects />
     </>
   );
 }
