@@ -20,7 +20,7 @@ export function HeroIridescence() {
   return createPortal(
     <div className="hero-visual-fx-root">
       <Iridescence
-        color={[0.10588235294117647, 0.615686274509804, 0.5882352941176471]}
+        color={[0.12156862745098039, 0.3176470588235294, 1]}
         mouseReact
         amplitude={0.1}
         speed={1}

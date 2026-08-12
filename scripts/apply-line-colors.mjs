@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /**
  * Idempotent brand patch for vendor/engine/engine.raw.js:
- *  1) line_reel  → uniform #0b6c79
- *  2) line_goal  → uniform #0b6c79 + earlier timing [0.6, 1.2]
+ *  1) line_reel  → uniform #FF5C00 (neon orange — first strip)
+ *  2) line_goal  → uniform #1F51FF (neon blue — second strip) + earlier timing [0.6, 1.2]
  *  3) EndSection ("Let's work together!") starts earlier: 2.5 → 1.8
  *  4) HomePage background stays light (off-white): no black bg before
  *     "Let's work together!", no white/black flicker on load.
  *  5) WebGL renderer clears to light off-white from the very first frame
  *     (prevents the black flash before the engine's first update()).
- *  6) Reel video pre-expand tint (#1A315B → lighter brand teal #0e93a5).
+ *  6) Reel video pre-expand tint (#1A315B → neon blue #1F51FF).
  * Safe to re-run: already-applied values are left untouched.
  * After this, run `node scripts/patch-engine.mjs`.
  */
@@ -41,15 +41,16 @@ function ensureReplace(from, to, label) {
 
 // 1) line_reel: uniform #0b6c79
 ensureReplace(
-  'fileName:"line_reel",aoThreshold:.555,margin:{x:-.05,y:-.8},scrollToRatioFactors:[.4,1.3],boxMin:new Vector3(-.0112049,-.0141946,0),boxMax:new Vector3(1.01357,.718671,0),color0:"#5a90ff",color1:"#2a38ee"',
   'fileName:"line_reel",aoThreshold:.555,margin:{x:-.05,y:-.8},scrollToRatioFactors:[.4,1.3],boxMin:new Vector3(-.0112049,-.0141946,0),boxMax:new Vector3(1.01357,.718671,0),color0:"#0b6c79",color1:"#0b6c79"',
+  'fileName:"line_reel",aoThreshold:.555,margin:{x:-.05,y:-.8},scrollToRatioFactors:[.4,1.3],boxMin:new Vector3(-.0112049,-.0141946,0),boxMax:new Vector3(1.01357,.718671,0),color0:"#FF5C00",color1:"#FF5C00"',
   "line_reel color",
 );
 
-// 2) line_goal: uniform #0b6c79 + even earlier timing [0.6, 1.2]
+// 2) line_goal: uniform #1F51FF + even earlier timing [0.6, 1.2]
+// from = current state (already patched timing [0.6, 1.2])
 ensureReplace(
-  'fileName:"line_goal",aoThreshold:1e-4,margin:{x:.2,y:-.6},scrollToRatioFactors:[0.8,1.5],boxMin:new Vector3(-.0180006,-.00963629,0),boxMax:new Vector3(1.01777,.850395,0),color0:"#0b6c79",color1:"#0b6c79"',
   'fileName:"line_goal",aoThreshold:1e-4,margin:{x:.2,y:-.6},scrollToRatioFactors:[0.6,1.2],boxMin:new Vector3(-.0180006,-.00963629,0),boxMax:new Vector3(1.01777,.850395,0),color0:"#0b6c79",color1:"#0b6c79"',
+  'fileName:"line_goal",aoThreshold:1e-4,margin:{x:.2,y:-.6},scrollToRatioFactors:[0.6,1.2],boxMin:new Vector3(-.0180006,-.00963629,0),boxMax:new Vector3(1.01777,.850395,0),color0:"#1F51FF",color1:"#1F51FF"',
   "line_goal even earlier",
 );
 
@@ -80,10 +81,11 @@ ensureReplace(
 
 // 5b) If clearColor already applied without clear(), leave raw as-is; patch-engine adds clear().
 
-// 6) Reel video tint before expand: #1A315B (1716219) → #0e93a5 (955301)
+// 6) Reel video tint before expand: #0e93a5 (955301) → #1F51FF (2052607)
+// from = current state (already patched to 955301)
 ensureReplace(
-  "u_color:{value:new Color(1716219)}",
   "u_color:{value:new Color(955301)}",
+  "u_color:{value:new Color(2052607)}",
   "reel video tint",
 );
 

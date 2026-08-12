@@ -95,6 +95,15 @@ if (raw.includes("homePage.preUfxContainer.add(goalTunnelAstronauts.container)")
   console.log("patched: preUfx astronaut add");
 }
 
+// 6a5) Home featured now has two category blocks (CYPRUS + FEATURED) inside one
+//      #home-featured. ProjectItemList must collect .project-item from BOTH
+//      blocks, so the WebGL covers, parallax and hover keep working for all cards.
+mustReplace(
+  "this.projectItemList=new ProjectItemList(homePage,e.querySelector(\".project-list\")),this.domItems=e.querySelectorAll(\".project-item\")",
+  "this.projectItemList=new ProjectItemList(homePage,e.querySelector(\"#home-featured\")),this.domItems=e.querySelectorAll(\".project-item\")",
+  "ProjectItemList scope #home-featured",
+);
+
 // 6b) Neutralize home balloons (heavy hero WebGL) — replaced by Topography React background
 mustReplace(
   "const homeBalloons=new HomeBalloons;",
@@ -264,6 +273,14 @@ mustReplace(
   'window.addEventListener("wheel",o=>o.preventDefault(),{passive:!1});',
   'window.addEventListener("wheel",o=>{}, {passive:!1});',
   "wheel preventDefault softened",
+);
+
+// 18) /services is a Next.js page that reuses the home engine target.
+//     Without this, Route.setTarget("services") redirects to origin.
+mustReplace(
+  "const pagesManager=new PageManager;",
+  'const pagesManager=(()=>{const p=new PageManager;routeManager.addPath("services",homePage);return p})();',
+  "services route → homePage",
 );
 
 fs.mkdirSync(path.dirname(outPath), { recursive: true });

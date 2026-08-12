@@ -1,84 +1,384 @@
 {
   "meta": {
-    "title": "As You Dreamed...",
-    "description": "Through optical fibers and bits, your thoughts will flow and find their perfect embodiment. High-performance product engineering and digital architecture."
+    "title": "As You Dream, So Shall It Be...",
+    "description": "Through optical fibers and digital grain, vision becomes tangible reality. Digital craftsmanship, architecture, and engineering."
   },
   "header": {
-    "logoAria": "Return to core",
+    "logoAria": "Return to origin",
     "backAria": "Go back",
     "back": "back",
     "letsTalk": "Initiate",
     "menuAria": "Menu",
     "menu": "Menu",
     "close": "Close",
-    "navHome": "Core",
-    "navAbout": "Manifesto",
+    "navHome": "Origin",
+    "navAbout": "Doctrine",
     "navProjects": "Artifacts",
     "navContact": "Signal",
-    "newsletterLine1": "Subscribe to",
-    "newsletterLine2": "system updates",
-    "emailPlaceholder": "Your endpoint / email",
+    "newsletterLine1": "Listen to",
+    "newsletterLine2": "pulses from the forge",
+    "emailPlaceholder": "Your mark / email",
     "newsletterSendAria": "Submit email",
-    "labs": "R&D",
+    "labs": "Sanctum",
     "localeEn": "EN",
-    "localeRu": "RU"
+    "localeRu": "RU",
+    "ourWorks": "Our works",
+    "services": "Services"
   },
   "hero": {
-    "title": "Through optical fibers, interwoven with bits, your thoughts will flow into perfect embodiment",
-    "scrollHint": "scroll to observe"
+    "title": "Through optical fibers, interwoven with bits, your thoughts flow into true embodiment",
+    "scrollHint": "scroll to learn more"
   },
   "reel": {
-    "titleLine1": "We obey",
-    "titleLine2": "in all things",
-    "body": "A vision requires form without distortion or friction. We combine full-stack engineering, motion, and cloud infrastructure to turn architectural concepts into living, production-ready web systems with cold precision and absolute dedication.",
-    "approach": "The Doctrine",
+    "titleLine1": "We are masters",
+    "titleLine2": "of all things",
+    "body": "We bind strong engineering, motion, and enduring architecture - carving abstract thoughts into living systems with patient dedication and quiet precision.",
+    "approach": "The Craft",
     "playReel": "Unfold Manifesto",
     "watchAria": "Play manifesto video"
   },
+  "cyprus": {
+    "title": "Cyprus",
+    "disclaimer": "Rooted in the ancient soil of our island home. We take pride in building for Cyprus, lending our craft to its digital horizon and its people."
+  },
   "featured": {
-    "title": "Featured Projects",
-    "disclaimer": "A curated fleet of production systems, SaaS applications, and interactive digital interfaces brought to life.",
+    "title": "Featured Artifacts",
+    "disclaimer": "A curated collection of bespoke digital artifacts, interactive realms, and software architecture brought to life.",
     "projects": {
+      "lamaison": {
+        "name": "La Maison Fleurie",
+        "tags": "fine dining • french restaurant • limassol • CMS • web",
+        "overview": {
+          "kicker": "The Brief",
+          "title": "A little piece of Paris, kept alive since 1986.",
+          "body": "La Maison Fleurie is a family-run French restaurant in Limassol. Since 1986 the Ioannou family has welcomed guests as their own — candlelit room, summer garden, and a menu that travels between Paris and the Mediterranean."
+        },
+        "sections": [
+          { "kicker": "01 / Story", "title": "Four decades of hospitality.", "body": "Founded in 1986 by Christos and Eleni Ioannou after a decade in Paris, the restaurant has become a neighbourhood landmark. Recipes from France, warmth from Cyprus." },
+          { "kicker": "02 / Kitchen", "title": "Seasoned by travel.", "body": "Fresh seafood arrives twice a week, delicacies are imported monthly from France, and the day ends with crème brûlée under candlelight — or in the summer garden." },
+          { "kicker": "03 / Site", "title": "A site as warm as the room.", "body": "A public website with the menu, gallery, and story — plus a quiet CMS where the team edits dishes, translations, and media without touching code." }
+        ],
+        "stack": ["Next.js", "TypeScript", "Django", "PostgreSQL", "CMS"],
+        "cta": "Visit the restaurant"
+      },
+      "agios": {
+        "name": "Taverna Agios Epiktitos",
+        "tags": "taverna • cypriot cuisine • menu • booking • web",
+        "overview": {
+          "kicker": "The Brief",
+          "title": "From the hills of Armenochori.",
+          "body": "A family Cypriot taverna in a restored old village school. Here tradition meets hospitality: meat over carob charcoal, bread from the wood-fired oven, and a table that always has room for one more."
+        },
+        "sections": [
+          { "kicker": "01 / Spirit", "title": "A restored school, a living table.", "body": "The taverna lives in a former village school in Armenochori. The building has a new chapter, but the spirit stays the same — gathering, sharing, celebrating." },
+          { "kicker": "02 / Kitchen", "title": "Fire, spice, tradition.", "body": "From souvlaki to resi, the menu is a tour of Cyprus: slow-cooked meats, aromatic meze, and homemade sweets the way families have made them for generations." },
+          { "kicker": "03 / Site", "title": "A menu, a table, a story.", "body": "The site carries the full menu with categories, table reservations, and events — and every booking lands straight in the owners' Telegram." }
+        ],
+        "stack": ["Next.js", "TypeScript", "Django", "PostgreSQL", "Telegram"],
+        "cta": "Visit the taverna"
+      },
+      "nicks_coffee_bike": {
+        "name": "Nick's Coffee Bike",
+        "tags": "coffee • street corner • coming soon • web",
+        "overview": {
+          "kicker": "The Brief",
+          "title": "Good coffee, on the move.",
+          "body": "Nick's Coffee Bike is a small coffee cart on wheels — espresso for the street, brewed where people walk by. The site is still in the works, and the idea is simple: good coffee, served warm, wherever Nick parks."
+        },
+        "sections": [
+          { "kicker": "01 / Idea", "title": "Coffee that travels.", "body": "A bicycle, a cart, and a proper little bar. No queues, no waiting rooms — coffee shows up on the corner, and leaves when it's time to ride." },
+          { "kicker": "02 / Craft", "title": "A small cart, a real bar.", "body": "The gear is serious and the recipe is personal. The kind of coffee you cross the street for, then come back for tomorrow." },
+          { "kicker": "03 / Status", "title": "In the works.", "body": "The website is being prepared — menu, location, and stories are coming. For now, the best way to find the bike is to follow it on Instagram." }
+        ],
+        "stack": ["Next.js", "TypeScript", "Tailwind"],
+        "cta": "Follow the bike"
+      },
+      "karagat": {
+        "name": "Karagat Hotel",
+        "tags": "hotel • karakol • mountains • booking • web",
+        "overview": {
+          "kicker": "The Brief",
+          "title": "Mountains. Lake. Hospitality.",
+          "body": "Karagat is a hotel in Karakol, Kyrgyzstan — a tall building by the mountains, a conference space beside it, and a kitchen that feeds the morning. Simple, warm, and made for guests."
+        },
+        "sections": [
+          { "kicker": "01 / Stay", "title": "Rooms over the mountains.", "body": "Comfortable rooms, quiet mornings, and Lake Issyk-Kul a short drive away. The hotel is a base for the mountains and a rest stop after the road." },
+          { "kicker": "02 / Gather", "title": "A conference space beside it.", "body": "An attached conference hall turns the hotel into a place for meetings, workshops, and events — work and rest under one roof." },
+          { "kicker": "03 / Kitchen", "title": "No menu, just home.", "body": "The kitchen works without a menu — it feeds the morning and cooks what the day brings, the way home cooking works best." },
+          { "kicker": "04 / Site", "title": "A site that books the stay.", "body": "Rooms, gallery, location, and booking in one calm place. The site shows the view and lets guests reserve without a single extra step." }
+        ],
+        "stack": ["Next.js", "TypeScript", "Django", "PostgreSQL", "Booking"],
+        "cta": "Plan your stay"
+      },
+      "leondiana": {
+        "name": "Leondiana",
+        "tags": "boutique hotel • larnaca • booking • admin panel • web",
+        "overview": {
+          "kicker": "The Brief",
+          "title": "A quiet corner of Larnaca, distilled into pixels.",
+          "body": "Leondiana is a boutique hotel in Larnaca, Cyprus — a quiet lane, Mediterranean light, coffee on the balcony, and the sound of the sea. Without the extra noise."
+        },
+        "sections": [
+          { "kicker": "01 / Guest", "title": "A stay that books itself.", "body": "The guest side is a calm visual journey: a home that carries the atmosphere, four room categories — Standard, Deluxe, Suite, Family — a filterable gallery with lightbox, location, and a booking form that computes the final check on the fly." },
+          { "kicker": "02 / Team", "title": "A quiet command center.", "body": "Behind the aesthetics sits a functional admin panel: rooms, incoming bookings with statuses, flexible promo codes, two-language content editing, settings, and a media library that places photos into slots without duplication." },
+          { "kicker": "03 / Architecture", "title": "One source, every surface.", "body": "The product is split into a user-facing frontend and a data-driven backend (Django + PostgreSQL). A single structured media source feeds the homepage carousel, the general gallery, and a specific room card alike — no duplicates, one truth." }
+        ],
+        "stack": ["Next.js", "TypeScript", "Django", "PostgreSQL", "i18n"],
+        "cta": "Visit the hotel"
+      },
       "oryzo_ai": {
         "name": "Daerdree Bar & Timeclub",
-        "tags": "entertainment • lounge concept • booking • UI/UX • web"
+        "tags": "entertainment • lounge concept • booking • UI/UX • web",
+        "overview": {
+          "kicker": "The Brief",
+          "title": "A lounge that sells atmosphere, not drinks.",
+          "body": "Daerdree Bar & Timeclub needed a digital identity as magnetic as its rooms — an entertainment platform where booking feels like an invitation, not a transaction."
+        },
+        "sections": [
+          { "kicker": "01 / Concept", "title": "Darker, warmer, louder.", "body": "We leaned into a dusk-toned palette, oversized editorial type, and motion that breathes like nightlife — every screen designed around the pulse of the venue." },
+          { "kicker": "02 / Booking", "title": "Reservations without friction.", "body": "Table selection, date pickers, and time slots were compressed into a single flowing flow, cutting booking time to under a minute." },
+          { "kicker": "03 / Interface", "title": "UI that knows your table.", "body": "Interactive menus, event schedules, and private-club details live in one coherent system — sharp on desktop, equally confident on mobile." }
+        ],
+        "stack": ["Next.js", "TypeScript", "GSAP", "Tailwind", "PostgreSQL"],
+        "cta": "Visit the venue"
       },
       "of_the_oak": {
         "name": "Dastorkon Ethno-Restaurant",
-        "tags": "gastronomy • restaurant • interactive menu • i18n • web"
+        "tags": "gastronomy • restaurant • interactive menu • i18n • web",
+        "overview": {
+          "kicker": "The Brief",
+          "title": "Heritage plated in pixels.",
+          "body": "Dastorkon blends centuries of nomad cuisine with a modern dining room. The site had to taste as rich as the menu — and speak fluently in two languages."
+        },
+        "sections": [
+          { "kicker": "01 / Story", "title": "Every dish has a chapter.", "body": "We structured the menu as a journey — ingredients, origins, and rituals behind each plate — turning a restaurant site into a cultural archive." },
+          { "kicker": "02 / Menu", "title": "A menu that serves itself.", "body": "Category navigation, dietary filters, and dish photography flow into a calm reading experience, built for both the curious guest and the quick browser." },
+          { "kicker": "03 / Locale", "title": "Two tongues, one table.", "body": "Full i18n between English and Russian — routing, content, and formatting — so every guest reads the story the way it was meant to be told." }
+        ],
+        "stack": ["Next.js", "TypeScript", "i18n", "Tailwind", "PostgreSQL"],
+        "cta": "Taste the menu"
       },
       "devin_ai": {
         "name": "Walmgres Investment",
-        "tags": "fintech • investment platform • analytics • web"
+        "tags": "fintech • investment platform • analytics • web",
+        "overview": {
+          "kicker": "The Brief",
+          "title": "Complex capital, composed.",
+          "body": "Walmgres needed an investment platform that makes sophisticated portfolios feel calm, legible, and decision-ready — without drowning in dashboards."
+        },
+        "sections": [
+          { "kicker": "01 / Position", "title": "Confidence through clarity.", "body": "A restrained dark interface with precise data hierarchy — numbers lead, decoration follows. Every screen answers: where do I stand?" },
+          { "kicker": "02 / Analytics", "title": "Data that performs.", "body": "Portfolio breakdowns, performance curves, and risk indicators render as focused charts — engineered to stay instant on heavy datasets." },
+          { "kicker": "03 / Motion", "title": "Movement with intent.", "body": "Transitions between states guide the eye, never distract it. GSAP-driven reveals make navigation feel like an instrument, not a slideshow." }
+        ],
+        "stack": ["Next.js", "TypeScript", "GSAP", "Recharts", "PostgreSQL"],
+        "cta": "Explore the platform"
       },
       "porsche_dream_machine": {
         "name": "IkSoft Studio",
-        "tags": "software studio • agency showcase • web • 3d"
+        "tags": "software studio • agency showcase • web • 3D",
+        "overview": {
+          "kicker": "The Brief",
+          "title": "A studio that ships velocity.",
+          "body": "IkSoft is a software studio that builds fast and thinks faster. The showcase had to feel engineered — speed, precision, and a touch of obsession."
+        },
+        "sections": [
+          { "kicker": "01 / Presence", "title": "Performance as identity.", "body": "We opened with motion and momentum — 3D-led hero, rapid scroll choreography — so the site itself demonstrates what the studio sells." },
+          { "kicker": "02 / Work", "title": "Case studies as products.", "body": "Project presentations are structured like product pages: problem, process, result. Clients scroll through proof, not promises." },
+          { "kicker": "03 / Craft", "title": "Details that compound.", "body": "Typographic contrast, precise spacing, and micro-interactions tuned by hand — the invisible ingredients of a premium software brand." }
+        ],
+        "stack": ["Next.js", "TypeScript", "Three.js", "GSAP", "WebGL"],
+        "cta": "Hire the studio"
       },
       "synthetic_human": {
         "name": "Webdoc.life AI",
-        "tags": "healthtech • AI medical parser • saas • next.js"
+        "tags": "healthtech • AI medical parser • SaaS • Next.js",
+        "overview": {
+          "kicker": "The Brief",
+          "title": "AI that reads the chart.",
+          "body": "Webdoc.life parses medical documents into structured health records. The product had to earn trust — clarity and calm were non-negotiable."
+        },
+        "sections": [
+          { "kicker": "01 / Product", "title": "From paperwork to signal.", "body": "Upload a document, receive a structured profile. We designed the pipeline so users always see what the AI extracted and why." },
+          { "kicker": "02 / Trust", "title": "Transparency by design.", "body": "Source highlighting and extraction confidence make the machine legible — the interface proves its own accuracy as you watch." },
+          { "kicker": "03 / Experience", "title": "Healing, quietly.", "body": "A light, clinical palette with generous whitespace keeps the experience gentle — technology that steps back so the patient steps forward." }
+        ],
+        "stack": ["Next.js", "TypeScript", "AI Parser", "Tailwind", "PostgreSQL"],
+        "cta": "Open the product"
       },
       "spatial_fusion": {
         "name": "Careyourpet (PetVet)",
-        "tags": "vet CRM • SaaS • postgresql • web • mobile"
+        "tags": "vet CRM • SaaS • PostgreSQL • web • mobile",
+        "overview": {
+          "kicker": "The Brief",
+          "title": "Every paw, tracked.",
+          "body": "Careyourpet is a veterinary CRM built for clinics that juggle patients, appointments, and records. The system had to be warm enough for nurses, fast enough for doctors."
+        },
+        "sections": [
+          { "kicker": "01 / System", "title": "One record, every visit.", "body": "A unified patient timeline consolidates medical history, prescriptions, and vaccination schedules — no more paper stacks behind the desk." },
+          { "kicker": "02 / Workflow", "title": "Built for busy hands.", "body": "Keyboard-first scheduling, quick-search across pets and owners, and mobile-ready screens keep the whole clinic in the flow." },
+          { "kicker": "03 / Interface", "title": "Clinical, not cold.", "body": "A soft palette and rounded geometry keep the tool approachable — software that respects the people caring for our animals." }
+        ],
+        "stack": ["React", "TypeScript", "PostgreSQL", "Tailwind", "Mobile"],
+        "cta": "Meet the clinic"
       },
       "spaace": {
         "name": "Proffmusic.shop",
-        "tags": "audio stock • music marketplace • e-commerce • digital assets"
+        "tags": "audio stock • music marketplace • e-commerce • digital assets",
+        "overview": {
+          "kicker": "The Brief",
+          "title": "Sound, sorted.",
+          "body": "Proffmusic is a marketplace for professional audio — samples, loops, and stems. Browsing thousands of assets had to feel as good as hearing them."
+        },
+        "sections": [
+          { "kicker": "01 / Discovery", "title": "Listen while you look.", "body": "Inline previews let producers audition tracks without leaving the grid — the fastest path from search to 'load into the DAW'." },
+          { "kicker": "02 / Commerce", "title": "Downloads that don't break the flow.", "body": "Cart, licensing, and instant delivery are reduced to a few uncluttered steps. The store stays out of the way of the music." },
+          { "kicker": "03 / Identity", "title": "Studio-grade aesthetics.", "body": "Deep tones, waveform motifs, and precise typography create a brand that producers trust at first glance." }
+        ],
+        "stack": ["Next.js", "TypeScript", "E-commerce", "Tailwind", "PostgreSQL"],
+        "cta": "Browse the catalog"
       },
       "ddd_2024": {
         "name": "El-Imperia Shop",
-        "tags": "e-commerce • retail • online store • web"
+        "tags": "e-commerce • retail • online store • web",
+        "overview": {
+          "kicker": "The Brief",
+          "title": "Retail that converts.",
+          "body": "El-Imperia is a full retail e-commerce operation. The store needed merchandising power, effortless checkout, and a presence that sells."
+        },
+        "sections": [
+          { "kicker": "01 / Catalog", "title": "Grids that merchandise.", "body": "Product photography, filters, and category storytelling are layered into a tight grid — shoppers find what they want, then discover what they didn't." },
+          { "kicker": "02 / Checkout", "title": "The shortest path to paid.", "body": "Cart → address → payment in three calm steps. Every input is engineered to reduce abandonment at the exact moment it matters." },
+          { "kicker": "03 / Brand", "title": "Premium shelf presence.", "body": "A composed palette and editorial product pages give the store the confidence of a flagship, not a marketplace stall." }
+        ],
+        "stack": ["Next.js", "TypeScript", "E-commerce", "Tailwind", "PostgreSQL"],
+        "cta": "Shop the store"
       },
       "choo_choo_world": {
         "name": "GardenHouse Eco-Resort",
-        "tags": "hospitality • garden hotel concept • booking • web"
+        "tags": "hospitality • garden hotel concept • booking • web",
+        "overview": {
+          "kicker": "The Brief",
+          "title": "A room in the garden.",
+          "body": "GardenHouse is an eco-resort where architecture dissolves into landscape. The site had to make visitors feel the soil, the light, and the silence."
+        },
+        "sections": [
+          { "kicker": "01 / Atmosphere", "title": "Nature as interface.", "body": "Soft greens, organic shapes, and slow scroll rhythm mirror the resort itself — every interaction quieter than the last." },
+          { "kicker": "02 / Stays", "title": "Choose the sky you wake under.", "body": "Cabin galleries, garden suites, and glamping pitches are presented as distinct micro-worlds, each with its own mood and view." },
+          { "kicker": "03 / Booking", "title": "Reserve the seasons.", "body": "Availability, rates, and seasonal packages fold into one gentle flow — booking feels like planning a retreat, not a transaction." }
+        ],
+        "stack": ["Next.js", "TypeScript", "Booking", "Tailwind", "PostgreSQL"],
+        "cta": "Plan the retreat"
       },
       "soda_experience": {
         "name": "BiMark Exchange",
-        "tags": "virtual assets • marketplace • digital goods • platform"
+        "tags": "virtual assets • marketplace • digital goods • platform",
+        "overview": {
+          "kicker": "The Brief",
+          "title": "Digital goods, liquid market.",
+          "body": "BiMark is a marketplace for virtual assets — accounts, keys, and digital inventory. Buyers needed trust; sellers needed reach."
+        },
+        "sections": [
+          { "kicker": "01 / Market", "title": "Listings that move.", "body": "Categorized listings with live status, price history, and seller reputation make the market feel alive — and the next deal one glance away." },
+          { "kicker": "02 / Trust", "title": "Escrow as a feature.", "body": "Guaranteed transactions are surfaced throughout the flow — badges, timelines, and protections turn a risky category into a safe one." },
+          { "kicker": "03 / Experience", "title": "Marketplace speed.", "body": "Instant search, snappy filters, and responsive controls across devices keep traders in motion. The interface stays light; the market stays deep." }
+        ],
+        "stack": ["Next.js", "TypeScript", "Marketplace", "Tailwind", "PostgreSQL"],
+        "cta": "Enter the market"
       }
+    }
+  },
+  "services": {
+    "metaTitle": "Services — As You Dream, So Shall It Be",
+    "metaDescription": "Web, mobile, and AI development. Modern design, a fast CMS, SEO, and hosting — built with the same craft as the rest of the studio.",
+    "eyebrow": "Services",
+    "heroTitle": "How We Can Help You",
+    "scrollHint": "scroll to learn more",
+    "offers": {
+      "webIndex": "01",
+      "webTitle": "Web Application Development",
+      "webBody": "Custom web application development services designed to build scalable, secure, and high-performance solutions for your business. We create modern web apps — including SPA, PWA, and enterprise systems — using advanced technologies to ensure seamless user experience and cross-platform compatibility. Our web applications improve workflow automation, enhance user engagement, and drive digital growth.",
+      "mobileIndex": "02",
+      "mobileTitle": "Mobile Application Development",
+      "mobileBody": "Mobile application development services tailored to your business goals — we build scalable, high-performance iOS and Android apps with seamless user experience. Our custom mobile app development ensures fast deployment, secure architecture, and full compatibility across devices.",
+      "aiIndex": "03",
+      "aiTitle": "AI Development",
+      "aiBody": "AI development services that transform your data into intelligent, scalable solutions using machine learning, deep learning, and advanced analytics. We build custom AI systems — from predictive analytics and NLP to computer vision — fully integrated into your business processes. Our AI solutions automate operations, improve decision-making, and drive measurable business growth."
+    },
+    "techTitle": "We Work with the Following Technologies",
+    "perksTitle": "By ordering a website from us, you will get:",
+    "perks": {
+      "p1Title": "Modern Design",
+      "p1Body": "We use the latest trends in design and user interface.",
+      "p2Title": "Free consultations",
+      "p2Body": "We train the customer's staff to work with CMS. We advise on all technical issues.",
+      "p3Title": "Convenient, Fast CMS",
+      "p3Body": "We offer a super-fast CMS; its functionality saves you time and helps you rank higher in search engines.",
+      "p4Title": "SEO Optimization",
+      "p4Body": "All our projects are initially built with SEO features in mind.",
+      "p5Title": "Super-Fast Hosting",
+      "p5Body": "We use the latest trends in design and user interface.",
+      "p6Title": "Responsive Layout",
+      "p6Body": "Our websites automatically adapt to any devices and screens."
+    },
+    "whyTitle": "Why Choose Us",
+    "why": {
+      "aLabel": "The client, first",
+      "aBody": "At our company, customer satisfaction is our top priority. We pride ourselves on providing personalized services and flexible solutions to meet the unique needs of each client. Our dedicated team ensures open communication and a seamless experience throughout the project lifecycle.",
+      "bLabel": "Depth of craft",
+      "bBody": "Our team possesses extensive expertise in the field of information technology, enabling us to tackle even the most complex challenges with ease. We are committed to staying updated with the latest trends and technologies to deliver cutting-edge solutions tailored to your needs.",
+      "cLabel": "Quality, guaranteed",
+      "cBody": "We guarantee high-quality services and reliable solutions to empower our clients to succeed in their endeavors. With a focus on rigorous quality assurance and proven methodologies, we deliver results that exceed expectations. Our commitment to excellence ensures that every project is executed with precision and professionalism.",
+      "dLabel": "Built to last",
+      "dBody": "Embracing innovation is at the core of our ethos. We leverage the latest technologies and adopt innovative approaches to drive digital transformation and achieve optimal outcomes for our clients. Our forward-thinking mindset enables us to stay ahead of the curve and deliver solutions that are future-proof and scalable."
+    },
+    "quotesTitle": "Our clients said",
+    "quotes": {
+      "aName": "Emily P",
+      "aBody": "I'm absolutely thrilled with the work done by this team! We commissioned the development of a web application for our startup, and the results surpassed all of our expectations. Their professionalism, quality, and attention to detail truly set them apart. A huge thank you for the outstanding work!",
+      "bName": "Alex P",
+      "bBody": "Our company recently engaged this team for the development of a web application, and we were pleasantly surprised with the outcome. The team demonstrated a deep understanding of our needs and proposed innovative solutions that greatly enhanced our product. Excellent job!",
+      "cName": "Ivan M",
+      "cBody": "I'd like to extend my sincerest gratitude to the team for creating our web application. The development process was seamless, and communication was clear and prompt throughout. We received a product that not only met but exceeded our expectations. I highly recommend this team to anyone in search of a dependable partner for web development."
+    },
+    "priceTitle": "Price",
+    "priceFrom": "from",
+    "prices": {
+      "p1Name": "Catalog Website Development",
+      "p1Meta": "from 699€ / from 8 days",
+      "p2Name": "Web Application Development",
+      "p2Meta": "from 499€ / from 5 days",
+      "p3Name": "E-commerce Development",
+      "p3Meta": "from 999€ / from 9 days",
+      "p4Name": "Business Card Website Development",
+      "p4Meta": "from 399€ / from 7 days",
+      "p5Name": "Order a Landing Page",
+      "p5Meta": "from 349€ / from 5 days",
+      "p6Name": "Mobile Application Development",
+      "p6Meta": "from 999€ / from 22 days",
+      "p7Name": "SEO Promotion",
+      "p7Meta": "from 249€ / month",
+      "p8Name": "Social Media Promotion",
+      "p8Meta": "from 149€ / month"
+    },
+    "faqTitle": "Frequently asked questions",
+    "faq": {
+      "q1": "How much does it cost to build a website in Cyprus from scratch?",
+      "a1": "The cost of creating websites in Cyprus is determined by their type and complexity. For each project, the final amount is calculated individually, after drawing up the terms of reference. The cost of creating a one-page website in the studio starts from 800€, corporate website from 1200€, online store from 1900€. It is possible to create a site on a so-called template. The advantage of this solution is a lower price from 300€, and a short start-up time, usually 3–5 days. The disadvantage — much more expensive support and maintenance, as well as greater complexity of reaching the top of search engines.",
+      "q2": "Which CMS to choose?",
+      "a2": "We recommend our clients our own development. This is a simple, fast CMS, which we customize for each client. It is characterized by high speed (3–5 times faster than commercial CMS), stability, security, real multilingualism, cheap development and maintenance.",
+      "q3": "Will we be able to update the information on our own?",
+      "a3": "Yes, you will be able to update all information yourself. Our CMS has a simple, intuitive interface, not overloaded with redundant fields, as in popular CMS, has an advanced visual editor that allows you to format text, insert tables, images, links, etc. In online stores we provide modules for import-export of goods from your internal electronic document management system. I.e. in one click, the customer can update all the products on the site — prices, photos, characteristics.",
+      "q4": "Does using a ready-made design make it cheaper to create a website?",
+      "a4": "Yes, the use of a template solution can significantly reduce the cost of development, but as a rule significantly increases the cost of subsequent technical support and implementation of additional modules. That is, if the customer does not plan to further develop the site, add new materials, does not plan to promote it in search engines, then this option will be optimal. We can offer an intermediate option — the customer chooses from a catalog of ready-made designs a favorite layout. We finalize it for the needs of the client, make a unique adaptive layout and programming.",
+      "q5": "Do you practice creating a website for free?",
+      "a5": "We do not advise you to use free constructors and online utilities for creating internet projects. First of all, all of them are paid, except for some promotional rates. Monthly payment on them is several times higher than a good hosting, and the speed and quality is much lower than professional development. Search engines dislike sites created on constructors or free templates and rarely bring them to the top. As a result, having saved a small amount, later you pay more, do not have the opportunity to transfer the code to another hosting and essentially waste time and money.",
+      "q6": "How to create a website inexpensively?",
+      "a6": "In the studio we pay attention to each client, and if you have a start-up company and you are just beginning to develop your business — we can offer you different options for inexpensive creation of sites, while maintaining the highest quality of work.",
+      "q7": "Do you do copywriting?",
+      "a7": "Yes, the specialists of our company can create effective content, but as practice shows, it is better to entrust the creation of content to users. The fact is that the copywriter of any web studio is not a professional in your business and can only write a summary based on the texts read on the Internet. In order to bring your project to the top of search engines and bypass competitors — the text must be absolutely unique and with this task can best cope the specialists of your company who know everything about your business. The best way to solve this problem is to apply a comprehensive approach. Your specialists write the main content or create the structure of the document, and the copywriter can help with formatting the text, setting keys, creating beautiful word forms, placement on the web.",
+      "q8": "What additional services do you provide?",
+      "a8": "Developers of our web studio take a comprehensive approach to website development. We can select a domain, check its history, conduct a full audit of competitors, develop a user-friendly interface that will increase the number of targeted applications from the site, provide various tools and testing services at all stages of development, test all versions of the site on various devices and platforms, and much more."
     }
   },
   "end": {

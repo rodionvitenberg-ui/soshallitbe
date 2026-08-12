@@ -4,6 +4,7 @@ import { useRef, useCallback, useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations } from "next-intl";
 import { X, ArrowUpRight } from "lucide-react";
 import type { ProjectPresentation } from "@/data/projects";
 
@@ -19,13 +20,12 @@ const CLOSE_DURATION = 0.5;
 
 /**
  * Модальное окно-свиток для FEATURED PROJECTS.
+ * Тексты читаются из i18n (messages/{en,ru}.json) по ключу project.i18nKey.
  *
  * Механика:
  *  - Root невидим через CSS (display:none); класс .is-open включает его.
  *  - Лист съезжает сверху вниз (CSS-старт translateY(-110%) → GSAP y:0).
- *  - Фон под листом сжимается/темнеет (CSS: body.project-modal-open -> depth).
  *  - Внутри собственный скролл с параллаксом (ScrollTrigger, scroller = sheet).
- *  - Закрытие: лист уходит вверх, root выключается по onComplete.
  */
 export function ProjectModal({ project, onClose }: ProjectModalProps) {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -36,6 +36,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
   const targetScrollRef = useRef(0);
   const smoothRafRef = useRef(0);
   const [visible, setVisible] = useState(false);
+  const t = useTranslations("featured.projects");
 
   const closeModal = useCallback(() => {
     const root = rootRef.current;
@@ -71,16 +72,12 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [onClose]);
 
-  // Открытие: включаем root, глубину на фон (скролл страницы НЕ блокируем —
-  // иначе исчезает скроллбар, вьюпорт расширяется и ломает сетку движка).
-  // Прокрутка фона глушится в capture-фазе: wheel / touch / keyboard.
   useEffect(() => {
     if (!project || !rootRef.current) return;
 
     document.body.classList.add("project-modal-open");
     setVisible(true);
 
-    // Даём браузеру отрисовать display:flex, затем анимируем.
     const raf = requestAnimationFrame(() => {
       const ctx = gsap.context(() => {
         const sheet = sheetRef.current;
@@ -142,7 +139,6 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [project]);
 
-  // Параллакс при внутреннем скролле (создаётся после открытия, живёт в модалке).
   useEffect(() => {
     if (!project || !visible) return;
     const scroller = scrollerRef.current;
@@ -173,7 +169,6 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
     return () => ctx.revert();
   }, [project, visible]);
 
-  // Плавный скролл внутри модалки, как на главной (lerp к target).
   const scrollToSmooth = useCallback(() => {
     cancelAnimationFrame(smoothRafRef.current);
     const scroller = scrollerRef.current;
@@ -192,9 +187,6 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
     smoothRafRef.current = requestAnimationFrame(step);
   }, []);
 
-  // Прокрутка колёсика: глобальный capture всегда отсекает движок (wheel на
-  // window) — фон не скроллится и не реагирует. Внутри модалки wheel ведёт
-  // плавный lerp-скролл листа; вне модалки wheel просто глушится.
   useEffect(() => {
     const scroller = scrollerRef.current;
     if (!scroller || !project) return;
@@ -222,7 +214,6 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
     };
   }, [project, scrollToSmooth]);
 
-  // Тач: не даём фоновой странице скроллиться жестом внутри модалки.
   useEffect(() => {
     if (!project) return;
     const onTouchMoveCapture = (e: TouchEvent) => {
@@ -240,8 +231,6 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
       });
   }, [project]);
 
-  // Keyboard: Escape закрывает, навигационные клавиши не скроллят фон
-  // (и не доходят до движка — stopImmediatePropagation).
   useEffect(() => {
     if (!project) return;
     const onKey = (e: KeyboardEvent) => {
@@ -288,12 +277,22 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
     return () => window.removeEventListener("keydown", onKey, { capture: true });
   }, [project, closeModal, scrollToSmooth]);
 
-  // Клик по фону (вне листа) закрывает.
   const handleRootClick = (e: React.MouseEvent) => {
     if (e.target === e.currentTarget) closeModal();
   };
 
   if (!project) return null;
+
+  const key = project.id;
+  const name = t(`${key}.name`);
+  const tags = t(`${key}.tags`);
+  const overviewKicker = t(`${key}.overview.kicker`);
+  const overviewTitle = t(`${key}.overview.title`);
+  const overviewBody = t(`${key}.overview.body`);
+  const sections = (t.raw(`${key}.sections`) ??
+    []) as Array<{ kicker: string; title: string; body: string }>;
+  const stack = (t.raw(`${key}.stack`) ?? []) as string[];
+  const cta = t(`${key}.cta`);
 
   return (
     <div
@@ -301,34 +300,32 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
       className={`project-modal-root${visible ? " is-open" : ""}`}
       role="dialog"
       aria-modal="true"
-      aria-label={project.name}
+      aria-label={name}
       onClick={handleRootClick}
     >
       <div ref={overlayRef} className="project-modal-overlay" />
       <div ref={sheetRef} className="project-modal-sheet">
         <div ref={scrollerRef} className="project-modal-scroll">
-          {/* Hero */}
           <div className="project-modal-hero">
             <img
               className="project-modal-hero-img"
               src={project.hero}
-              alt={project.name}
+              alt={name}
               draggable={false}
             />
             <div className="project-modal-hero-shade" />
             <div className="project-modal-hero-content">
               <div className="project-modal-hero-meta">
-                <span className="project-modal-hero-tags">{project.tags}</span>
+                <span className="project-modal-hero-tags">{tags}</span>
                 <span className="project-modal-hero-year">{project.year}</span>
               </div>
-              <h2 className="project-modal-hero-title">{project.name}</h2>
+              <h2 className="project-modal-hero-title">{name}</h2>
             </div>
           </div>
 
-          {/* Sticky header */}
           <header className="project-modal-header-row">
             <div className="project-modal-header">
-              <span className="project-modal-header-kicker">{project.overview.kicker}</span>
+              <span className="project-modal-header-kicker">{overviewKicker}</span>
               <span className="project-modal-header-index">{project.year}</span>
             </div>
             <button
@@ -341,16 +338,15 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             </button>
           </header>
 
-          {/* Контент */}
           <div className="project-modal-content">
             <section className="project-modal-section project-modal-overview" data-parallax="0.04">
               <p className="project-modal-overview-title" data-parallax="0.06">
-                {project.overview.title}
+                {overviewTitle}
               </p>
-              <p className="project-modal-overview-body">{project.overview.body}</p>
+              <p className="project-modal-overview-body">{overviewBody}</p>
             </section>
 
-            {project.sections.map((section) => (
+            {sections.map((section) => (
               <section key={section.kicker} className="project-modal-section">
                 <div className="project-modal-section-main">
                   <p className="project-modal-section-kicker" data-parallax="0.08">
@@ -367,7 +363,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             <section className="project-modal-section project-modal-stack-section">
               <p className="project-modal-section-kicker">Stack</p>
               <div className="project-modal-stack">
-                {project.stack.map((tech) => (
+                {stack.map((tech) => (
                   <span key={tech} className="project-modal-stack-chip">
                     {tech}
                   </span>
@@ -377,7 +373,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
             <section className="project-modal-section project-modal-cta-section">
               <a className="project-modal-cta" href={project.url} target="_blank" rel="noreferrer">
-                <span>{project.cta}</span>
+                <span>{cta}</span>
                 <ArrowUpRight size={20} strokeWidth={1.5} />
               </a>
             </section>
