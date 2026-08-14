@@ -77,6 +77,17 @@ Tunnel/astronaut timeline выключен патчем.
 
 Проприетарный reference Lusion. Локально / обучение. Не публичный rehost как официальный сайт.
 
+## SEO / GEO layer
+
+- **Canonical entity**: «So Shall It Be» / `soshallitbe.cyou` / email `soshallitbe5@gmail.com`.
+- **Positioning: Cyprus + Europe only.** No Kyrgyzstan/Karakol in any SEO/GEO artifact.
+- `public/robots.txt` — allows standard + AI crawlers (GPTBot, ClaudeBot, PerplexityBot, …).
+- `public/sitemap.xml` — `/` and `/services`.
+- `src/components/structured-data.tsx` — JSON-LD: ProfessionalService/Organization, WebSite, ItemList (home), FAQPage (services).
+- `public/llms.txt` + `public/llms-full.txt` — LLM-readable studio passport (llmstxt.org-style).
+- `src/fragments/home-about.html` — crawler-visible «who/what/where/pricing» SSR block inside `#ui`; visually clipped out by `overrides.css` (no impact on engine scroll math).
+- `docs/geo-checklist.md` — deployment + external-profile consistency checklist.
+
 ## Product cuts (custom)
 
 - **No tunnel / astronaut**; Goal manifesto copy removed (engine stubs only).

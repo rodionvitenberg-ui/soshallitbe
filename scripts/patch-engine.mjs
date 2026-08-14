@@ -283,6 +283,76 @@ mustReplace(
   "services route → homePage",
 );
 
+// 19) Extra Services lines: Line(4) = goal mesh / orange, Line(5) = reel mesh / blue.
+//     Hosts exist only on /services (#svc-quotes, #svc-pre-end-line), so homepage is unchanged.
+mustReplace(
+  'scrollToRatioFactors:[-2,1.85],color0:"#fff",color1:"#bbb"}];class Line{',
+  'scrollToRatioFactors:[-2,1.85],color0:"#fff",color1:"#bbb"},' +
+    '{fileName:"line_goal",aoThreshold:1e-4,margin:{x:.2,y:-.6},scrollToRatioFactors:[0.6,1.2],' +
+    "boxMin:new Vector3(-.0180006,-.00963629,0),boxMax:new Vector3(1.01777,.850395,0)," +
+    'color0:"#FF5C00",color1:"#FF5C00"},' +
+    '{fileName:"line_reel",aoThreshold:.555,margin:{x:-.05,y:-.8},scrollToRatioFactors:[.4,1.3],' +
+    "boxMin:new Vector3(-.0112049,-.0141946,0),boxMax:new Vector3(1.01357,.718671,0)," +
+    'color0:"#1F51FF",color1:"#1F51FF"}];class Line{',
+  "extra LINES_DATA_LIST 4+5",
+);
+
+mustReplace(
+  "const homePage=new HomePage,",
+  "const homePage=new HomePage," +
+    "extraPageLines=(()=>{" +
+      "const quotes=new Line(4),preEnd=new Line(5);" +
+      "let qHost=null,pHost=null,on=!1;" +
+      "const bind=()=>{" +
+        'qHost=document.getElementById("svc-quotes");' +
+        'pHost=document.getElementById("svc-pre-end-line");' +
+        "return !!(qHost||pHost);" +
+      "};" +
+      "const stealGeom=(line,src)=>{" +
+        "if(line.geometry&&line.geometry.attributes&&line.geometry.attributes.position)return;" +
+        "if(src&&src.geometry)line.geometry=src.geometry;" +
+      "};" +
+      "const prep=(line)=>{" +
+        "line.init();" +
+        "line.mesh&&(line.mesh.material.transparent=!0,line.mesh.renderOrder=180);" +
+        "line.circle&&(line.circle.material.transparent=!0,line.circle.renderOrder=180);" +
+      "};" +
+      "const api={" +
+        "preInit(){if(!bind())return;qHost&&quotes.preInit();pHost&&preEnd.preInit();}," +
+        "init(){" +
+          "if(!bind())return;" +
+          "if(qHost){" +
+            "stealGeom(quotes,homeGoalSection&&homeGoalSection.lineVisual);" +
+            "prep(quotes);" +
+            "homePage.postUfxContainer.add(quotes.container);" +
+          "}" +
+          "if(pHost){" +
+            "stealGeom(preEnd,homeReelSection&&homeReelSection.lineVisual);" +
+            "prep(preEnd);" +
+            "homePage.preUfxContainer.add(preEnd.container);" +
+          "}" +
+          "on=!0;" +
+        "}," +
+        "resize(e,t){if(!on)return;qHost&&quotes.mesh&&quotes.resize(e,t);pHost&&preEnd.mesh&&preEnd.resize(e,t);}," +
+        "update(e){" +
+          "if(!on)return;" +
+          "qHost&&quotes.update(e,scrollManager.getDomRange(qHost));" +
+          "pHost&&preEnd.update(e,scrollManager.getDomRange(pHost));" +
+        "}" +
+      "};" +
+      "const _pre=homePage.preInit.bind(homePage);" +
+      "homePage.preInit=function(){_pre();api.preInit()};" +
+      "const _init=homePage.init.bind(homePage);" +
+      "homePage.init=function(){_init();api.init()};" +
+      "const _rs=homePage.resize.bind(homePage);" +
+      "homePage.resize=function(e,t){_rs(e,t);api.resize(e,t)};" +
+      "const _up=homePage.update.bind(homePage);" +
+      "homePage.update=function(e){_up(e);api.update(e)};" +
+      "return api;" +
+    "})(),",
+  "extraPageLines hook HomePage",
+);
+
 fs.mkdirSync(path.dirname(outPath), { recursive: true });
 fs.writeFileSync(outPath, raw);
 console.log("wrote", outPath, `(${raw.length} bytes)`);

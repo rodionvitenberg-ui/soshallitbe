@@ -6,6 +6,7 @@ import {
   scrollIndicatorHtml,
 } from "@/components/chrome/ScrollNav";
 import { videoOverlayHtml } from "@/components/chrome/VideoOverlay";
+import { aboutHtml } from "@/components/home/About";
 import { featuredHtml } from "@/components/home/Featured";
 import { goalHtml } from "@/components/home/Goal";
 import { heroHtml } from "@/components/home/Hero";
@@ -32,6 +33,7 @@ export function assembleUiInnerHtml(
     reelHtml(),
     featuredHtml(),
     goalHtml(),
+    aboutHtml(),
     endSectionHtml(),
     `</div>`,
     `<div id="page-extra-sections">`,

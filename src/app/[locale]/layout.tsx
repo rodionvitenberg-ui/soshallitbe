@@ -26,10 +26,26 @@ export async function generateMetadata({
 
   const title = t("title");
   const description = t("description");
+  const siteUrl = new URL("https://soshallitbe.cyou");
+  const canonical = new URL(siteUrl.pathname, siteUrl).href;
 
   return {
+    metadataBase: siteUrl,
     title,
     description,
+    alternates: {
+      canonical,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
     icons: {
       apple: "/assets/meta/apple-touch-icon.png",
       icon: [
@@ -53,6 +69,22 @@ export async function generateMetadata({
       description,
       type: "website",
       locale: locale === "ru" ? "ru_RU" : "en_US",
+      url: canonical,
+      siteName: "So Shall It Be",
+      images: [
+        {
+          url: "/assets/meta/social_sharing.jpg",
+          width: 1200,
+          height: 630,
+          alt: "So Shall It Be — Web, Mobile & AI Development Studio in Cyprus",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/assets/meta/social_sharing.jpg"],
     },
     other: {
       "theme-color": "#ffffff",

@@ -6,6 +6,8 @@ import {
   REEL_BGM_SRC,
   getOutputVolume,
   getReelBgmState,
+  persistPlaybackTime,
+  readPlaybackTime,
   registerStartHandler,
   setPlaying,
   setVisible,
@@ -17,16 +19,36 @@ import {
  * Owns BGM <audio>.
  * First pointerdown/keydown → start (UI 60% → quiet mapped output).
  * Header slider controls UI volume; output is gain-capped.
+ * State is persisted so Home ↔ Services keep the same track.
  */
-export function ReelBgmController() {
+export function ReelBgmController({
+  visibleByDefault = false,
+}: {
+  visibleByDefault?: boolean;
+} = {}) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
+    if (visibleByDefault) setVisible(true);
+
     const audio = new Audio(REEL_BGM_SRC);
     audio.loop = true;
     audio.preload = "auto";
     audio.volume = 0;
     audioRef.current = audio;
+
+    const savedTime = readPlaybackTime();
+    if (savedTime > 0) {
+      const seek = () => {
+        try {
+          audio.currentTime = Math.min(savedTime, audio.duration || savedTime);
+        } catch {
+          /* not seekable yet */
+        }
+      };
+      if (audio.readyState >= 1) seek();
+      else audio.addEventListener("loadedmetadata", seek, { once: true });
+    }
 
     const applyOutput = () => {
       const el = audioRef.current;
@@ -67,6 +89,21 @@ export function ReelBgmController() {
     };
 
     registerStartHandler(doStart);
+
+    if (getReelBgmState().started) {
+      doStart();
+    }
+
+    let lastPersist = 0;
+    const persistTime = () => {
+      const now = performance.now();
+      if (now - lastPersist < 800) return;
+      lastPersist = now;
+      persistPlaybackTime(audio.currentTime);
+    };
+    audio.addEventListener("timeupdate", persistTime);
+    const onPageHide = () => persistPlaybackTime(audio.currentTime);
+    window.addEventListener("pagehide", onPageHide);
 
     const onGesture = () => {
       if (getReelBgmState().started) return;
@@ -122,6 +159,9 @@ export function ReelBgmController() {
       window.removeEventListener("pointerdown", onGesture);
       window.removeEventListener("keydown", onGesture);
       window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pagehide", onPageHide);
+      audio.removeEventListener("timeupdate", persistTime);
+      persistPlaybackTime(audio.currentTime);
       document.documentElement.style.removeProperty("cursor");
       clearInterval(ioRetry);
       clearTimeout(ioStop);

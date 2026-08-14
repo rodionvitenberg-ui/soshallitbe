@@ -1,6 +1,9 @@
 {
-	"name": "Lusion",
-	"short_name": "Lusion",
+	"name": "So Shall It Be — Web, Mobile & AI Development Studio in Cyprus",
+	"short_name": "So Shall It Be",
+	"description": "Web design and development studio in Cyprus. Web applications, mobile apps, e-commerce, AI systems — with design, fast CMS, SEO, and hosting.",
+	"start_url": "/",
+	"lang": "en",
 	"icons": [
 		{
 			"src": "./android-chrome-192x192.png",

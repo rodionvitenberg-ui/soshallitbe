@@ -4,9 +4,9 @@ import { useEffect } from "react";
 
 /**
  * Header wordmark:
- * - default on load: AS I DREAMED... (line 1)
+ * - default on load: AS YOU DREAME... (line 1)
  * - scroll down → SO SHALL IT BE (line 2)
- * - scroll up → AS I DREAMED... (line 1)
+ * - scroll up → AS YOU DREAME... (line 1)
  *
  * Direction-based (not section-based). Vertical slide is pure CSS via data-phrase.
  */
@@ -16,9 +16,25 @@ export function HeaderLogoPhrase() {
     const sr = document.getElementById("header-logo-sr");
     if (!logo) return;
 
+    const onHome =
+      window.location.pathname.replace(/\/+$/, "") === "" ||
+      window.location.pathname === "/";
+    if (!onHome) {
+      logo.setAttribute("data-link-type", "external");
+    }
+
+    const onLogoClick = (e: MouseEvent) => {
+      const path = window.location.pathname.replace(/\/+$/, "") || "/";
+      if (path === "/") return;
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      window.location.assign("/");
+    };
+    logo.addEventListener("click", onLogoClick, true);
+
     let phrase: "start" | "mid" = "start";
     logo.dataset.phrase = "start";
-    if (sr) sr.textContent = "AS YOU DREAMED...";
+    if (sr) sr.textContent = "AS YOU DREAME...";
 
     const setPhrase = (next: "start" | "mid") => {
       if (next === phrase) return;
@@ -26,7 +42,7 @@ export function HeaderLogoPhrase() {
       logo.dataset.phrase = next;
       if (sr) {
         sr.textContent =
-          next === "mid" ? "SO SHALL IT BE" : "AS YOU DREAMED...";
+          next === "mid" ? "SO SHALL IT BE" : "AS YOU DREAME...";
       }
     };
 
@@ -88,6 +104,7 @@ export function HeaderLogoPhrase() {
     window.addEventListener("pointercancel", onPointerUp, { passive: true });
 
     return () => {
+      logo.removeEventListener("click", onLogoClick, true);
       window.removeEventListener("wheel", onWheel);
       window.removeEventListener("touchstart", onTouchStart);
       window.removeEventListener("touchmove", onTouchMove);

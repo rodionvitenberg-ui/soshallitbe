@@ -25,6 +25,24 @@ export type ReelBgmState = {
 type Listener = () => void;
 const listeners = new Set<Listener>();
 
+const STORAGE_KEY = "studio.reel-bgm";
+const TIME_KEY = "studio.reel-bgm-t";
+
+function clamp01(n: number) {
+  return Math.max(0, Math.min(1, n));
+}
+
+function readPersisted(): Partial<ReelBgmState> | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = sessionStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    return JSON.parse(raw) as Partial<ReelBgmState>;
+  } catch {
+    return null;
+  }
+}
+
 let state: ReelBgmState = {
   started: false,
   muted: false,
@@ -32,6 +50,21 @@ let state: ReelBgmState = {
   visible: false,
   playing: false,
 };
+
+if (typeof window !== "undefined") {
+  const persisted = readPersisted();
+  if (persisted?.started) {
+    state = {
+      ...state,
+      started: true,
+      muted: !!persisted.muted,
+      volume: clamp01(
+        typeof persisted.volume === "number" ? persisted.volume : REEL_BGM_START,
+      ),
+      visible: true,
+    };
+  }
+}
 
 let onStartHandler: (() => void) | null = null;
 
@@ -43,8 +76,39 @@ function emit() {
   for (const l of listeners) l();
 }
 
-function clamp01(n: number) {
-  return Math.max(0, Math.min(1, n));
+function persistState() {
+  if (typeof window === "undefined") return;
+  try {
+    sessionStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({
+        started: state.started,
+        muted: state.muted,
+        volume: state.volume,
+      }),
+    );
+  } catch {
+    /* private mode */
+  }
+}
+
+export function persistPlaybackTime(t: number) {
+  if (typeof window === "undefined") return;
+  try {
+    sessionStorage.setItem(TIME_KEY, String(t));
+  } catch {
+    /* private mode */
+  }
+}
+
+export function readPlaybackTime(): number {
+  if (typeof window === "undefined") return 0;
+  try {
+    const n = Number(sessionStorage.getItem(TIME_KEY));
+    return Number.isFinite(n) && n >= 0 ? n : 0;
+  } catch {
+    return 0;
+  }
 }
 
 export function getReelBgmState(): ReelBgmState {
@@ -71,6 +135,7 @@ function setState(partial: Partial<ReelBgmState>) {
     return;
   }
   state = next;
+  persistState();
   emit();
 }
 

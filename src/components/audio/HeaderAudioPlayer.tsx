@@ -12,6 +12,7 @@ import {
   getDisplayLevel,
   getReelBgmState,
   setVolume,
+  startBgm,
   subscribeReelBgm,
   toggleMuted,
 } from "@/components/audio/reelBgmStore";
@@ -114,11 +115,11 @@ export function HeaderAudioPlayer() {
               : "Mute background music"
         }
         aria-pressed={state.muted}
-        disabled={!state.started}
         onClick={() => {
-          if (state.started) toggleMuted();
+          if (!state.started) startBgm();
+          else toggleMuted();
         }}
-        tabIndex={show && state.started ? 0 : -1}
+        tabIndex={show ? 0 : -1}
       >
         <SpeakerIcon muted={!state.started || state.muted} />
       </button>

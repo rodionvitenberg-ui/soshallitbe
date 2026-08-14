@@ -1,92 +1,95 @@
 <div id="home-services" class="section">
   <div class="svc">
-    <header class="svc-hero" data-svc="hero">
-      <div class="svc-hero-copy">
-        <p class="svc-eyebrow">{{services.eyebrow}}</p>
-        <h1 class="svc-hero-title">{{services.heroTitle}}</h1>
+    <header class="svc-hero">
+      <h1 class="svc-hero-title" aria-label="{{services.heroTitle}}">
+        <span class="svc-hero-line">{{services.heroTitleLine1}}</span>
+        <span class="svc-hero-line">{{services.heroTitleLine2}}</span>
+      </h1>
+      <div class="svc-hero-row">
         <div class="svc-hero-scroll" aria-hidden="true">
           <span class="svc-hero-cross"></span>
           <span class="svc-hero-cross"></span>
           <span class="svc-hero-cross"></span>
           <span class="svc-hero-cross"></span>
-          <span class="svc-hero-hint">{{services.scrollHint}}</span>
         </div>
+        <div class="svc-hero-visual" aria-hidden="true"></div>
       </div>
-      <div id="services-lines-slot" class="svc-hero-visual" aria-hidden="true"></div>
     </header>
 
-    <div class="svc-offers" data-svc="offers">
+    <div class="svc-offers">
       <article class="svc-offer" data-svc-item>
-        <span class="svc-idx" aria-hidden="true">{{services.offers.webIndex}}</span>
-        <div class="svc-offer-body">
-          <h2 class="svc-offer-title">{{services.offers.webTitle}}</h2>
-          <p class="svc-copy">{{services.offers.webBody}}</p>
-        </div>
+        <h2 class="svc-offer-title">{{services.offers.webTitle}}</h2>
+        <p class="svc-copy">{{services.offers.webBody}}</p>
       </article>
       <article class="svc-offer" data-svc-item>
-        <span class="svc-idx" aria-hidden="true">{{services.offers.mobileIndex}}</span>
-        <div class="svc-offer-body">
-          <h2 class="svc-offer-title">{{services.offers.mobileTitle}}</h2>
-          <p class="svc-copy">{{services.offers.mobileBody}}</p>
-        </div>
+        <h2 class="svc-offer-title">{{services.offers.mobileTitle}}</h2>
+        <p class="svc-copy">{{services.offers.mobileBody}}</p>
       </article>
       <article class="svc-offer" data-svc-item>
-        <span class="svc-idx" aria-hidden="true">{{services.offers.aiIndex}}</span>
-        <div class="svc-offer-body">
-          <h2 class="svc-offer-title">{{services.offers.aiTitle}}</h2>
-          <p class="svc-copy">{{services.offers.aiBody}}</p>
-        </div>
+        <h2 class="svc-offer-title">{{services.offers.aiTitle}}</h2>
+        <p class="svc-copy">{{services.offers.aiBody}}</p>
       </article>
     </div>
 
     <section class="svc-tech" data-svc="tech" aria-labelledby="svc-tech-title">
+      <div id="home-reel" class="section engine-stub-section">
+        <h4 id="home-reel-title">
+          <div id="home-reel-title-inner">
+            <div id="home-reel-title-line-1"></div>
+            <div id="home-reel-title-line-2"></div>
+          </div>
+        </h4>
+        <div id="home-reel-content">
+          <h2 id="home-reel-desc"></h2>
+          <a id="home-reel-cta" class="engine-stub" hidden href="#" tabindex="-1"></a>
+        </div>
+        <div id="home-reel-thumb-wrapper"><div id="home-reel-thumb"></div></div>
+        <div id="home-reel-container">
+          <div id="home-reel-container-inner">
+            <div id="home-reel-video-container">
+              <div id="home-reel-video-container-decoration">
+                <div id="home-reel-video-container-top">
+                  <div class="home-reel-video-container-cross"></div>
+                  <div class="home-reel-video-container-svg-wrapper"><svg width="1" height="1" aria-hidden="true"></svg></div>
+                </div>
+                <div id="home-reel-video-container-bottom">
+                  <div class="home-reel-video-container-cross"></div>
+                  <div class="home-reel-video-container-svg-wrapper"><svg width="1" height="1" aria-hidden="true"></svg></div>
+                </div>
+              </div>
+              <div id="home-reel-video-placeholder"><div id="home-reel-video-title"></div></div>
+              <button id="home-reel-video-watch-btn" class="engine-stub" tabindex="-1" aria-hidden="true"></button>
+            </div>
+          </div>
+        </div>
+      </div>
       <h2 id="svc-tech-title" class="svc-section-title">{{services.techTitle}}</h2>
-      <ul class="svc-tech-list">
-        <li class="svc-tech-item" data-svc-item>
-          <span class="svc-tech-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4.5h16v15H4z" stroke="currentColor" stroke-width="1.5"/><path d="m7 9 3 3-3 3M12.5 15.5H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          <span>HTML</span>
-        </li>
-        <li class="svc-tech-item" data-svc-item>
-          <span class="svc-tech-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.25" stroke="currentColor" stroke-width="1.5"/><path d="M7 12h10M12 7c2.2 1.6 2.2 8.4 0 10M12 7c-2.2 1.6-2.2 8.4 0 10" stroke="currentColor" stroke-width="1.5"/></svg></span>
-          <span>CSS</span>
-        </li>
-        <li class="svc-tech-item" data-svc-item>
-          <span class="svc-tech-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M9 9v6M9 15h3.2a2.3 2.3 0 0 0 0-4.6H9" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
-          <span>Javascript</span>
-        </li>
-        <li class="svc-tech-item" data-svc-item>
-          <span class="svc-tech-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8.5 15.2V8.8h2.4a2.2 2.2 0 1 1 0 4.4H8.5M14.2 15.2V8.8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
-          <span>Typescript</span>
-        </li>
-        <li class="svc-tech-item" data-svc-item>
-          <span class="svc-tech-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="2" stroke="currentColor" stroke-width="1.5"/><ellipse cx="12" cy="12" rx="9" ry="3.6" stroke="currentColor" stroke-width="1.5"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(60 12 12)" stroke="currentColor" stroke-width="1.5"/><ellipse cx="12" cy="12" rx="9" ry="3.6" transform="rotate(120 12 12)" stroke="currentColor" stroke-width="1.5"/></svg></span>
-          <span>React</span>
-        </li>
-        <li class="svc-tech-item" data-svc-item>
-          <span class="svc-tech-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4 4.8 8v8L12 20l7.2-4V8L12 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 12 4.8 8M12 12v8M12 12l7.2-4" stroke="currentColor" stroke-width="1.5"/></svg></span>
-          <span>Next JS</span>
-        </li>
-        <li class="svc-tech-item" data-svc-item>
-          <span class="svc-tech-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="7" rx="6.5" ry="2.6" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 7v10c0 1.4 2.9 2.6 6.5 2.6s6.5-1.2 6.5-2.6V7" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 12c0 1.4 2.9 2.6 6.5 2.6s6.5-1.2 6.5-2.6" stroke="currentColor" stroke-width="1.5"/></svg></span>
-          <span>PHP</span>
-        </li>
-        <li class="svc-tech-item" data-svc-item>
-          <span class="svc-tech-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 16.5 12 4.5 19 16.5H5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9.2 14.2h5.6L12 9.4 9.2 14.2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
-          <span>Laravel</span>
-        </li>
-        <li class="svc-tech-item" data-svc-item>
-          <span class="svc-tech-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="6.8" rx="7" ry="2.4" stroke="currentColor" stroke-width="1.5"/><path d="M5 6.8v10.4c0 1.3 3.1 2.4 7 2.4s7-1.1 7-2.4V6.8M5 12c0 1.3 3.1 2.4 7 2.4s7-1.1 7-2.4" stroke="currentColor" stroke-width="1.5"/></svg></span>
-          <span>MySQL</span>
-        </li>
-        <li class="svc-tech-item" data-svc-item>
-          <span class="svc-tech-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="4.5" y="5.5" width="15" height="13" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 9h15M8 5.5v3.5M12 5.5v3.5M16 5.5v3.5" stroke="currentColor" stroke-width="1.5"/></svg></span>
-          <span>Bootstrap</span>
-        </li>
-        <li class="svc-tech-item" data-svc-item>
-          <span class="svc-tech-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4.8 16.6 12 4.8l7.2 11.8H4.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
-          <span>Vue</span>
-        </li>
-      </ul>
+      <div class="svc-tech-masonry">
+        <div class="svc-tech-row">
+          <article class="svc-tech-item" data-svc-brick data-brick="0"><img class="svc-tech-icon" src="/assets/images/stack/html5.svg" alt="" width="40" height="40"><span>HTML</span></article>
+          <article class="svc-tech-item" data-svc-brick data-brick="1"><img class="svc-tech-icon" src="/assets/images/stack/css3.svg" alt="" width="40" height="40"><span>CSS</span></article>
+          <article class="svc-tech-item" data-svc-brick data-brick="2"><img class="svc-tech-icon" src="/assets/images/stack/javascript.svg" alt="" width="40" height="40"><span>Javascript</span></article>
+          <article class="svc-tech-item" data-svc-brick data-brick="3"><img class="svc-tech-icon" src="/assets/images/stack/typescript.svg" alt="" width="40" height="40"><span>Typescript</span></article>
+          <article class="svc-tech-item" data-svc-brick data-brick="4"><img class="svc-tech-icon" src="/assets/images/stack/react.svg" alt="" width="40" height="40"><span>React</span></article>
+          <article class="svc-tech-item" data-svc-brick data-brick="5"><img class="svc-tech-icon" src="/assets/images/stack/nextjs.svg" alt="" width="40" height="40"><span>Next JS</span></article>
+        </div>
+        <div class="svc-tech-row svc-tech-row--offset">
+          <article class="svc-tech-item" data-svc-brick data-brick="6"><img class="svc-tech-icon" src="/assets/images/stack/vue.svg" alt="" width="40" height="40"><span>Vue</span></article>
+          <article class="svc-tech-item" data-svc-brick data-brick="7"><img class="svc-tech-icon" src="/assets/images/stack/php.svg" alt="" width="40" height="40"><span>PHP</span></article>
+          <article class="svc-tech-item" data-svc-brick data-brick="8"><img class="svc-tech-icon" src="/assets/images/stack/laravel.svg" alt="" width="40" height="40"><span>Laravel</span></article>
+          <article class="svc-tech-item" data-svc-brick data-brick="9"><img class="svc-tech-icon" src="/assets/images/stack/mysql.svg" alt="" width="40" height="40"><span>MySQL</span></article>
+          <article class="svc-tech-item" data-svc-brick data-brick="10"><img class="svc-tech-icon" src="/assets/images/stack/bootstrap.svg" alt="" width="40" height="40"><span>Bootstrap</span></article>
+          <article class="svc-tech-item" data-svc-brick data-brick="11"><img class="svc-tech-icon" src="/assets/images/stack/vite.svg" alt="" width="40" height="40"><span>Vite</span></article>
+        </div>
+        <div class="svc-tech-row">
+          <article class="svc-tech-item" data-svc-brick data-brick="12"><img class="svc-tech-icon" src="/assets/images/stack/kotlin.svg" alt="" width="40" height="40"><span>Kotlin</span></article>
+          <article class="svc-tech-item" data-svc-brick data-brick="13"><img class="svc-tech-icon" src="/assets/images/stack/android.svg" alt="" width="40" height="40"><span>Android</span></article>
+          <article class="svc-tech-item" data-svc-brick data-brick="14"><img class="svc-tech-icon" src="/assets/images/stack/postgresql.svg" alt="" width="40" height="40"><span>PostgreSQL</span></article>
+          <article class="svc-tech-item" data-svc-brick data-brick="15"><img class="svc-tech-icon" src="/assets/images/stack/mongodb.svg" alt="" width="40" height="40"><span>MongoDB</span></article>
+          <article class="svc-tech-item" data-svc-brick data-brick="16"><span class="svc-tech-icon svc-tech-icon--pair"><img src="/assets/images/stack/python.svg" alt="" width="28" height="28"><img src="/assets/images/stack/django.svg" alt="" width="28" height="28"></span><span>Python / Django</span></article>
+          <article class="svc-tech-item" data-svc-brick data-brick="17"><img class="svc-tech-icon" src="/assets/images/stack/nodejs.svg" alt="" width="40" height="40"><span>Node.js</span></article>
+        </div>
+      </div>
     </section>
 
     <section class="svc-perks" data-svc="perks" aria-labelledby="svc-perks-title">
@@ -147,7 +150,7 @@
       </div>
     </section>
 
-    <section class="svc-quotes" data-svc="quotes" aria-labelledby="svc-quotes-title">
+    <section id="svc-quotes" class="svc-quotes" data-svc="quotes" aria-labelledby="svc-quotes-title">
       <h2 id="svc-quotes-title" class="svc-section-title">{{services.quotesTitle}}</h2>
       <div class="svc-quote-list">
         <figure class="svc-quote" data-svc-item>
@@ -296,5 +299,7 @@
         </div>
       </div>
     </section>
+
+    <div id="svc-pre-end-line" class="svc-pre-end-line" aria-hidden="true"></div>
   </div>
 </div>

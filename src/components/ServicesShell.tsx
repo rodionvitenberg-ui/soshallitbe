@@ -2,14 +2,15 @@
 
 import { useEffect } from "react";
 import { EngineBootstrap } from "@/components/EngineBootstrap";
+import { ReelBgmController } from "@/components/audio/ReelBgmController";
 import { HeaderLogoPhrase } from "@/components/chrome/HeaderLogoPhrase";
 import { HeaderNavScroll } from "@/components/chrome/HeaderNavScroll";
-import { ServicesLines } from "@/components/services/ServicesLines";
+import { IntroOverlay } from "@/components/IntroOverlay";
 import { ServicesMotion } from "@/components/services/ServicesMotion";
 
 /**
  * Client shell for the Services page: same engine canvas + #ui contract
- * as the homepage, without reel BGM / intro / project modal.
+ * as the homepage, plus curtain, BGM controls, and services motion.
  */
 export function ServicesShell({ uiHtml }: { uiHtml: string }) {
   useEffect(() => {
@@ -32,11 +33,12 @@ export function ServicesShell({ uiHtml }: { uiHtml: string }) {
         suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: uiHtml }}
       />
-      <ServicesLines />
       <HeaderLogoPhrase />
       <HeaderNavScroll />
       <ServicesMotion />
       <EngineBootstrap />
+      <ReelBgmController visibleByDefault />
+      <IntroOverlay page="services" />
     </>
   );
 }

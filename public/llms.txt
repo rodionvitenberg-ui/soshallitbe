@@ -1,0 +1,29 @@
+# So Shall It Be
+
+> Web, Mobile & AI Development Studio in Cyprus — Limassol & Larnaca.
+> We design and build web applications, mobile applications, e-commerce platforms, and AI systems — with an in-house fast CMS, SEO built in from the first line, and hosting chosen for speed and stability. We exist to serve clients in Cyprus and across Europe.
+
+- Website: https://soshallitbe.cyou
+- Email: soshallitbe5@gmail.com
+- X: https://x.com/soshallitbe5
+- Instagram: https://www.instagram.com/derweisseberg5/
+
+## Services
+
+- Web Application Development — SPA, PWA, enterprise systems (from 499€)
+- Mobile Application Development — iOS & Android (from 999€)
+- AI Development — machine learning, language, vision, analytics
+- E-commerce Development — online stores built for conversion (from 999€)
+- Catalog Website Development (from 699€)
+- Business Card Website Development (from 399€)
+- Landing Page (from 349€)
+- SEO Promotion (from 249€ / month)
+- Fast, quiet in-house CMS and fast hosting
+
+## Key pages
+
+- Home: https://soshallitbe.cyou/
+- Services: https://soshallitbe.cyou/services
+- Full content (recommended for LLMs): https://soshallitbe.cyou/llms-full.txt
+
+> For the complete, machine-readable description of the studio, portfolio, pricing, and FAQ, read /llms-full.txt.

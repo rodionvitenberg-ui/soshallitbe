@@ -5,6 +5,7 @@ import { routing, type AppLocale } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { ServicesShell } from "@/components/ServicesShell";
+import { StructuredData } from "@/components/structured-data";
 
 export async function generateMetadata({
   params,
@@ -13,13 +14,46 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "services" });
+  const title = t("metaTitle");
+  const description = t("metaDescription");
+  const canonical = "https://soshallitbe.cyou/services";
+
   return {
-    title: t("metaTitle"),
-    description: t("metaDescription"),
+    title,
+    description,
+    alternates: {
+      canonical,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
     openGraph: {
-      title: t("metaTitle"),
-      description: t("metaDescription"),
+      title,
+      description,
       type: "website",
+      url: canonical,
+      siteName: "So Shall It Be",
+      images: [
+        {
+          url: "/assets/meta/social_sharing.jpg",
+          width: 1200,
+          height: 630,
+          alt: "So Shall It Be — Web, Mobile & AI Development Studio in Cyprus",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/assets/meta/social_sharing.jpg"],
     },
   };
 }
@@ -45,5 +79,13 @@ export default async function ServicesPage({
     locale,
   );
 
-  return <ServicesShell uiHtml={uiHtml} />;
+  return (
+    <>
+      <StructuredData
+        messages={messages as Record<string, unknown>}
+        page="services"
+      />
+      <ServicesShell uiHtml={uiHtml} />
+    </>
+  );
 }

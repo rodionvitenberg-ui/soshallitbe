@@ -27,7 +27,7 @@ export function HomeShell({ uiHtml }: { uiHtml: string }) {
       <HeroIridescence />
       <EngineBootstrap />
       <ReelBgmController />
-      <IntroOverlay />
+      <IntroOverlay page="home" />
       <FeaturedProjects />
     </>
   );

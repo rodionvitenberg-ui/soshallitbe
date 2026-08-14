@@ -24,6 +24,8 @@ export function ServicesLines() {
         enabledWaves={["middle", "bottom"]}
         lineCount={[8, 5]}
         lineDistance={[6, 10]}
+        middleWavePosition={{ x: 5.0, y: 0.35, rotate: 0.2 }}
+        bottomWavePosition={{ x: 2.0, y: -1.45, rotate: -1 }}
         animationSpeed={0.7}
         interactive
         mixBlendMode="screen"
