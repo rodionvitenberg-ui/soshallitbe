@@ -38,7 +38,7 @@ export function ServicesShell({ uiHtml }: { uiHtml: string }) {
       <ServicesMotion />
       <EngineBootstrap />
       <ReelBgmController visibleByDefault />
-      <IntroOverlay page="services" />
+      <IntroOverlay />
     </>
   );
 }

@@ -20,7 +20,7 @@ export function ServicesLines() {
   return createPortal(
     <div className="svc-hero-visual-fx">
       <FloatingLines
-        linesGradient={["#1F51FF", "#ff5c00", "#8eb0ff"]}
+        linesGradient={["#e19386", "#366894", "#ecc5c0"]}
         enabledWaves={["middle", "bottom"]}
         lineCount={[8, 5]}
         lineDistance={[6, 10]}

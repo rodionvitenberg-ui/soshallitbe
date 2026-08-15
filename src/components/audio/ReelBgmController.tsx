@@ -6,6 +6,7 @@ import {
   REEL_BGM_SRC,
   getOutputVolume,
   getReelBgmState,
+  isAudioEnabled,
   persistPlaybackTime,
   readPlaybackTime,
   registerStartHandler,
@@ -29,6 +30,8 @@ export function ReelBgmController({
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
+    if (!isAudioEnabled()) return;
+
     if (visibleByDefault) setVisible(true);
 
     const audio = new Audio(REEL_BGM_SRC);
@@ -106,6 +109,7 @@ export function ReelBgmController({
     window.addEventListener("pagehide", onPageHide);
 
     const onGesture = () => {
+      if (!isAudioEnabled()) return;
       if (getReelBgmState().started) return;
       startBgm();
     };

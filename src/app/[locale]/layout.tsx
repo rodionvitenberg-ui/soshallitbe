@@ -120,9 +120,18 @@ export default async function LocaleLayout({
         <style>{`
           html, body { background: #f0f1fa !important; }
           #canvas { background: #f0f1fa !important; }
+          /* SSR-first: intro curtain is fully opaque from the first byte —
+             the WebGL iridescence overlays it after hydration without ever
+             exposing the page content underneath. */
+          #intro-curtain {
+            position: fixed !important;
+            inset: 0 !important;
+            z-index: 9999 !important;
+            background: #366894 !important;
+          }
         `}</style>
         <base href="/" />
-        <link rel="stylesheet" href="/_astro/lusion.css" />
+        <link rel="stylesheet" href="/_astro/daydream.css" />
         <link rel="stylesheet" href="/styles/overrides.css" />
         {/* engine.js is loaded after hydration via EngineBootstrap — avoids #canvas mismatch */}
       </head>

@@ -1,11 +1,11 @@
-# lusion-home · Next.js project (homepage only)
+# daydream-home · Next.js project (homepage only)
 
-Идеальная копия **главной** lusion.co на **Next.js** (App Router), с **их продакшен-движком** (JS/CSS/ассеты), разбитая на модули для правок.
+Идеальная копия **главной** daydream-концепции на **Next.js** (App Router), с **продакшен-движком** (JS/CSS/ассеты), разбитая на модули для правок.
 
 ## Запуск
 
 ```bash
-cd website-clones/lusion-home
+cd website-clones/daydream-home
 npm install
 node scripts/patch-engine.mjs   # если трогали vendor/engine/engine.raw.js
 npm run dev                     # http://localhost:3000
@@ -17,7 +17,7 @@ npm run build && npm start
 ```
 src/
   app/
-    [locale]/layout.tsx     # meta + lusion.css + engine.js (lang per locale)
+    [locale]/layout.tsx     # meta + daydream.css + engine.js (lang per locale)
     [locale]/page.tsx       # canvas + #ui (assembled DOM + i18n)
     api/locale/              # POST sets NEXT_LOCALE cookie (no /en|/ru in URL)
   i18n/                      # next-intl routing (localePrefix: never)
@@ -31,7 +31,7 @@ src/
 messages/
   en.json · ru.json          # весь пользовательский текст
 public/
-  _astro/engine.js · lusion.css
+  _astro/engine.js · daydream.css
   styles/overrides.css
   assets/
 vendor/engine/ · scripts/patch-engine.mjs
@@ -64,18 +64,18 @@ Tunnel/astronaut timeline выключен патчем.
 | Тексты (en/ru) | `messages/en.json`, `messages/ru.json` |
 | DOM-скелет секций | `src/fragments/*.html` (`{{keys}}`) |
 | Состав страницы | `src/lib/assemble-home-ui.ts` / `src/app/[locale]/page.tsx` |
-| CSS UI | `public/_astro/lusion.css` или `vendor/engine/lusion.css` |
+| CSS UI | `public/_astro/daydream.css` или `vendor/engine/daydream.css` |
 | Product overrides | `public/styles/overrides.css` |
 | Движок / патчи | `vendor/engine/engine.raw.js` → `node scripts/patch-engine.mjs` |
 | Картинки кейсов | `public/assets/projects/<id>/` |
 
 ## Единственный проект
 
-В `website-clones/` остаётся только **`lusion-home`**.
+В `website-clones/` остаётся только **`daydream-home`**.
 
 ## Юридика
 
-Проприетарный reference Lusion. Локально / обучение. Не публичный rehost как официальный сайт.
+Проприетарный reference-движок. Локально / обучение. Не публичный rehost как официальный сайт.
 
 ## SEO / GEO layer
 
@@ -94,7 +94,7 @@ Tunnel/astronaut timeline выключен патчем.
 - **No audio**: `USE_AUDIO=false`; audios folder removed.
 - **Footer**: contact socials / enquiries / newsletter (`#footer-section`); **no postal address**.
 - **i18n**: next-intl + `messages/{en,ru}.json` kept; UI English-only for now (no switcher).
-- **Header logo**: `public/logo.png` instead of Lusion SVG wordmark.
+- **Header logo**: `public/logo.png` instead of the original SVG wordmark.
 - **Hero visual slot**: react-bits `Iridescence` (`src/components/home/HeroIridescence.tsx`) in `#home-hero-visual-container`; engine `homeBalloons` disabled. RAF pauses off-screen / hidden tab.
 - **Vimeo oEmbed soft-fail** in engine patch: network/private video no longer throws Next runtime overlay (reel may not play without a valid embed).
 - **No Next Page scroll-nav**: black `#scroll-nav-section` omitted; `ScrollNavSection` no-op + `RouteManager._initDom` null-safe.

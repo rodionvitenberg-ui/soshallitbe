@@ -252,7 +252,7 @@ mustReplace(
  );
 
 // 16) FIX SCROLL: the engine's internal font loader points at "DaerdreeMono:400",
-//     which is NOT shipped in /assets/fonts (only Aeonik/IBMPlexMono/LusionMono).
+//     which is NOT shipped in /assets/fonts (only Aeonik/IBMPlexMono/DaydreamMono).
 //     FontItem._loadFunc waits for the font's measured width to change; for a missing
 //     @font-face it never changes → loader never reaches 100% → run()/start() never
 //     fire → scrollManager.isActive stays false → native wheel is blocked forever.
@@ -290,10 +290,10 @@ mustReplace(
   'scrollToRatioFactors:[-2,1.85],color0:"#fff",color1:"#bbb"},' +
     '{fileName:"line_goal",aoThreshold:1e-4,margin:{x:.2,y:-.6},scrollToRatioFactors:[0.6,1.2],' +
     "boxMin:new Vector3(-.0180006,-.00963629,0),boxMax:new Vector3(1.01777,.850395,0)," +
-    'color0:"#FF5C00",color1:"#FF5C00"},' +
+    'color0:"#e19386",color1:"#e19386"},' +
     '{fileName:"line_reel",aoThreshold:.555,margin:{x:-.05,y:-.8},scrollToRatioFactors:[.4,1.3],' +
     "boxMin:new Vector3(-.0112049,-.0141946,0),boxMax:new Vector3(1.01357,.718671,0)," +
-    'color0:"#1F51FF",color1:"#1F51FF"}];class Line{',
+    'color0:"#366894",color1:"#366894"}];class Line{',
   "extra LINES_DATA_LIST 4+5",
 );
 

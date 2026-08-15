@@ -1,6 +1,6 @@
-# Lusion Home
+# Daydream Home
 
-Local educational clone of the Lusion homepage: production engine + CSS + assets behind a thin Next.js shell.
+Local educational clone of the Daydream homepage: production engine + CSS + assets behind a thin Next.js shell.
 
 ## Language
 
@@ -17,7 +17,7 @@ The Next.js App Router layer (`layout`, `page`, assembly) that serves meta, CSS,
 _Avoid_: app, framework app
 
 **Product cut**:
-A deliberate omission or UI reduction vs the live Lusion site (no audio, no astronaut/tunnel, no Next Page scroll-nav, no preloader, no black transition overlay, delayed canvas is-ready + light WebGL clear to avoid load flash, no postal address, header reduced to Let's talk, collapsed goal section). Footer contact/socials kept. English UI for now.
+A deliberate omission or UI reduction vs the original live reference (no audio, no astronaut/tunnel, no Next Page scroll-nav, no preloader, no black transition overlay, delayed canvas is-ready + light WebGL clear to avoid load flash, no postal address, header reduced to Let's talk, collapsed goal section). Footer contact/socials kept. English UI for now.
 _Avoid_: bug, incomplete port
 
 **Message dictionary**:

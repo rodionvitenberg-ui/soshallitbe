@@ -48,6 +48,8 @@ void main() {
 
 export type IridescenceProps = {
   color?: [number, number, number];
+  /** First-frame WebGL clear. Defaults to black (hero unchanged). */
+  clearColor?: [number, number, number];
   speed?: number;
   amplitude?: number;
   mouseReact?: boolean;
@@ -56,6 +58,7 @@ export type IridescenceProps = {
 
 export default function Iridescence({
   color = [1, 1, 1],
+  clearColor,
   speed = 1.0,
   amplitude = 0.1,
   mouseReact = true,
@@ -75,7 +78,8 @@ export default function Iridescence({
       powerPreference: "high-performance",
     });
     const gl = renderer.gl;
-    gl.clearColor(0, 0, 0, 1);
+    const [cr, cg, cb] = clearColor ?? [0, 0, 0];
+    gl.clearColor(cr, cg, cb, 1);
 
     let program: Program;
 
@@ -196,7 +200,7 @@ export default function Iridescence({
       if (ctn.contains(gl.canvas)) ctn.removeChild(gl.canvas);
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
-  }, [color, speed, amplitude, mouseReact]);
+  }, [color, clearColor, speed, amplitude, mouseReact]);
 
   return (
     <div

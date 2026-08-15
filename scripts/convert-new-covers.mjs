@@ -17,7 +17,8 @@ const MAPPING = [
   ["lemansion.png", "lamaison"],
   ["proffmusic.jpeg", "spaace"],
   ["walmgres.png", "devin_ai"],
-  ["карагат.png", "karagat"],
+  ["maintest.png", "maintest"],
+  ["newwebdoc.jpeg", "synthetic_human"],
 ];
 
 async function depthMap(buf) {
@@ -38,7 +39,7 @@ for (const [src, proj] of MAPPING) {
   const srcPath = path.join(COVERS, src);
   const dir = path.join(PROJ, proj);
   if (!fs.existsSync(srcPath)) { console.error("MISSING:", srcPath); continue; }
-  if (!fs.existsSync(dir)) { console.error("NO DIR:", dir); continue; }
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
   const base = await sharp(srcPath).resize(W, H, { fit: "cover", position: "centre" }).toBuffer();
   // Сжатие: WebP q70 — заметно легче png/jpeg-исходников.

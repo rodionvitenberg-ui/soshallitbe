@@ -1,736 +1,535 @@
-{
-  "meta": {
-    "title": "Web, Mobile & AI Development Studio in Cyprus - So Shall It Be",
-    "description": "So Shall It Be is a web design and development studio in Cyprus (Limassol, Larnaca). We build web applications, mobile apps, e-commerce, and AI systems — with design, fast CMS, SEO, and hosting. Prices from 349€."
-  },
-  "header": {
-    "logoAria": "Go to home",
-    "backAria": "Go back",
-    "back": "back",
-    "letsTalk": "Initiate",
-    "menuAria": "Menu",
-    "menu": "Menu",
-    "close": "Close",
-    "navHome": "Home",
-    "navAbout": "About",
-    "navProjects": "Work",
-    "navContact": "Contact",
-    "newsletterLine1": "Write to us.",
-    "newsletterLine2": "We answer.",
-    "emailPlaceholder": "name@company.com",
-    "newsletterSendAria": "Send email",
-    "labs": "",
-    "localeEn": "EN",
-    "localeRu": "RU",
-    "ourWorks": "Our works",
-    "services": "Services"
-  },
-  "intro": {
-    "home": {
-      "a": {
-        "line1": "AS YOU DREAME,",
-        "line2": "SO SHALL IT BE."
+  {
+    "meta": {
+      "title": "R.Vittenberg — Full-Stack Development",
+      "description": "Independent full-stack developer building complete web products from architecture and interface to backend, integrations, deployment, and long-term support."
+    },
+    "header": {
+      "logoAria": "Go to home",
+      "backAria": "Go back",
+      "back": "back",
+      "letsTalk": "Let's talk",
+      "menuAria": "Menu",
+      "menu": "Menu",
+      "close": "Close",
+      "navHome": "Home",
+      "navAbout": "About",
+      "navProjects": "Work",
+      "navContact": "Contact",
+      "newsletterLine1": "Have a project?",
+      "newsletterLine2": "Let's talk.",
+      "emailPlaceholder": "name@company.com",
+      "newsletterSendAria": "Send email",
+      "labs": "",
+      "localeEn": "EN",
+      "localeRu": "RU",
+      "ourWorks": "Selected work",
+      "services": "What I do"
+    },
+    "hero": {
+      "title": "I build complete digital products — from the first idea and interface to backend, integrations, deployment, and everything that comes after.",
+      "scrollHint": "scroll"
+    },
+    "about": {
+      "title": "Who I am",
+      "body": "I'm an independent full-stack developer focused on building complete web products rather than isolated pieces of software. I work across the entire development process: understanding the idea, planning the architecture, designing the interface, building the frontend and backend, connecting external services, working with databases, deploying the application, and supporting it after launch. I prefer taking responsibility for the whole result. If a project needs something outside the initial brief, I would rather solve it than leave the client to figure it out alone.",
+      "servicesTitle": "What I do",
+      "services": {
+        "ul1": "Full-stack web development — complete products built from the ground up.",
+        "ul2": "Frontend development with React and Next.js, including responsive interfaces, animation, and complex client-side interactions.",
+        "ul3": "Backend development with Django, REST APIs, authentication, business logic, and database-driven systems.",
+        "ul4": "E-commerce, booking systems, dashboards, CRMs, SaaS products, and custom business applications.",
+        "ul5": "Third-party integrations — payments, messaging, external APIs, authentication providers, analytics, and other services.",
+        "ul6": "Deployment and production setup — servers, databases, domains, SSL, environment configuration, monitoring, and maintenance."
       },
-      "b": {
-        "line1": "WE'LL BUILD",
-        "line2": "YOUR DAYDREAM."
+      "locationsTitle": "How I work",
+      "locationsBody": "I work remotely with clients and teams regardless of where they are located. The process is direct: you talk to the person actually building the product. There is no unnecessary layer between the client and development.",
+      "pricingTitle": "Approach to pricing",
+      "pricing": {
+        "li1": "Every project is different, so I prefer estimating from the actual brief rather than selling artificial packages.",
+        "li2": "Small fixes, integrations, and individual features can be handled as focused tasks.",
+        "li3": "Larger products are planned in stages so that the client always understands what is being built and why.",
+        "li4": "The goal is not to make the cheapest possible version. It is to build something that can actually be used, maintained, and developed further."
       },
-      "c": {
-        "line1": "COMMAND",
-        "line2": "US."
+      "contactTitle": "Contact",
+      "contactBody": "The best way to reach me is by email. I keep communication direct and practical, and I'm happy to discuss an idea even when it is still only an idea."
+    },
+    "reel": {
+      "titleLine1": "I build the",
+      "titleLine2": "whole thing.",
+      "body": "A product rarely ends at the interface. Someone has to think about the data, business logic, authentication, integrations, deployment, edge cases, security, and what happens six months after launch. That is the part of development I take seriously. I prefer to stay involved until the result is actually working.",
+      "approach": "View my work",
+      "playReel": "Read the approach",
+      "watchAria": "Read the approach"
+    },
+    "featured": {
+      "title": "Selected Work",
+      "designTitle": "Design Concepts",
+      "wip": "In development",
+      "disclaimer": "Selected projects and products I have designed, developed, or worked on. Some professional work cannot be shown publicly because of confidentiality agreements.",
+      "projects": {
+        "oryzo_ai": {
+          "name": "Daerdree Bar & Timeclub",
+          "tags": "hospitality • entertainment • booking • UI/UX • web",
+          "overview": {
+            "kicker": "The Brief",
+            "title": "A digital experience for a nightlife venue.",
+            "body": "Daerdree Bar & Timeclub required more than a conventional business website. The goal was to create a digital presence that communicated the atmosphere of the venue while making practical things such as events, information, and reservations easy to access."
+          },
+          "sections": [
+            {
+              "kicker": "01 / Concept",
+              "title": "The interface carries the atmosphere.",
+              "body": "The visual direction uses large typography, motion, contrast, and carefully controlled transitions to make the website feel connected to the physical venue rather than looking like a generic hospitality template."
+            },
+            {
+              "kicker": "02 / Booking",
+              "title": "Reservations without unnecessary steps.",
+              "body": "The booking experience was designed around a short, understandable flow, with the important information presented at the moment it is needed."
+            },
+            {
+              "kicker": "03 / Interface",
+              "title": "One system for the whole venue.",
+              "body": "Venue information, events, menus, and reservations are brought together in one responsive interface designed to work equally well on desktop and mobile."
+            }
+          ],
+          "stack": [
+            "Next.js",
+            "TypeScript",
+            "GSAP",
+            "Tailwind",
+            "PostgreSQL"
+          ],
+          "cta": "Visit the venue"
+        },
+        "porsche_dream_machine": {
+          "name": "IkSoft Studio",
+          "tags": "software studio • agency website • web • 3D",
+          "overview": {
+            "kicker": "The Brief",
+            "title": "A website for a software company that needed to demonstrate its technical character.",
+            "body": "The purpose was not simply to present a list of services. The website itself had to communicate speed, precision, engineering, and attention to detail."
+          },
+          "sections": [
+            {
+              "kicker": "01 / Presence",
+              "title": "The website demonstrates the product.",
+              "body": "Motion, interaction, and 3D elements were used as part of the experience rather than as decoration. The interface itself becomes evidence of the team's capabilities."
+            },
+            {
+              "kicker": "02 / Work",
+              "title": "Projects instead of empty promises.",
+              "body": "Work is presented around problems, decisions, and implementation so that a potential client can understand what was actually built."
+            },
+            {
+              "kicker": "03 / Craft",
+              "title": "Small details matter.",
+              "body": "Typography, spacing, transitions, responsiveness, and performance were treated as part of the engineering rather than something added at the end."
+            }
+          ],
+          "stack": [
+            "Next.js",
+            "TypeScript",
+            "Three.js",
+            "GSAP",
+            "WebGL"
+          ],
+          "cta": "View the project"
+        },
+        "spatial_fusion": {
+          "name": "Careyourpet (PetVet)",
+          "tags": "veterinary CRM • SaaS • PostgreSQL • web • mobile",
+          "overview": {
+            "kicker": "The Brief",
+            "title": "A working CRM for veterinary clinics.",
+            "body": "Careyourpet is a veterinary CRM concept designed around the daily work of clinics: patients, owners, appointments, medical history, prescriptions, and vaccination records."
+          },
+          "sections": [
+            {
+              "kicker": "01 / System",
+              "title": "One patient, one complete record.",
+              "body": "The system brings medical history, visits, prescriptions, and vaccination information into a unified patient record so that important information is available when it is needed."
+            },
+            {
+              "kicker": "02 / Workflow",
+              "title": "Software built around real work.",
+              "body": "Search, scheduling, records, and common actions were designed to minimize unnecessary navigation and keep staff focused on the patient."
+            },
+            {
+              "kicker": "03 / Interface",
+              "title": "Functional without feeling clinical.",
+              "body": "The interface balances information density with a clear visual hierarchy so that the product remains approachable while handling complex data."
+            }
+          ],
+          "stack": [
+            "React",
+            "TypeScript",
+            "PostgreSQL",
+            "Tailwind",
+            "Mobile"
+          ],
+          "cta": "View the project"
+        },
+        "ddd_2024": {
+          "name": "El-Imperia Shop",
+          "tags": "e-commerce • retail • online store • web",
+          "overview": {
+            "kicker": "The Brief",
+            "title": "A complete online retail experience.",
+            "body": "El-Imperia is an e-commerce project built around product discovery, catalog management, purchasing, and a straightforward customer journey."
+          },
+          "sections": [
+            {
+              "kicker": "01 / Catalog",
+              "title": "Products are easy to find.",
+              "body": "Categories, product pages, filtering, and visual hierarchy are organized around helping customers reach the right product quickly."
+            },
+            {
+              "kicker": "02 / Checkout",
+              "title": "A simple path to purchase.",
+              "body": "The purchasing flow is intentionally focused: the customer should understand what they are buying, provide the required information, and complete the order without unnecessary friction."
+            },
+            {
+              "kicker": "03 / Architecture",
+              "title": "Built as a real application.",
+              "body": "The store is not just a collection of static pages. It is a data-driven product designed to support catalog information, customer interactions, and future expansion."
+            }
+          ],
+          "stack": [
+            "Next.js",
+            "TypeScript",
+            "E-commerce",
+            "Tailwind",
+            "PostgreSQL"
+          ],
+          "cta": "View the store"
+        },
+        "spaace": {
+          "name": "Proffmusic.shop",
+          "tags": "audio marketplace • music • e-commerce • digital assets",
+          "overview": {
+            "kicker": "The Brief",
+            "title": "A marketplace for professional audio assets.",
+            "body": "Proffmusic is an e-commerce concept for professional audio content such as samples, loops, and stems. The experience had to support discovery, previews, licensing, purchasing, and digital delivery."
+          },
+          "sections": [
+            {
+              "kicker": "01 / Discovery",
+              "title": "Listen before you buy.",
+              "body": "Audio previews are integrated into the browsing experience so users can evaluate assets without repeatedly leaving the catalog."
+            },
+            {
+              "kicker": "02 / Commerce",
+              "title": "Digital products need a different checkout.",
+              "body": "The purchase flow accounts for licensing and digital delivery while keeping the number of steps understandable."
+            },
+            {
+              "kicker": "03 / Identity",
+              "title": "The interface belongs to the product.",
+              "body": "Visual language, typography, audio-related interaction, and layout work together to create a product that feels intended for producers rather than adapted from a generic store."
+            }
+          ],
+          "stack": [
+            "Next.js",
+            "TypeScript",
+            "E-commerce",
+            "Tailwind",
+            "PostgreSQL"
+          ],
+          "cta": "View the project"
+        },
+        "synthetic_human": {
+          "name": "Webdoc.life AI",
+          "tags": "healthtech • AI • laboratory reports • SaaS • Next.js",
+          "overview": {
+            "kicker": "The Brief",
+            "title": "Making laboratory reports easier to understand.",
+            "body": "Webdoc.life is an AI-powered product concept that processes laboratory test results and presents their meaning in understandable language. The product combines structured data, interpretation, user profiles, and history."
+          },
+          "sections": [
+            {
+              "kicker": "01 / Decoder",
+              "title": "Numbers need context.",
+              "body": "The system is designed to explain laboratory indicators, reference ranges, deviations, and terminology instead of simply returning a collection of unexplained values."
+            },
+            {
+              "kicker": "02 / Profiles",
+              "title": "History makes information useful.",
+              "body": "Results can be associated with user profiles and viewed over time, making changes and trends easier to understand."
+            },
+            {
+              "kicker": "03 / Responsible software",
+              "title": "Sensitive data requires careful engineering.",
+              "body": "Projects dealing with personal and health-related information require particular attention to access control, data handling, confidentiality, and responsible product design."
+            }
+          ],
+          "stack": [
+            "Next.js",
+            "TypeScript",
+            "AI Parser",
+            "Tailwind",
+            "PostgreSQL"
+          ],
+          "cta": "View the product"
+        },
+        "choo_choo_world": {
+          "name": "GardenHouse Eco-Resort",
+          "tags": "hospitality • hotel • booking • web",
+          "overview": {
+            "kicker": "The Brief",
+            "title": "A digital experience for an eco-resort.",
+            "body": "GardenHouse is a hospitality concept built around nature, accommodation, seasonal stays, and booking. The website was designed to communicate the atmosphere of the place before the visitor ever arrives."
+          },
+          "sections": [
+            {
+              "kicker": "01 / Atmosphere",
+              "title": "The interface should feel like the place.",
+              "body": "Organic shapes, restrained motion, photography, and generous spacing create a quieter experience appropriate for a nature-focused property."
+            },
+            {
+              "kicker": "02 / Stays",
+              "title": "Different rooms, different experiences.",
+              "body": "Accommodation options are presented as individual experiences rather than simply a list of room specifications."
+            },
+            {
+              "kicker": "03 / Booking",
+              "title": "Planning a stay should be simple.",
+              "body": "Availability, accommodation information, rates, and booking actions are organized into a clear path from discovery to reservation."
+            }
+          ],
+          "stack": [
+            "Next.js",
+            "TypeScript",
+            "Booking",
+            "Tailwind",
+            "PostgreSQL"
+          ],
+          "cta": "View the project"
+        },
+        "agios": {
+          "name": "Taverna Agios Epiktitos",
+          "tags": "Cypriot cuisine • restaurant • menu • booking • web",
+          "overview": {
+            "kicker": "The Brief",
+            "title": "A website for a traditional Cypriot taverna.",
+            "body": "The project combines the identity of a family restaurant with practical digital functions: menu presentation, events, information, and table reservations."
+          },
+          "sections": [
+            {
+              "kicker": "01 / Spirit",
+              "title": "The website starts with the place itself.",
+              "body": "The visual direction was built around the story and atmosphere of the taverna instead of using a generic restaurant template."
+            },
+            {
+              "kicker": "02 / Content",
+              "title": "A real menu, not a photograph of one.",
+              "body": "Menu content is structured so that visitors can browse categories and dishes comfortably on both desktop and mobile devices."
+            },
+            {
+              "kicker": "03 / Integration",
+              "title": "Bookings reach the people who need them.",
+              "body": "The reservation flow is connected to the owners' Telegram workflow so that incoming bookings do not disappear into an isolated contact form."
+            }
+          ],
+          "stack": [
+            "Next.js",
+            "TypeScript",
+            "Django",
+            "PostgreSQL",
+            "Telegram"
+          ],
+          "cta": "View the project"
+        },
+        "devin_ai": {
+          "name": "Walmgres Investment",
+          "tags": "fintech • investment platform • analytics • web",
+          "overview": {
+            "kicker": "The Brief",
+            "title": "Complex financial information, made readable.",
+            "body": "Walmgres is an investment platform concept where portfolio information, analytics, performance, and risk data need to remain understandable without sacrificing depth."
+          },
+          "sections": [
+            {
+              "kicker": "01 / Position",
+              "title": "Clarity comes first.",
+              "body": "The interface establishes a clear hierarchy between primary financial information, secondary metrics, and supporting data."
+            },
+            {
+              "kicker": "02 / Analytics",
+              "title": "Data has to remain usable.",
+              "body": "Portfolio breakdowns, performance information, and risk indicators are represented through focused visualizations designed around actual decision-making."
+            },
+            {
+              "kicker": "03 / Motion",
+              "title": "Motion should explain, not distract.",
+              "body": "Transitions are used to communicate changes of state and guide attention rather than simply decorate the interface."
+            }
+          ],
+          "stack": [
+            "Next.js",
+            "TypeScript",
+            "GSAP",
+            "Recharts",
+            "PostgreSQL"
+          ],
+          "cta": "View the project"
+        },
+        "leondiana": {
+          "name": "Leondiana",
+          "tags": "boutique hotel • Larnaca • booking • admin panel • web",
+          "overview": {
+            "kicker": "The Brief",
+            "title": "A hotel website backed by a real management system.",
+            "body": "Leondiana is a boutique hotel project in Larnaca, Cyprus. The product combines a visual guest-facing website with a functional backend and administration panel for managing rooms, bookings, content, promotions, and media."
+          },
+          "sections": [
+            {
+              "kicker": "01 / Guest",
+              "title": "The guest sees the simple part.",
+              "body": "The public website presents the hotel, rooms, gallery, location, and booking flow in a calm and responsive interface."
+            },
+            {
+              "kicker": "02 / Team",
+              "title": "Behind it is a working command center.",
+              "body": "The administration panel manages rooms, incoming reservations and their statuses, promotional codes, multilingual content, settings, and media."
+            },
+            {
+              "kicker": "03 / Architecture",
+              "title": "One source of truth.",
+              "body": "The product separates the user-facing frontend from the data-driven backend. Structured media can be reused across the homepage, gallery, and room pages without creating unnecessary duplicates."
+            }
+          ],
+          "stack": [
+            "Next.js",
+            "TypeScript",
+            "Django",
+            "PostgreSQL",
+            "i18n"
+          ],
+          "cta": "View the project"
+        }
       }
     },
     "services": {
-      "a": {
-        "line1": "WE TAKE",
-        "line2": "THE BRIEF."
+      "metaTitle": "Services — Full-Stack Development",
+      "metaDescription": "Full-stack web development, product engineering, backend systems, integrations, deployment, and long-term technical support.",
+      "eyebrow": "What I do",
+      "heroTitle": "How I Can Help",
+      "heroTitleLine1": "How I",
+      "heroTitleLine2": "Can Help",
+      "scrollHint": "scroll",
+      "offers": {
+        "webIndex": "01",
+        "webTitle": "Full-Stack Web Development",
+        "webBody": "I build complete web applications rather than only one layer of them. That means frontend, backend, database, authentication, business logic, integrations, deployment, and the less visible work required to make the product reliable. If you already have a design, I can turn it into a working application. If you only have an idea, I can help shape the technical solution.",
+        "mobileIndex": "02",
+        "mobileTitle": "Product Development",
+        "mobileBody": "A product usually needs more than a collection of pages. I can help structure the application, define the data model, build the core workflows, connect external services, and turn an initial concept into something people can actually use. The work can start from a specification, a design, a prototype, or simply a conversation.",
+        "aiIndex": "03",
+        "aiTitle": "Integrations, Automation & AI",
+        "aiBody": "I work with external APIs, payment systems, messaging services, AI-powered functionality, data processing, and other integrations that make a product useful in the real world. The important part is not adding technology for its own sake, but making it solve an actual business problem."
       },
-      "b": {
-        "line1": "CRAFT, CODE,",
-        "line2": "CYPRUS."
+      "techTitle": "Technologies I Work With",
+      "perksTitle": "What you receive with the work",
+      "perks": {
+        "p1Title": "One person who understands the whole system",
+        "p1Body": "You do not have to explain the same product separately to a designer, frontend developer, backend developer, and deployment engineer. I work across the stack and understand how the pieces affect each other.",
+        "p2Title": "A complete development cycle",
+        "p2Body": "I can take a project from an initial idea or specification through architecture, implementation, testing, deployment, and further development.",
+        "p3Title": "Clear communication",
+        "p3Body": "I prefer direct communication and understandable explanations. You should know what is being built, what has been completed, and what still needs attention.",
+        "p4Title": "Attention to security",
+        "p4Body": "Authentication, permissions, environment variables, sensitive information, database access, and third-party integrations are treated as engineering concerns rather than afterthoughts.",
+        "p5Title": "Confidentiality",
+        "p5Body": "A significant part of professional development happens behind NDA. I understand that some projects, business ideas, source code, customer data, and internal processes are not mine to discuss publicly.",
+        "p6Title": "Someone who stays",
+        "p6Body": "I do not consider the job finished when the code merely runs on my machine. The goal is a working product that can be deployed, used, maintained, and developed further."
       },
-      "c": {
-        "line1": "WE'LL BUILD",
-        "line2": "YOUR DAYDREAM."
+      "whyTitle": "Why Work With Me",
+      "why": {
+        "aLabel": "I take ownership",
+        "aBody": "When I accept a project, I take responsibility for getting it to a usable result. If something turns out to be more complicated than expected, I look for a solution rather than simply passing the problem back to the client.",
+        "bLabel": "I think beyond the screen",
+        "bBody": "A good interface is only one part of a product. I think about data, architecture, business logic, integrations, performance, deployment, maintenance, and what happens when the first version needs to grow.",
+        "cLabel": "I finish what I start",
+        "cBody": "Projects can change during development. Requirements can become clearer, unexpected problems can appear, and technical decisions sometimes need to be revisited. None of that changes the basic responsibility: the work needs to reach the finish line.",
+        "dLabel": "I let the work speak",
+        "dBody": "I'm not particularly interested in being a public personality. I keep a relatively low profile and prefer to spend my time building. The projects are the strongest explanation of what I can do."
+      },
+      "quotesTitle": "Working together",
+      "quotes": {
+        "aName": "The principle",
+        "aBody": "You should not need to become a technical expert just to work with a developer. My job is to understand the technical side, explain the important decisions, and make sure the product keeps moving.",
+        "bName": "The commitment",
+        "bBody": "I would rather take on fewer projects and finish them properly than accept everything and leave unfinished work behind.",
+        "cName": "The standard",
+        "cBody": "The result should be something I am comfortable putting my name behind. That means functioning software, sensible architecture, careful implementation, and responsibility for the details."
+      },
+      "priceTitle": "Projects",
+      "priceFrom": "starting from",
+      "prices": {
+        "p1Name": "Landing Page Development",
+        "p1Meta": "estimated individually",
+        "p2Name": "Business Website Development",
+        "p2Meta": "estimated from the brief",
+        "p3Name": "Web Application Development",
+        "p3Meta": "estimated from the brief",
+        "p4Name": "E-commerce Development",
+        "p4Meta": "estimated from the brief",
+        "p5Name": "Backend & API Development",
+        "p5Meta": "estimated from the brief",
+        "p6Name": "Integrations & Automation",
+        "p6Meta": "estimated from the brief",
+        "p7Name": "Existing Project Development",
+        "p7Meta": "audit and estimate first",
+        "p8Name": "Long-Term Technical Support",
+        "p8Meta": "available by arrangement"
+      },
+      "faqTitle": "Frequently Asked Questions",
+      "faq": {
+        "q1": "Can you build a project from scratch?",
+        "a1": "Yes. This is one of the main ways I work. We can start with an idea, specification, prototype, design, or existing business process. I can help translate it into a technical architecture and then build the product through to deployment.",
+        "q2": "Can you work with an existing design?",
+        "a2": "Yes. If the design is already prepared, I can turn it into a responsive production interface and connect it to the backend and required services. I can also point out technical problems in the design before they become expensive to fix.",
+        "q3": "Do you only work on the frontend?",
+        "a3": "No. My focus is full-stack development. I work with React and Next.js on the frontend and Django and PostgreSQL on the backend, alongside APIs, authentication, integrations, deployment, and related infrastructure.",
+        "q4": "What if I don't have a technical specification?",
+        "a4": "That is fine. Many projects start as a business idea and a conversation. I can help break the idea into features, identify the important technical questions, define an initial architecture, and turn that into an actionable development plan.",
+        "q5": "Do you work under NDA?",
+        "a5": "Yes. Confidentiality is a normal part of professional software development. I have worked with projects and information that cannot be publicly described. If a project requires an NDA or specific confidentiality requirements, those requirements are respected.",
+        "q6": "What about sensitive or private data?",
+        "a6": "Sensitive information should be handled carefully from the beginning. Access control, authentication, secrets, permissions, data exposure, and third-party services all need to be considered as part of the architecture. I do not treat client data or source code as something to share casually.",
+        "q7": "Will you leave after the website goes live?",
+        "a7": "Not necessarily. Launch is a milestone, not a natural reason to disappear. If you need fixes, improvements, new functionality, integrations, or continued technical support, we can continue working together.",
+        "q8": "What if something goes wrong during development?",
+        "a8": "Something unexpected eventually happens in almost every non-trivial project. The important part is how it is handled. I prefer to communicate the problem clearly, explain the available options, and work toward a practical solution rather than hide the issue or abandon the task.",
+        "q9": "Do you take small tasks?",
+        "a9": "Yes. I can work on individual features, bugs, integrations, API connections, forms, payment systems, performance problems, or other focused development tasks when they fit my stack and availability.",
+        "q10": "Why don't you show every project?",
+        "a10": "Because not every project belongs to me publicly. Some professional work is covered by NDA or contains private business information. I believe respecting that agreement is more important than having another item in a portfolio."
       }
+    },
+    "end": {
+      "subtitle": "Have an idea?",
+      "titleLine1": "Let's build",
+      "titleLine2": "it properly."
+    },
+    "footer": {
+      "twitter": "X",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn",
+      "enquiriesHeader": "Contact",
+      "enquiriesEmail": "rodionvitenberg@gmail.com",
+      "businessHeader": "Work",
+      "businessEmail": "rodionvitenberg@gmail.com",
+      "newsletterLine1": "Have a project in mind?",
+      "newsletterLine2": "Tell me about it.",
+      "decorativeNote": "Independent full-stack development.",
+      "copyright": "©2026 Rodion Vitenberg • All rights reserved",
+      "labs": "",
+      "tagline": "Full-stack development from idea to production."
+    },
+    "videoOverlay": {
+      "play": "PLAY",
+      "mute": "MUTE"
     }
-  },
-  "hero": {
-    "title": "Through optical fibers, interwoven with bits, your thoughts flow into true embodiment",
-    "scrollHint": "scroll"
-  },
-  "about": {
-    "title": "Who we are",
-    "body": "So Shall It Be is a web design and development studio based in Cyprus, serving Limassol, Larnaca, and clients across Europe. We design and build web applications, mobile applications, e-commerce platforms, and AI systems — with an in-house fast CMS, SEO built in from the first line, and hosting chosen for speed and stability.",
-    "servicesTitle": "What we do",
-    "services": {
-      "ul1": "Web application development — SPA, PWA, and enterprise systems built to last.",
-      "ul2": "Mobile application development for iOS and Android.",
-      "ul3": "AI development — machine learning, language, vision, and analytics on your data.",
-      "ul4": "E-commerce development — online stores built for conversion and easy upkeep.",
-      "ul5": "A fast, quiet CMS that your team edits without touching code.",
-      "ul6": "SEO and hosting — search structure from the start and infrastructure that performs."
-    },
-    "locationsTitle": "Where we are",
-    "locationsBody": "We are rooted in Cyprus. We build for this island and for the people who work here — from Limassol and Larnaca across Europe — with the same care we give every brief.",
-    "pricingTitle": "Pricing",
-    "pricing": {
-      "li1": "Landing page from 349€ — live in from 5 days.",
-      "li2": "Business card website from 399€ — live in from 7 days.",
-      "li3": "Web application from 499€ — live in from 5 days.",
-      "li4": "E-commerce and mobile apps from 999€ — timelines by brief."
-    },
-    "contactTitle": "Contact",
-    "contactBody": "Email us at soshallitbe5@gmail.com or reach us on X (@soshallitbe5) and Instagram (@derweisseberg5)."
-  },
-  "reel": {
-    "titleLine1": "We are masters",
-    "titleLine2": "of all things",
-    "body": "We bind engineering, motion, and lasting architecture into one system. We serve your brief with patience and precision — and we stay until the result is strong enough to stand.",
-    "approach": "View services",
-    "playReel": "Play manifesto",
-    "watchAria": "Play manifesto video"
-  },
-  "cyprus": {
-    "title": "Our projects in Cyprus",
-    "disclaimer": "We are rooted in Cyprus. We build for this island and for the people who work here — with the same care we give every brief."
-  },
-  "featured": {
-    "title": "Featured Artifacts",
-    "wip": "In development",
-    "disclaimer": "Selected work: sites, systems, and software we built and stand behind.",
-    "projects": {
-      "lamaison": {
-        "name": "La Maison Fleurie",
-        "tags": "fine dining • french restaurant • limassol • CMS • web",
-        "overview": {
-          "kicker": "The Brief",
-          "title": "A little piece of Paris, kept alive since 1986.",
-          "body": "La Maison Fleurie is a family-run French restaurant in Limassol. Since 1986 the Ioannou family has welcomed guests as their own — candlelit room, summer garden, and a menu that travels between Paris and the Mediterranean."
-        },
-        "sections": [
-          {
-            "kicker": "01 / Story",
-            "title": "Four decades of hospitality.",
-            "body": "Founded in 1986 by Christos and Eleni Ioannou after a decade in Paris, the restaurant has become a neighbourhood landmark. Recipes from France, warmth from Cyprus."
-          },
-          {
-            "kicker": "02 / Kitchen",
-            "title": "Seasoned by travel.",
-            "body": "Fresh seafood arrives twice a week, delicacies are imported monthly from France, and the day ends with crème brûlée under candlelight — or in the summer garden."
-          },
-          {
-            "kicker": "03 / Site",
-            "title": "A site as warm as the room.",
-            "body": "A public website with the menu, gallery, and story — plus a quiet CMS where the team edits dishes, translations, and media without touching code."
-          }
-        ],
-        "stack": [
-          "Next.js",
-          "TypeScript",
-          "Django",
-          "PostgreSQL",
-          "CMS"
-        ],
-        "cta": "Visit the restaurant"
-      },
-      "agios": {
-        "name": "Taverna Agios Epiktitos",
-        "tags": "taverna • cypriot cuisine • menu • booking • web",
-        "overview": {
-          "kicker": "The Brief",
-          "title": "From the hills of Armenochori.",
-          "body": "A family Cypriot taverna in a restored old village school. Here tradition meets hospitality: meat over carob charcoal, bread from the wood-fired oven, and a table that always has room for one more."
-        },
-        "sections": [
-          {
-            "kicker": "01 / Spirit",
-            "title": "A restored school, a living table.",
-            "body": "The taverna lives in a former village school in Armenochori. The building has a new chapter, but the spirit stays the same — gathering, sharing, celebrating."
-          },
-          {
-            "kicker": "02 / Kitchen",
-            "title": "Fire, spice, tradition.",
-            "body": "From souvlaki to resi, the menu is a tour of Cyprus: slow-cooked meats, aromatic meze, and homemade sweets the way families have made them for generations."
-          },
-          {
-            "kicker": "03 / Site",
-            "title": "A menu, a table, a story.",
-            "body": "The site carries the full menu with categories, table reservations, and events — and every booking lands straight in the owners' Telegram."
-          }
-        ],
-        "stack": [
-          "Next.js",
-          "TypeScript",
-          "Django",
-          "PostgreSQL",
-          "Telegram"
-        ],
-        "cta": "Visit the taverna"
-      },
-      "nicks_coffee_bike": {
-        "name": "Nick's Coffee Bike",
-        "tags": "coffee • street corner • coming soon • web",
-        "overview": {
-          "kicker": "The Brief",
-          "title": "Good coffee, on the move.",
-          "body": "Nick's Coffee Bike is a small coffee cart on wheels — espresso for the street, brewed where people walk by. The site is still in the works, and the idea is simple: good coffee, served warm, wherever Nick parks."
-        },
-        "sections": [
-          {
-            "kicker": "01 / Idea",
-            "title": "Coffee that travels.",
-            "body": "A bicycle, a cart, and a proper little bar. No queues, no waiting rooms — coffee shows up on the corner, and leaves when it's time to ride."
-          },
-          {
-            "kicker": "02 / Craft",
-            "title": "A small cart, a real bar.",
-            "body": "The gear is serious and the recipe is personal. The kind of coffee you cross the street for, then come back for tomorrow."
-          },
-          {
-            "kicker": "03 / Status",
-            "title": "In the works.",
-            "body": "The website is being prepared — menu, location, and stories are coming. For now, the best way to find the bike is to follow it on Instagram."
-          }
-        ],
-        "stack": [
-          "Next.js",
-          "TypeScript",
-          "Tailwind"
-        ],
-        "cta": "Follow the bike"
-      },
-      "karagat": {
-        "name": "Karagat Hotel",
-        "tags": "hotel • mountains • booking • web",
-        "overview": {
-          "kicker": "The Brief",
-          "title": "Mountains. Lake. Hospitality.",
-          "body": "Karagat is a mountain hotel — a tall building by the peaks, a conference space beside it, and a kitchen that feeds the morning. Simple, warm, and made for guests."
-        },
-        "sections": [
-          {
-            "kicker": "01 / Stay",
-            "title": "Rooms over the mountains.",
-            "body": "Comfortable rooms, quiet mornings, and calm lake views a short drive away. The hotel is a base for the mountains and a rest stop after the road."
-          },
-          {
-            "kicker": "02 / Gather",
-            "title": "A conference space beside it.",
-            "body": "An attached conference hall turns the hotel into a place for meetings, workshops, and events — work and rest under one roof."
-          },
-          {
-            "kicker": "03 / Kitchen",
-            "title": "No menu, just home.",
-            "body": "The kitchen works without a menu — it feeds the morning and cooks what the day brings, the way home cooking works best."
-          },
-          {
-            "kicker": "04 / Site",
-            "title": "A site that books the stay.",
-            "body": "Rooms, gallery, location, and booking in one calm place. The site shows the view and lets guests reserve without a single extra step."
-          }
-        ],
-        "stack": [
-          "Next.js",
-          "TypeScript",
-          "Django",
-          "PostgreSQL",
-          "Booking"
-        ],
-        "cta": "Plan your stay"
-      },
-      "leondiana": {
-        "name": "Leondiana",
-        "tags": "boutique hotel • larnaca • booking • admin panel • web",
-        "overview": {
-          "kicker": "The Brief",
-          "title": "A quiet corner of Larnaca, distilled into pixels.",
-          "body": "Leondiana is a boutique hotel in Larnaca, Cyprus — a quiet lane, Mediterranean light, coffee on the balcony, and the sound of the sea. Without the extra noise."
-        },
-        "sections": [
-          {
-            "kicker": "01 / Guest",
-            "title": "A stay that books itself.",
-            "body": "The guest side is a calm visual journey: a home that carries the atmosphere, four room categories — Standard, Deluxe, Suite, Family — a filterable gallery with lightbox, location, and a booking form that computes the final check on the fly."
-          },
-          {
-            "kicker": "02 / Team",
-            "title": "A quiet command center.",
-            "body": "Behind the aesthetics sits a functional admin panel: rooms, incoming bookings with statuses, flexible promo codes, two-language content editing, settings, and a media library that places photos into slots without duplication."
-          },
-          {
-            "kicker": "03 / Architecture",
-            "title": "One source, every surface.",
-            "body": "The product is split into a user-facing frontend and a data-driven backend (Django + PostgreSQL). A single structured media source feeds the homepage carousel, the general gallery, and a specific room card alike — no duplicates, one truth."
-          }
-        ],
-        "stack": [
-          "Next.js",
-          "TypeScript",
-          "Django",
-          "PostgreSQL",
-          "i18n"
-        ],
-        "cta": "Visit the hotel"
-      },
-      "oryzo_ai": {
-        "name": "Daerdree Bar & Timeclub",
-        "tags": "entertainment • lounge concept • booking • UI/UX • web",
-        "overview": {
-          "kicker": "The Brief",
-          "title": "A lounge that sells atmosphere, not drinks.",
-          "body": "Daerdree Bar & Timeclub needed a digital identity as magnetic as its rooms — an entertainment platform where booking feels like an invitation, not a transaction."
-        },
-        "sections": [
-          {
-            "kicker": "01 / Concept",
-            "title": "Darker, warmer, louder.",
-            "body": "We leaned into a dusk-toned palette, oversized editorial type, and motion that breathes like nightlife — every screen designed around the pulse of the venue."
-          },
-          {
-            "kicker": "02 / Booking",
-            "title": "Reservations without friction.",
-            "body": "Table selection, date pickers, and time slots were compressed into a single flowing flow, cutting booking time to under a minute."
-          },
-          {
-            "kicker": "03 / Interface",
-            "title": "UI that knows your table.",
-            "body": "Interactive menus, event schedules, and private-club details live in one coherent system — sharp on desktop, equally confident on mobile."
-          }
-        ],
-        "stack": [
-          "Next.js",
-          "TypeScript",
-          "GSAP",
-          "Tailwind",
-          "PostgreSQL"
-        ],
-        "cta": "Visit the venue"
-      },
-      "of_the_oak": {
-        "name": "Dastorkon Ethno-Restaurant",
-        "tags": "gastronomy • restaurant • interactive menu • i18n • web",
-        "overview": {
-          "kicker": "The Brief",
-          "title": "Heritage plated in pixels.",
-          "body": "Dastorkon blends centuries of nomad cuisine with a modern dining room. The site had to taste as rich as the menu — and speak fluently in two languages."
-        },
-        "sections": [
-          {
-            "kicker": "01 / Story",
-            "title": "Every dish has a chapter.",
-            "body": "We structured the menu as a journey — ingredients, origins, and rituals behind each plate — turning a restaurant site into a cultural archive."
-          },
-          {
-            "kicker": "02 / Menu",
-            "title": "A menu that serves itself.",
-            "body": "Category navigation, dietary filters, and dish photography flow into a calm reading experience, built for both the curious guest and the quick browser."
-          },
-          {
-            "kicker": "03 / Locale",
-            "title": "Two tongues, one table.",
-            "body": "Full i18n between English and Russian — routing, content, and formatting — so every guest reads the story the way it was meant to be told."
-          }
-        ],
-        "stack": [
-          "Next.js",
-          "TypeScript",
-          "i18n",
-          "Tailwind",
-          "PostgreSQL"
-        ],
-        "cta": "Taste the menu"
-      },
-      "devin_ai": {
-        "name": "Walmgres Investment",
-        "tags": "fintech • investment platform • analytics • web",
-        "overview": {
-          "kicker": "The Brief",
-          "title": "Complex capital, composed.",
-          "body": "Walmgres needed an investment platform that makes sophisticated portfolios feel calm, legible, and decision-ready — without drowning in dashboards."
-        },
-        "sections": [
-          {
-            "kicker": "01 / Position",
-            "title": "Confidence through clarity.",
-            "body": "A restrained dark interface with precise data hierarchy — numbers lead, decoration follows. Every screen answers: where do I stand?"
-          },
-          {
-            "kicker": "02 / Analytics",
-            "title": "Data that performs.",
-            "body": "Portfolio breakdowns, performance curves, and risk indicators render as focused charts — engineered to stay instant on heavy datasets."
-          },
-          {
-            "kicker": "03 / Motion",
-            "title": "Movement with intent.",
-            "body": "Transitions between states guide the eye, never distract it. GSAP-driven reveals make navigation feel like an instrument, not a slideshow."
-          }
-        ],
-        "stack": [
-          "Next.js",
-          "TypeScript",
-          "GSAP",
-          "Recharts",
-          "PostgreSQL"
-        ],
-        "cta": "Explore the platform"
-      },
-      "porsche_dream_machine": {
-        "name": "IkSoft Studio",
-        "tags": "software studio • agency showcase • web • 3D",
-        "overview": {
-          "kicker": "The Brief",
-          "title": "A studio that ships velocity.",
-          "body": "IkSoft is a software studio that builds fast and thinks faster. The showcase had to feel engineered — speed, precision, and a touch of obsession."
-        },
-        "sections": [
-          {
-            "kicker": "01 / Presence",
-            "title": "Performance as identity.",
-            "body": "We opened with motion and momentum — 3D-led hero, rapid scroll choreography — so the site itself demonstrates what the studio sells."
-          },
-          {
-            "kicker": "02 / Work",
-            "title": "Case studies as products.",
-            "body": "Project presentations are structured like product pages: problem, process, result. Clients scroll through proof, not promises."
-          },
-          {
-            "kicker": "03 / Craft",
-            "title": "Details that compound.",
-            "body": "Typographic contrast, precise spacing, and micro-interactions tuned by hand — the invisible ingredients of a premium software brand."
-          }
-        ],
-        "stack": [
-          "Next.js",
-          "TypeScript",
-          "Three.js",
-          "GSAP",
-          "WebGL"
-        ],
-        "cta": "Hire the studio"
-      },
-      "synthetic_human": {
-        "name": "Webdoc.life AI",
-        "tags": "healthtech • AI medical parser • SaaS • Next.js",
-        "overview": {
-          "kicker": "The Brief",
-          "title": "AI that reads the chart.",
-          "body": "Webdoc.life parses medical documents into structured health records. The product had to earn trust — clarity and calm were non-negotiable."
-        },
-        "sections": [
-          {
-            "kicker": "01 / Product",
-            "title": "From paperwork to signal.",
-            "body": "Upload a document, receive a structured profile. We designed the pipeline so users always see what the AI extracted and why."
-          },
-          {
-            "kicker": "02 / Trust",
-            "title": "Transparency by design.",
-            "body": "Source highlighting and extraction confidence make the machine legible — the interface proves its own accuracy as you watch."
-          },
-          {
-            "kicker": "03 / Experience",
-            "title": "Healing, quietly.",
-            "body": "A light, clinical palette with generous whitespace keeps the experience gentle — technology that steps back so the patient steps forward."
-          }
-        ],
-        "stack": [
-          "Next.js",
-          "TypeScript",
-          "AI Parser",
-          "Tailwind",
-          "PostgreSQL"
-        ],
-        "cta": "Open the product"
-      },
-      "spatial_fusion": {
-        "name": "Careyourpet (PetVet)",
-        "tags": "vet CRM • SaaS • PostgreSQL • web • mobile",
-        "overview": {
-          "kicker": "The Brief",
-          "title": "Every paw, tracked.",
-          "body": "Careyourpet is a veterinary CRM built for clinics that juggle patients, appointments, and records. The system had to be warm enough for nurses, fast enough for doctors."
-        },
-        "sections": [
-          {
-            "kicker": "01 / System",
-            "title": "One record, every visit.",
-            "body": "A unified patient timeline consolidates medical history, prescriptions, and vaccination schedules — no more paper stacks behind the desk."
-          },
-          {
-            "kicker": "02 / Workflow",
-            "title": "Built for busy hands.",
-            "body": "Keyboard-first scheduling, quick-search across pets and owners, and mobile-ready screens keep the whole clinic in the flow."
-          },
-          {
-            "kicker": "03 / Interface",
-            "title": "Clinical, not cold.",
-            "body": "A soft palette and rounded geometry keep the tool approachable — software that respects the people caring for our animals."
-          }
-        ],
-        "stack": [
-          "React",
-          "TypeScript",
-          "PostgreSQL",
-          "Tailwind",
-          "Mobile"
-        ],
-        "cta": "Meet the clinic"
-      },
-      "spaace": {
-        "name": "Proffmusic.shop",
-        "tags": "audio stock • music marketplace • e-commerce • digital assets",
-        "overview": {
-          "kicker": "The Brief",
-          "title": "Sound, sorted.",
-          "body": "Proffmusic is a marketplace for professional audio — samples, loops, and stems. Browsing thousands of assets had to feel as good as hearing them."
-        },
-        "sections": [
-          {
-            "kicker": "01 / Discovery",
-            "title": "Listen while you look.",
-            "body": "Inline previews let producers audition tracks without leaving the grid — the fastest path from search to 'load into the DAW'."
-          },
-          {
-            "kicker": "02 / Commerce",
-            "title": "Downloads that don't break the flow.",
-            "body": "Cart, licensing, and instant delivery are reduced to a few uncluttered steps. The store stays out of the way of the music."
-          },
-          {
-            "kicker": "03 / Identity",
-            "title": "Studio-grade aesthetics.",
-            "body": "Deep tones, waveform motifs, and precise typography create a brand that producers trust at first glance."
-          }
-        ],
-        "stack": [
-          "Next.js",
-          "TypeScript",
-          "E-commerce",
-          "Tailwind",
-          "PostgreSQL"
-        ],
-        "cta": "Browse the catalog"
-      },
-      "ddd_2024": {
-        "name": "El-Imperia Shop",
-        "tags": "e-commerce • retail • online store • web",
-        "overview": {
-          "kicker": "The Brief",
-          "title": "Retail that converts.",
-          "body": "El-Imperia is a full retail e-commerce operation. The store needed merchandising power, effortless checkout, and a presence that sells."
-        },
-        "sections": [
-          {
-            "kicker": "01 / Catalog",
-            "title": "Grids that merchandise.",
-            "body": "Product photography, filters, and category storytelling are layered into a tight grid — shoppers find what they want, then discover what they didn't."
-          },
-          {
-            "kicker": "02 / Checkout",
-            "title": "The shortest path to paid.",
-            "body": "Cart → address → payment in three calm steps. Every input is engineered to reduce abandonment at the exact moment it matters."
-          },
-          {
-            "kicker": "03 / Brand",
-            "title": "Premium shelf presence.",
-            "body": "A composed palette and editorial product pages give the store the confidence of a flagship, not a marketplace stall."
-          }
-        ],
-        "stack": [
-          "Next.js",
-          "TypeScript",
-          "E-commerce",
-          "Tailwind",
-          "PostgreSQL"
-        ],
-        "cta": "Shop the store"
-      },
-      "choo_choo_world": {
-        "name": "GardenHouse Eco-Resort",
-        "tags": "hospitality • garden hotel concept • booking • web",
-        "overview": {
-          "kicker": "The Brief",
-          "title": "A room in the garden.",
-          "body": "GardenHouse is an eco-resort where architecture dissolves into landscape. The site had to make visitors feel the soil, the light, and the silence."
-        },
-        "sections": [
-          {
-            "kicker": "01 / Atmosphere",
-            "title": "Nature as interface.",
-            "body": "Soft greens, organic shapes, and slow scroll rhythm mirror the resort itself — every interaction quieter than the last."
-          },
-          {
-            "kicker": "02 / Stays",
-            "title": "Choose the sky you wake under.",
-            "body": "Cabin galleries, garden suites, and glamping pitches are presented as distinct micro-worlds, each with its own mood and view."
-          },
-          {
-            "kicker": "03 / Booking",
-            "title": "Reserve the seasons.",
-            "body": "Availability, rates, and seasonal packages fold into one gentle flow — booking feels like planning a retreat, not a transaction."
-          }
-        ],
-        "stack": [
-          "Next.js",
-          "TypeScript",
-          "Booking",
-          "Tailwind",
-          "PostgreSQL"
-        ],
-        "cta": "Plan the retreat"
-      },
-      "soda_experience": {
-        "name": "BiMark Exchange",
-        "tags": "virtual assets • marketplace • digital goods • platform",
-        "overview": {
-          "kicker": "The Brief",
-          "title": "Digital goods, liquid market.",
-          "body": "BiMark is a marketplace for virtual assets — accounts, keys, and digital inventory. Buyers needed trust; sellers needed reach."
-        },
-        "sections": [
-          {
-            "kicker": "01 / Market",
-            "title": "Listings that move.",
-            "body": "Categorized listings with live status, price history, and seller reputation make the market feel alive — and the next deal one glance away."
-          },
-          {
-            "kicker": "02 / Trust",
-            "title": "Escrow as a feature.",
-            "body": "Guaranteed transactions are surfaced throughout the flow — badges, timelines, and protections turn a risky category into a safe one."
-          },
-          {
-            "kicker": "03 / Experience",
-            "title": "Marketplace speed.",
-            "body": "Instant search, snappy filters, and responsive controls across devices keep traders in motion. The interface stays light; the market stays deep."
-          }
-        ],
-        "stack": [
-          "Next.js",
-          "TypeScript",
-          "Marketplace",
-          "Tailwind",
-          "PostgreSQL"
-        ],
-        "cta": "Enter the market"
-      }
-    }
-  },
-  "services": {
-    "metaTitle": "Services — As You Dream, So Shall It Be",
-    "metaDescription": "Web, mobile, and AI development. Design, a fast CMS, SEO, and hosting — built with the same care as the rest of the studio.",
-    "eyebrow": "Services",
-    "heroTitle": "How We Can Help You",
-    "heroTitleLine1": "How We",
-    "heroTitleLine2": "Can Help You",
-    "scrollHint": "scroll",
-    "offers": {
-      "webIndex": "01",
-      "webTitle": "Web Application Development",
-      "webBody": "We build web applications to the measure of your work: secure, stable, and ready to grow. SPA, PWA, and enterprise systems — one standard of craft, on every screen. The aim is simple: your team works faster, your clients stay, the business moves.",
-      "mobileIndex": "02",
-      "mobileTitle": "Mobile Application Development",
-      "mobileBody": "We build iOS and Android applications to your goals: fast to ship, sound in structure, clear in use. One product, every device. We stay with the work until it holds.",
-      "aiIndex": "03",
-      "aiTitle": "AI Development",
-      "aiBody": "We turn your data into working systems: machine learning, language, vision, and analytics — fitted into the way you already operate. The machine takes the repeatable load. You keep the decisions that matter."
-    },
-    "techTitle": "We Work with the Following Technologies",
-    "perksTitle": "What you receive with the work:",
-    "perks": {
-      "p1Title": "Modern design",
-      "p1Body": "Clear interfaces, current craft, no decoration for its own sake.",
-      "p2Title": "Guidance, without charge",
-      "p2Body": "We train your staff on the CMS and answer every technical question the work raises.",
-      "p3Title": "A fast, quiet CMS",
-      "p3Body": "Our own CMS: simple, quick, and built so you spend less time editing and rank more cleanly.",
-      "p4Title": "SEO from the first line",
-      "p4Body": "Every project is structured for search from the start — not added later as a patch.",
-      "p5Title": "Fast hosting",
-      "p5Body": "Infrastructure chosen for speed and stability, so the site you order is the site people reach.",
-      "p6Title": "A layout that fits",
-      "p6Body": "The site adapts to the screen in front of it — phone, tablet, or desk."
-    },
-    "whyTitle": "Why Choose Us",
-    "why": {
-      "aLabel": "The client, first",
-      "aBody": "We serve your brief, not a template. One conversation, one plan, one standard through the life of the project. You always know where the work stands.",
-      "bLabel": "Depth of craft",
-      "bBody": "We take hard problems as our duty. We keep the tools current so the system we hand you is the one the work requires — not the one that was convenient.",
-      "cLabel": "Quality, guaranteed",
-      "cBody": "We do not leave a result we would not stand beside. Checks are part of the craft. Precision is not a slogan; it is how the work is done.",
-      "dLabel": "Built to last",
-      "dBody": "We build so the system can grow with you. What we ship is meant to hold — this year, and the next brief after it."
-    },
-    "quotesTitle": "Our clients said",
-    "quotes": {
-      "aName": "Emily P",
-      "aBody": "We asked this team to build a web application for our startup. The result was stronger than we had asked for. They were precise, calm, and present at every step. We would work with them again.",
-      "bName": "Alex P",
-      "bBody": "We hired this team for a web application. They understood the brief and proposed work that made the product better. Solid, reliable, no noise.",
-      "cName": "Ivan M",
-      "cBody": "They built our web application with clear communication and a steady process. We received exactly what we needed — and more. I recommend them to anyone who wants a partner they can trust."
-    },
-    "priceTitle": "Price",
-    "priceFrom": "from",
-    "prices": {
-      "p1Name": "Catalog Website Development",
-      "p1Meta": "from 699€ / from 8 days",
-      "p2Name": "Web Application Development",
-      "p2Meta": "from 499€ / from 5 days",
-      "p3Name": "E-commerce Development",
-      "p3Meta": "from 999€ / from 9 days",
-      "p4Name": "Business Card Website Development",
-      "p4Meta": "from 399€ / from 7 days",
-      "p5Name": "Order a Landing Page",
-      "p5Meta": "from 349€ / from 5 days",
-      "p6Name": "Mobile Application Development",
-      "p6Meta": "from 999€ / from 22 days",
-      "p7Name": "SEO Promotion",
-      "p7Meta": "from 249€ / month",
-      "p8Name": "Social Media Promotion",
-      "p8Meta": "from 149€ / month"
-    },
-    "faqTitle": "Frequently asked questions",
-    "faq": {
-      "q1": "How much does a website cost to build in Cyprus from scratch?",
-      "a1": "Cost follows the type and the difficulty of the work. We set the figure after the brief is written. A one-page site with us starts from 800€, a corporate site from 1200€, an online store from 1900€. A template site is possible: from 300€, usually live in 3–5 days. It costs less to start and more to keep — and it is harder to reach the top of search.",
-      "q2": "Which CMS should we choose?",
-      "a2": "We recommend our own. It is simple, fast, and cut to each client. It runs 3–5 times faster than common commercial CMS tools, stays stable, stays secure, and handles real multilingual work — with lower cost to build and to keep.",
-      "q3": "Will we be able to update the site ourselves?",
-      "a3": "Yes. The CMS is clear and spare — no extra fields, a visual editor for text, tables, images, and links. For stores we add import and export from your own documents. One action updates prices, photos, and details.",
-      "q4": "Does a ready-made design make the site cheaper?",
-      "a4": "Yes — the first invoice is lower. Support and later modules usually cost more. If you do not plan to grow the site, add material, or push it in search, a template can be the right cut. There is a middle path: you choose a layout from a catalog; we finish it for your brief, then build a unique responsive front and the code behind it.",
-      "q5": "Do you build websites for free?",
-      "a5": "We do not recommend free builders. Most are paid after a short trial. The monthly fee is often higher than good hosting, and the result is slower and weaker. Search rarely lifts builder sites. You save a little now, pay more later, and cannot move the code. The time is lost.",
-      "q6": "How do we get a site without wasting money?",
-      "a6": "We attend to each client. If you are starting out, we can set a leaner path — without lowering the standard of the work.",
-      "q7": "Do you write the words?",
-      "a7": "Yes, we can. In practice, the strongest text comes from you. A studio writer is not inside your trade; they can only summarise what the web already holds. To outrank rivals, the words must be yours. The sound method is shared work: your people write the substance or the structure; we shape the language, the keys, and the placement.",
-      "q8": "What else do you take on?",
-      "a8": "We take the work as a whole: domain, its history, a full reading of rivals, an interface that brings the right requests, tests at every stage, and checks on the devices your clients actually use."
-    }
-  },
-  "end": {
-    "subtitle": "Is the brief ready?",
-    "titleLine1": "Let's build",
-    "titleLine2": "together."
-  },
-  "footer": {
-    "twitter": "X (@soshallitbe5)",
-    "instagram": "Instagram (@derweisseberg5)",
-    "enquiriesHeader": "Contact",
-    "enquiriesEmail": "soshallitbe5@gmail.com",
-    "businessHeader": "",
-    "businessEmail": "",
-    "newsletterLine1": "We are ready to fulfill our role in your play.",
-    "newsletterLine2": "",
-    "decorativeNote": "",
-    "copyright": "©2026 soshallitbe.cyou • All rights reversed",
-    "labs": "",
-    "tagline": ""
-  },
-  "videoOverlay": {
-    "play": "PLAY",
-    "mute": "MUTE"
   }
-}

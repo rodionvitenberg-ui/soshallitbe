@@ -1,6 +1,6 @@
 /*
  * Minimal Tailwind for shadcn/react-bits components.
- * Preflight (base reset) is intentionally omitted so lusion.css keeps control.
+ * Preflight (base reset) is intentionally omitted so daydream.css keeps control.
  */
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities);

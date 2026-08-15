@@ -4,7 +4,7 @@ export const routing = defineRouting({
   locales: ["en", "ru"],
   defaultLocale: "en",
   localePrefix: "never",
-  // UI switcher removed for now — always serve default (en); keep ru messages for later.
+  // UI is English-only (switcher removed). Keep ru dictionary for later.
   localeDetection: false,
 });
 

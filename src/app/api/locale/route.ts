@@ -6,21 +6,21 @@ function isLocale(value: string | null): value is AppLocale {
 }
 
 /**
- * Set NEXT_LOCALE cookie and return to referer (or /).
- * Used by header EN|RU forms — no path prefix.
+ * Set NEXT_LOCALE cookie.
+ * Client component calls this with JSON { locale }, then re-renders the page
+ * (window.location.assign("/")) so next-intl picks the new dictionary.
  */
 export async function POST(request: NextRequest) {
-  const form = await request.formData();
-  const locale = String(form.get("locale") ?? "");
+  let locale: string | null = null;
+  try {
+    const body = (await request.json()) as { locale?: unknown };
+    if (typeof body?.locale === "string") locale = body.locale;
+  } catch {
+    /* invalid JSON → fall back to default */
+  }
 
   const target = isLocale(locale) ? locale : routing.defaultLocale;
-  const referer = request.headers.get("referer");
-  const redirectTo =
-    referer && referer.startsWith(request.nextUrl.origin)
-      ? referer
-      : new URL("/", request.url).toString();
-
-  const response = NextResponse.redirect(redirectTo, 303);
+  const response = NextResponse.json({ ok: true, locale: target });
   response.cookies.set("NEXT_LOCALE", target, {
     path: "/",
     maxAge: 60 * 60 * 24 * 365,

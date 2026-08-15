@@ -7,9 +7,10 @@ export type StructuredDataPage = "home" | "services";
 const SITE_URL = "https://soshallitbe.cyou";
 const BRAND = "So Shall It Be";
 const SLOGAN = "As You Dream, So Shall It Be";
-const EMAIL = "soshallitbe5@gmail.com";
+const EMAIL = "rodionvitenberg@gmail.com";
 const X_HANDLE = "https://x.com/soshallitbe5";
 const INSTAGRAM = "https://www.instagram.com/derweisseberg5/";
+const LINKEDIN = "https://www.linkedin.com/in/rodion-vitenberg-4200363a4/";
 const LOGO = `${SITE_URL}/logo.png`;
 const SOCIAL_IMAGE = `${SITE_URL}/assets/meta/social_sharing.jpg`;
 
@@ -39,7 +40,7 @@ function organizationJsonLd(messages: Messages): Record<string, unknown> {
     logo: LOGO,
     image: SOCIAL_IMAGE,
     description: str(messages, "meta.description"),
-    sameAs: [X_HANDLE, INSTAGRAM],
+    sameAs: [X_HANDLE, INSTAGRAM, LINKEDIN],
     knowsAbout: [
       "Web application development",
       "Mobile application development",
@@ -175,4 +176,4 @@ export function StructuredData({
   );
 }
 
-export { SITE_URL, BRAND, SLOGAN, EMAIL, X_HANDLE, INSTAGRAM };
+export { SITE_URL, BRAND, SLOGAN, EMAIL, X_HANDLE, INSTAGRAM, LINKEDIN };

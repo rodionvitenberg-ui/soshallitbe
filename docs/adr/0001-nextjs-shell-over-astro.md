@@ -1,4 +1,4 @@
-# Next.js shell over Astro for the Lusion homepage clone
+# Next.js shell over Astro for the Daydream homepage clone
 
 The homepage is a thin framework shell around a fixed production engine and HTML fragments. We migrated the shell from Astro to Next.js (App Router) while keeping fragments, public assets, and the vendor engine patch unchanged.
 

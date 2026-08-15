@@ -9,12 +9,12 @@ import { useEffect } from "react";
  */
 export function EngineBootstrap() {
   useEffect(() => {
-    if (document.querySelector("script[data-lusion-engine]")) return;
+    if (document.querySelector("script[data-daydream-engine]")) return;
 
     const script = document.createElement("script");
     script.type = "module";
     script.src = "/_astro/engine.js";
-    script.dataset.lusionEngine = "1";
+    script.dataset.daydreamEngine = "1";
     document.body.appendChild(script);
   }, []);
 

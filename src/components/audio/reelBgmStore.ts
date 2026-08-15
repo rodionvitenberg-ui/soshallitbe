@@ -13,6 +13,17 @@ export const REEL_BGM_MAX_OUTPUT = 0.08;
 /** Default slider position after start (60% of bar). */
 export const REEL_BGM_START = 0.6;
 
+/** Mobile detection: no hover / likely touch device. Music stays OFF there. */
+const IS_MOBILE =
+  typeof window !== "undefined" &&
+  (window.matchMedia("(any-hover: none)").matches ||
+    /Mobi|Android/i.test(navigator.userAgent));
+
+/** Gate that blocks BGM start/volume on mobile. */
+export function isAudioEnabled(): boolean {
+  return !IS_MOBILE;
+}
+
 export type ReelBgmState = {
   started: boolean;
   muted: boolean;
@@ -52,7 +63,8 @@ let state: ReelBgmState = {
 };
 
 if (typeof window !== "undefined") {
-  const persisted = readPersisted();
+  // On mobile never pick up a persisted started=true session — BGM stays OFF.
+  const persisted = !IS_MOBILE ? readPersisted() : null;
   if (persisted?.started) {
     state = {
       ...state,
@@ -121,6 +133,7 @@ export function subscribeReelBgm(listener: Listener): () => void {
 }
 
 function setState(partial: Partial<ReelBgmState>) {
+  if (!isAudioEnabled()) return;
   const next = { ...state, ...partial };
   if (typeof partial.volume === "number") {
     next.volume = clamp01(partial.volume);
@@ -152,7 +165,7 @@ export function setVisible(visible: boolean) {
  * Soft curve so low slider values stay gentle; cap at REEL_BGM_MAX_OUTPUT.
  */
 export function getOutputVolume(): number {
-  if (!state.started || state.muted) return 0;
+  if (!isAudioEnabled() || !state.started || state.muted) return 0;
   const ui = clamp01(state.volume);
   // ease-in: mid values quieter than linear
   const shaped = ui * ui; // quadratic
@@ -161,11 +174,12 @@ export function getOutputVolume(): number {
 
 /** Bar fill mirrors UI volume (not raw HTML gain). */
 export function getDisplayLevel(): number {
-  if (!state.started || state.muted) return 0;
+  if (!isAudioEnabled() || !state.started || state.muted) return 0;
   return state.volume;
 }
 
 export function startBgm() {
+  if (!isAudioEnabled()) return;
   if (state.started) return;
   setState({
     started: true,
@@ -177,14 +191,17 @@ export function startBgm() {
 }
 
 export function setMuted(muted: boolean) {
+  if (!isAudioEnabled()) return;
   setState({ muted });
 }
 
 export function toggleMuted() {
+  if (!isAudioEnabled()) return;
   setState({ muted: !state.muted });
 }
 
 export function setVolume(volume: number) {
+  if (!isAudioEnabled()) return;
   const wasStarted = state.started;
   setState({
     volume: clamp01(volume),
