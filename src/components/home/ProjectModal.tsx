@@ -217,6 +217,10 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
   useEffect(() => {
     if (!project) return;
     const onTouchMoveCapture = (e: TouchEvent) => {
+      // Разрешаем нативный touch-скролл внутри скроллера модалки,
+      // фоновую страницу по-прежнему блокируем.
+      const scroller = scrollerRef.current;
+      if (scroller && scroller.contains(e.target as Node)) return;
       e.preventDefault();
       e.stopPropagation();
       e.stopImmediatePropagation();
