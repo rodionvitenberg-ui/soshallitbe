@@ -3,16 +3,17 @@
 All machine-readable layers (`robots.txt`, `sitemap.xml`, `llms.txt`, `llms-full.txt`,
 JSON-LD, `meta description`) are already aligned to one canonical identity:
 
+- Developer: **Rodion Vittenberg**
 - Brand: **So Shall It Be**
 - Domain: **https://soshallitbe.cyou**
-- Email: **soshallitbe5@gmail.com**
+- Email: **rodionvitenberg@gmail.com**
 - X: **@soshallitbe5**
 - Instagram: **@derweisseberg5**
-- Type: Web, Mobile & AI Development Studio
+- Type: Full-Stack Developer, based in Cyprus (web, mobile, AI, e-commerce)
 - Location: **Cyprus only** (Limassol; serving Larnaca and the island + Europe)
 
-> ⚠️ GEO rule: the studio positions itself **only in Cyprus and Europe**.
-> Do not introduce other regions/countries in any SEO/GEO artifact.
+> ⚠️ GEO rule: one developer — Rodion Vittenberg — based in Cyprus, clients
+> **Cyprus and Europe only**. Do not introduce other regions/countries in any SEO/GEO artifact.
 
 ## After deploying
 
@@ -23,7 +24,7 @@ JSON-LD, `meta description`) are already aligned to one canonical identity:
   - `https://soshallitbe.cyou/llms-full.txt`
 - [ ] Check the homepage `<head>` contains:
   - `canonical` → `https://soshallitbe.cyou/`
-  - JSON-LD: `ProfessionalService` (+ `Organization`), `WebSite`, `ItemList`
+  - JSON-LD: `Person`, `ProfessionalService` (+ `Organization`), `WebSite`, `ItemList`
   - `og:site_name` = `So Shall It Be`, `twitter:card` = `summary_large_image`
 - [ ] Check `/services` contains JSON-LD `FAQPage` (8 Q&A) and canonical URL.
 
@@ -31,7 +32,7 @@ JSON-LD, `meta description`) are already aligned to one canonical identity:
 
 - [ ] **Google Business Profile** — name «So Shall It Be», Cyprus (Limassol),
   website `https://soshallitbe.cyou`, same email. Description mirrors `meta.description`.
-- [ ] **X** — verify handle `@soshallitbe5`, bio mentions «Web, Mobile & AI Development Studio in Cyprus».
+- [ ] **X** — verify handle `@soshallitbe5`, bio mentions «Full-stack developer based in Cyprus» (Rodion Vittenberg).
 - [ ] **Instagram** — verified handle `@derweisseberg5`, same positioning.
 - [ ] **GitHub / other profiles** — same brand name and description; link to domain.
 

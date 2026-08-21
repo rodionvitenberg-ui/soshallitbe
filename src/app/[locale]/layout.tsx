@@ -76,7 +76,7 @@ export async function generateMetadata({
           url: "/assets/meta/social_sharing.jpg",
           width: 1200,
           height: 630,
-          alt: "So Shall It Be — Web, Mobile & AI Development Studio in Cyprus",
+          alt: "R.Vittenberg — Full-Stack Development in Cyprus",
         },
       ],
     },

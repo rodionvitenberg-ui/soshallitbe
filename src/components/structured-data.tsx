@@ -6,6 +6,7 @@ export type StructuredDataPage = "home" | "services";
 
 const SITE_URL = "https://soshallitbe.cyou";
 const BRAND = "So Shall It Be";
+const PERSON_NAME = "Rodion Vittenberg";
 const SLOGAN = "As You Dream, So Shall It Be";
 const EMAIL = "rodionvitenberg@gmail.com";
 const X_HANDLE = "https://x.com/soshallitbe5";
@@ -28,6 +29,25 @@ function str(messages: Messages, path: string): string {
   return value == null || typeof value === "object" ? "" : String(value);
 }
 
+function personJsonLd(): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${SITE_URL}/#person`,
+    name: PERSON_NAME,
+    url: SITE_URL,
+    email: EMAIL,
+    image: SOCIAL_IMAGE,
+    sameAs: [X_HANDLE, INSTAGRAM, LINKEDIN],
+    worksFor: { "@id": `${SITE_URL}/#organization` },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Limassol",
+      addressCountry: "CY",
+    },
+  };
+}
+
 function organizationJsonLd(messages: Messages): Record<string, unknown> {
   return {
     "@context": "https://schema.org",
@@ -41,6 +61,7 @@ function organizationJsonLd(messages: Messages): Record<string, unknown> {
     image: SOCIAL_IMAGE,
     description: str(messages, "meta.description"),
     sameAs: [X_HANDLE, INSTAGRAM, LINKEDIN],
+    founder: { "@id": `${SITE_URL}/#person` },
     knowsAbout: [
       "Web application development",
       "Mobile application development",
@@ -143,6 +164,7 @@ function buildStructuredData(
   page: StructuredDataPage,
 ): Array<Record<string, unknown>> {
   const blocks: Array<Record<string, unknown>> = [
+    personJsonLd(),
     organizationJsonLd(messages),
     webSiteJsonLd(),
   ];

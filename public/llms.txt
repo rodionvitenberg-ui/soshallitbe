@@ -1,24 +1,23 @@
-# So Shall It Be
+# Rodion Vittenberg
 
-> Web, Mobile & AI Development Studio in Cyprus — Limassol & Larnaca.
-> We design and build web applications, mobile applications, e-commerce platforms, and AI systems — with an in-house fast CMS, SEO built in from the first line, and hosting chosen for speed and stability. We exist to serve clients in Cyprus and across Europe.
+> Full-stack developer, based in Cyprus — Limassol & Larnaca.
+> I design and build web applications, mobile applications, e-commerce platforms, and AI systems — from architecture and interface to backend, integrations, deployment, and long-term support. I work with clients in Cyprus and across Europe.
 
 - Website: https://soshallitbe.cyou
-- Email: soshallitbe5@gmail.com
+- Email: rodionvitenberg@gmail.com
 - X: https://x.com/soshallitbe5
 - Instagram: https://www.instagram.com/derweisseberg5/
 
 ## Services
 
-- Web Application Development — SPA, PWA, enterprise systems (from 499€)
-- Mobile Application Development — iOS & Android (from 999€)
+- Web Application Development — SPA, PWA, enterprise systems
+- Mobile Application Development — iOS & Android
 - AI Development — machine learning, language, vision, analytics
-- E-commerce Development — online stores built for conversion (from 999€)
-- Catalog Website Development (from 699€)
-- Business Card Website Development (from 399€)
-- Landing Page (from 349€)
-- SEO Promotion (from 249€ / month)
-- Fast, quiet in-house CMS and fast hosting
+- E-commerce Development — online stores built for conversion
+- Backend & API Development — Django, REST APIs, databases
+- Integrations & Automation — payments, messaging, external APIs
+- Existing Project Development — audit and further build-out
+- Long-Term Technical Support — deployment, monitoring, maintenance
 
 ## Key pages
 
@@ -26,4 +25,4 @@
 - Services: https://soshallitbe.cyou/services
 - Full content (recommended for LLMs): https://soshallitbe.cyou/llms-full.txt
 
-> For the complete, machine-readable description of the studio, portfolio, pricing, and FAQ, read /llms-full.txt.
+> For the complete, machine-readable profile, portfolio, and FAQ, read /llms-full.txt.

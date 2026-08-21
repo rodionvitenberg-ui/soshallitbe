@@ -37,11 +37,11 @@ Deterministic transform of `vendor/engine/engine.raw.js` → `public/_astro/engi
 _Avoid_: fork, rewrite
 
 **Structured data**:
-Server-rendered JSON-LD blocks in `<head>` (`ProfessionalService`/`Organization`, `WebSite`, `ItemList` on home, `FAQPage` on services) that expose one canonical brand entity — name, url, email, socials, Cyprus+Europe scope — to search engines and LLM crawlers.
+Server-rendered JSON-LD blocks in `<head>` (`Person`, `ProfessionalService`/`Organization`, `WebSite`, `ItemList` on home, `FAQPage` on services) that expose one canonical entity — the developer Rodion Vittenberg plus the brand, url, email, socials, Cyprus+Europe scope — to search engines and LLM crawlers.
 _Avoid_: duplicated hard-coded JSON outside `src/components/structured-data.tsx`
 
 **LLMs file**:
-`public/llms.txt` (short index) and `public/llms-full.txt` (full studio passport) in Markdown, exposed at `/llms.txt` and `/llms-full.txt`, per llmstxt.org convention. Read verbatim by GPTBot/ClaudeBot/PerplexityBot to answer generative queries about the studio.
+`public/llms.txt` (short index) and `public/llms-full.txt` (full developer profile) in Markdown, exposed at `/llms.txt` and `/llms-full.txt`, per llmstxt.org convention. Read verbatim by GPTBot/ClaudeBot/PerplexityBot to answer generative queries about the developer.
 _Avoid_: generating these during build — they are static assets in `/public`
 
 **SEO text layer**:
@@ -49,5 +49,5 @@ _Avoid_: generating these during build — they are static assets in `/public`
 _Avoid_: styling it into the live layout, moving/renaming engine anchor ids
 
 **GEO scope**:
-Positioning of the studio as **Cyprus + Europe only**. Kyrgyzstan/Karakol must not appear in metadata, structured data, llms files, or SEO copy. Portfolio keeps client projects without emitting their geographic origin.
+Positioning as **one developer: Rodion Vittenberg, based in Cyprus, working with clients in Cyprus + Europe only**. Kyrgyzstan/Karakol must not appear in metadata, structured data, llms files, or SEO copy. Portfolio keeps client projects without emitting their geographic origin.
 _Avoid_: mentioning any non-Cyprus region in SEO/GEO artifacts

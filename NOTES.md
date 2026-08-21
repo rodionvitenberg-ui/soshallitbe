@@ -79,12 +79,12 @@ Tunnel/astronaut timeline выключен патчем.
 
 ## SEO / GEO layer
 
-- **Canonical entity**: «So Shall It Be» / `soshallitbe.cyou` / email `soshallitbe5@gmail.com`.
-- **Positioning: Cyprus + Europe only.** No Kyrgyzstan/Karakol in any SEO/GEO artifact.
+- **Canonical entity**: developer **Rodion Vittenberg** + brand «So Shall It Be» / `soshallitbe.cyou` / email `rodionvitenberg@gmail.com`.
+- **Positioning: one developer (Rodion Vittenberg), based in Cyprus, clients Cyprus + Europe only.** No Kyrgyzstan/Karakol in any SEO/GEO artifact.
 - `public/robots.txt` — allows standard + AI crawlers (GPTBot, ClaudeBot, PerplexityBot, …).
 - `public/sitemap.xml` — `/` and `/services`.
-- `src/components/structured-data.tsx` — JSON-LD: ProfessionalService/Organization, WebSite, ItemList (home), FAQPage (services).
-- `public/llms.txt` + `public/llms-full.txt` — LLM-readable studio passport (llmstxt.org-style).
+- `src/components/structured-data.tsx` — JSON-LD: Person (Rodion Vittenberg) + ProfessionalService/Organization, WebSite, ItemList (home), FAQPage (services).
+- `public/llms.txt` + `public/llms-full.txt` — LLM-readable developer profile (llmstxt.org-style).
 - `src/fragments/home-about.html` — crawler-visible «who/what/where/pricing» SSR block inside `#ui`; visually clipped out by `overrides.css` (no impact on engine scroll math).
 - `docs/geo-checklist.md` — deployment + external-profile consistency checklist.
 

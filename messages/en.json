@@ -1,7 +1,7 @@
   {
     "meta": {
       "title": "R.Vittenberg — Full-Stack Development",
-      "description": "Independent full-stack developer building complete web products from architecture and interface to backend, integrations, deployment, and long-term support."
+      "description": "Independent full-stack developer based in Cyprus working with clients on the island and across Europe — building complete web products from architecture and interface to backend, integrations, deployment, and long-term support."
     },
     "header": {
       "logoAria": "Go to home",
@@ -41,8 +41,8 @@
         "ul5": "Third-party integrations — payments, messaging, external APIs, authentication providers, analytics, and other services.",
         "ul6": "Deployment and production setup — servers, databases, domains, SSL, environment configuration, monitoring, and maintenance."
       },
-      "locationsTitle": "How I work",
-      "locationsBody": "I work remotely with clients and teams regardless of where they are located. The process is direct: you talk to the person actually building the product. There is no unnecessary layer between the client and development.",
+      "locationsTitle": "Where I work",
+      "locationsBody": "I'm based in Cyprus, working with clients in Limassol, Larnaca, and across Europe. The process is direct: you talk to the person actually building the product. There is no unnecessary layer between the client and development.",
       "pricingTitle": "Approach to pricing",
       "pricing": {
         "li1": "Every project is different, so I prefer estimating from the actual brief rather than selling artificial packages.",
