@@ -22,6 +22,7 @@
 ## Key pages
 
 - Home: https://soshallitbe.cyou/
+- Portfolio: https://soshallitbe.cyou/portfolio
 - Services: https://soshallitbe.cyou/services
 - Full content (recommended for LLMs): https://soshallitbe.cyou/llms-full.txt
 

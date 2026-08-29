@@ -63,7 +63,7 @@
     },
     "featured": {
       "title": "Selected Work",
-      "designTitle": "Design Concepts",
+      "designTitle": "Design Mastery",
       "wip": "In development",
       "disclaimer": "Selected projects and products I have designed, developed, or worked on. Some professional work cannot be shown publicly because of confidentiality agreements.",
       "projects": {
@@ -102,36 +102,41 @@
           "cta": "Visit the venue"
         },
         "porsche_dream_machine": {
-          "name": "IkSoft Studio",
-          "tags": "software studio • agency website • web • 3D",
+          "name": "IkSoft Solutions",
+          "tags": "IT solutions • turnkey business outfitting • Berlin • Germany",
           "overview": {
             "kicker": "The Brief",
-            "title": "A website for a software company that needed to demonstrate its technical character.",
-            "body": "The purpose was not simply to present a list of services. The website itself had to communicate speed, precision, engineering, and attention to detail."
+            "title": "A solutions company that outfits businesses end to end.",
+            "body": "IkSoft Solutions is an organization founded during the coronavirus era by three major companies that pooled their resources and expertise. It takes on the full cycle of business outfitting: premises, furniture, hardware, software, and IT. A client arrives with an idea — and leaves with a business ready to operate."
           },
           "sections": [
             {
-              "kicker": "01 / Presence",
-              "title": "The website demonstrates the product.",
-              "body": "Motion, interaction, and 3D elements were used as part of the experience rather than as decoration. The interface itself becomes evidence of the team's capabilities."
+              "kicker": "01 / Founding",
+              "title": "Born in the pandemic.",
+              "body": "While the world was shutting down, three major companies joined forces to found IkSoft Solutions. Each brought its own strength: real estate, outfitting, and technology. The result is a partner that covers everything for a business at once — so entrepreneurs never have to juggle a dozen contractors."
             },
             {
-              "kicker": "02 / Work",
-              "title": "Projects instead of empty promises.",
-              "body": "Work is presented around problems, decisions, and implementation so that a potential client can understand what was actually built."
+              "kicker": "02 / Full cycle",
+              "title": "From empty premises to a working business.",
+              "body": "IkSoft Solutions finds and prepares the premises, furnishes it, equips it with hardware, deploys the software, and builds out the entire IT infrastructure. One contract — one party responsible for the result — a fully operational office, shop, or studio."
             },
             {
-              "kicker": "03 / Craft",
-              "title": "Small details matter.",
-              "body": "Typography, spacing, transitions, responsiveness, and performance were treated as part of the engineering rather than something added at the end."
+              "kicker": "03 / Geography",
+              "title": "Berlin is home, Germany is the arena.",
+              "body": "The organization is headquartered in Berlin, but IkSoft Solutions projects operate across all of Germany — from Hamburg to Munich. Wherever a business opens, the team comes on site and delivers the location fully ready."
+            },
+            {
+              "kicker": "04 / Results",
+              "title": "15+ startups and 500 businesses.",
+              "body": "IkSoft Solutions has raised more than 15 startups and helped 500 small and medium businesses across Berlin grow to new heights. They are known in every district of the city — Mitte, Kreuzberg, Friedrichshain, Prenzlauer Berg, Neukölln, Schöneberg, Charlottenburg, and Wedding."
             }
           ],
           "stack": [
-            "Next.js",
-            "TypeScript",
-            "Three.js",
-            "GSAP",
-            "WebGL"
+            "Premises",
+            "Furniture",
+            "Hardware",
+            "Software",
+            "IT"
           ],
           "cta": "View the project"
         },
@@ -408,6 +413,10 @@
           "cta": "View the project"
         }
       }
+    },
+    "portfolio": {
+      "metaTitle": "Selected Work — R.Vittenberg",
+      "metaDescription": "Selected projects and products designed and built by Rodion Vittenberg — websites, web apps, e-commerce, booking platforms, and AI systems."
     },
     "services": {
       "metaTitle": "Services — Full-Stack Development",
