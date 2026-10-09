@@ -23,7 +23,8 @@
       "localeEn": "EN",
       "localeRu": "RU",
       "ourWorks": "Selected work",
-      "services": "What I do"
+      "services": "What I do",
+      "cv": "CV"
     },
     "hero": {
       "title": "I build complete digital products — from the first idea and interface to backend, integrations, deployment, and everything that comes after.",
@@ -66,6 +67,7 @@
       "designTitle": "Design Mastery",
       "wip": "In development",
       "disclaimer": "Selected projects and products I have designed, developed, or worked on. Some professional work cannot be shown publicly because of confidentiality agreements.",
+      "cta": "Portfolio",
       "projects": {
         "oryzo_ai": {
           "name": "Daerdree Bar & Timeclub",
@@ -515,6 +517,77 @@
         "a9": "Yes. I can work on individual features, bugs, integrations, API connections, forms, payment systems, performance problems, or other focused development tasks when they fit my stack and availability.",
         "q10": "Why don't you show every project?",
         "a10": "Because not every project belongs to me publicly. Some professional work is covered by NDA or contains private business information. I believe respecting that agreement is more important than having another item in a portfolio."
+      }
+    },
+    "cv": {
+      "metaTitle": "Rodion Vittenberg — CV | Full-Stack Product Engineer",
+      "metaDescription": "Curriculum vitae of Rodion Vittenberg — Middle+ full-stack / product engineer in Cyprus with 5+ years of practice. Python APIs (FastAPI, Django REST), PostgreSQL, React and Next.js frontends, Docker and Nginx infrastructure. Live work: de-press.co, careyour.pet, webdoc.life, daerdree.bar.",
+      "heroTitle": "Rodion Vittenberg — Full-Stack Product Engineer",
+      "heroTitleLine1": "Rodion",
+      "heroTitleLine2": "Vittenberg",
+      "heroHint": "Full-stack product engineer · Cyprus",
+      "experienceTitle": "Experience",
+      "experience": {
+        "e1Title": "Full-Stack / Systems Integration Engineer — Techtitans Creative Hub / DAERDREE LIMITED",
+        "e1Body": "Since 2024 I have been launching the digital and physical infrastructure of commercial venues in Cyprus end to end. I built and shipped the venue web platform — daerdree.bar — on the Next.js App Router with Tailwind CSS and next-intl multilingual routing, and brought the first contentful paint under 0.3s. Alongside that I selected the hardware stack (POS terminals, workstations), set up isolated subnets and keep production servers running under Nginx and PM2 at 99.9% uptime.",
+        "e2Title": "Backend / Full-Stack Developer — Alpina IT Solutions / IkSoft Solutions",
+        "e2Body": "From 2021 to 2024 I designed server architecture, microservices and REST APIs in Python (FastAPI, Django REST Framework), modelled PostgreSQL databases, wired queues with Celery and Redis and message buses over WebSockets, and built responsive interfaces in React, Next.js and Vue. I also automated data collection with Playwright and deployed a pool of Linux VPS machines with Docker."
+      },
+      "trackTitle": "Track record",
+      "track": {
+        "r1Name": "Techtitans Creative Hub / DAERDREE LIMITED · Full-Stack / Systems Integration Engineer",
+        "r1Meta": "Larnaca, Cyprus · 2024 — present",
+        "r2Name": "Alpina IT Solutions / IkSoft Solutions · Backend / Full-Stack Developer",
+        "r2Meta": "2021 — 2024",
+        "r3Name": "Tomsk State University (TSU) · Information Systems and Technologies",
+        "r3Meta": "Degree · 2017"
+      },
+      "stackTitle": "Technology stack",
+      "proofsTitle": "Live proof",
+      "proofs": {
+        "p1Name": "de-press.co",
+        "p1Body": "Real-time web platform built around privacy: an asynchronous WebSocket backend, client-side encryption, no server-side logs (zero-knowledge by design) and a Next.js interface.",
+        "p2Name": "careyour.pet",
+        "p2Body": "Veterinary CRM SaaS: a relational PostgreSQL schema across 12 entities, medical records, dashboards and a mobile-adapted interface.",
+        "p3Name": "webdoc.life",
+        "p3Body": "Engineering AI service: LLM API integration, streamed answers over Server-Sent Events and contract validation with Pydantic v2.",
+        "p4Name": "daerdree.bar",
+        "p4Body": "Commercial web system for a Cyprus venue: first contentful paint under 0.3s, three-level multilingual routing, faceted catalogue filtering and a booking module."
+      },
+      "howTitle": "How I work",
+      "how": {
+        "aLabel": "Full cycle",
+        "aBody": "I take a product from data modelling and an asynchronous API to the client interface and deployment on Linux servers — one person responsible for the whole path instead of handovers between layers.",
+        "bLabel": "Root cause",
+        "bBody": "Problems get fixed at the source: I trace the shared failure point before patching a symptom, and I keep the change as small as the fix allows.",
+        "cLabel": "Discretion",
+        "cBody": "Client data, source code and business logic stay private by default. A non-disclosure agreement is a normal working condition, not an obstacle.",
+        "dLabel": "Completion",
+        "dBody": "I do not leave work half done. When requirements shift or something breaks, the responsibility for the result stays where it was."
+      },
+      "ndaTitle": "Confidentiality",
+      "nda": {
+        "aBody": "Roughly 80% of my commercial development has been delivered under strict B2B non-disclosure agreements — closed ERP and CRM panels, integration gateways and billing systems, all inside client repositories.",
+        "aName": "NDA-covered work",
+        "bBody": "Open products are the public demonstration stands: what closed contracts do not allow me to show is evidenced by working systems that anyone can open and use.",
+        "bName": "What can be shown",
+        "cBody": "Where privacy matters, it is built in from the start: access control, secrets handling and data exposure are architecture decisions, and sensitive data can stay on the client side or on the device.",
+        "cName": "Privacy by design"
+      },
+      "faqTitle": "Questions I get asked",
+      "faq": {
+        "q1": "What is your core stack?",
+        "a1": "Python on the backend (FastAPI, Django REST Framework, Django Ninja, AsyncIO) with PostgreSQL, Redis and Celery; TypeScript on the frontend with React, Next.js 15 and Vue; Docker, Nginx, PM2 and Linux VPS for deployment, with Git and CI/CD around it.",
+        "q2": "How much commercial experience do you have?",
+        "a2": "More than five years of continuous practice in web development, architecture design and shipping systems end to end: server-side and platform work since 2021, and full-cycle product and infrastructure work in Cyprus since 2024. Higher technical education — Tomsk State University, Information Systems and Technologies, 2017.",
+        "q3": "Where are you based and which markets do you work with?",
+        "a3": "I am based in Cyprus (Larnaca) and work with clients on the island and across Europe. Communication runs directly with the engineer who builds the product.",
+        "q4": "Do you work under NDA?",
+        "a4": "Yes. About 80% of my commercial work was delivered under B2B contracts with strict non-disclosure terms, so confidentiality is the default way I work rather than a special arrangement.",
+        "q5": "Why can a part of your work not be shown?",
+        "a5": "Because those systems belong to clients: closed ERP and CRM panels, integration gateways and billing. Keeping that agreement matters more than adding another item to a portfolio, so the public services on this page carry the proof of the stack instead.",
+        "q6": "Do you handle deployment and infrastructure as well?",
+        "a6": "Yes. Linux VPS administration, Docker and Docker Compose, Nginx reverse proxy, SSL with Certbot, PM2 process management and Bash automation are part of the delivery, with production uptime held at 99.9%."
       }
     },
     "end": {

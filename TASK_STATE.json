@@ -1,0 +1,71 @@
+{
+  "$schema_version": "1.0",
+  "project": "daydream-home (STUDIO) — So Shall It Be engine site",
+  "active_feature_or_sprint": "Publish STUDIO sprint to GitHub (rodionvitenberg-ui/soshallitbe): /cv résumé page + /portfolio engine-route fixes + uncommitted locale/CSS/structured-data work",
+  "status": "DONE",
+  "context": {
+    "stack": [
+      "Next.js 15 App Router",
+      "React 19",
+      "next-intl (EN-only UI: assemble-* use `void locale`)",
+      "vendored WebGL engine (public/_astro/engine.js, patched via scripts/patch-engine.mjs)",
+      "hand-written CSS (public/_astro/daydream.css + public/styles/overrides.css)",
+      "fragments in src/fragments/*.html assembled into #ui"
+    ],
+    "target_files": [
+      "src/app/[locale]/cv/page.tsx",
+      "src/lib/assemble-cv-ui.ts",
+      "src/components/CvShell.tsx",
+      "src/components/cv/Cv.ts",
+      "src/fragments/cv.html",
+      "src/fragments/services.html",
+      "src/components/services/ServicesMotion.tsx",
+      "src/components/structured-data.tsx",
+      "src/fragments/header.html",
+      "messages/en.json",
+      "public/styles/overrides.css",
+      "public/sitemap.xml",
+      "public/llms.txt",
+      "public/llms-full.txt",
+      "NOTES.md"
+    ],
+    "hard_constraints": [
+      "Strict Zero-Knowledge: do NOT log raw PII/secrets to console or logs",
+      "Keep diffs atomic and clean",
+      "Engine is bound to exact DOM ids/classes — never rename/remove #home-hero, #home-featured, #home-reel, #home-goal, #svc-quotes, #svc-pre-end-line",
+      "Page HTML is assembled into #ui without extra wrappers (assemble-* pattern)",
+      "Reuse existing .svc-* vocabulary; no new CSS system, no new dependencies",
+      "Existing uncommitted changes in working tree (messages/en.json, ru.json, overrides.css, home-featured.html) must not be clobbered — new edits are additive",
+      "Only facts supplied by the user go into /cv copy (no invented metrics or projects)"
+    ]
+  },
+  "execution_plan": {
+    "completed_tasks": [
+      "Recon: mapped engine anchors, services page skeleton (.svc-* + ServicesMotion + body:has(#home-services) scoping), fragments/assembly pattern, structured-data, llms/sitemap, cover pipeline",
+      "Decision with user: option D — /cv route inside STUDIO (shared engine, build, deploy); no repo copy",
+      "src/fragments/cv.html — résumé chapter (hero, experience, track record, 24-slot stack matrix, live proof, how I work, confidentiality, recruiter FAQ) reusing the .svc-* vocabulary; engine anchors #home-reel / #svc-quotes / #svc-pre-end-line preserved",
+      "messages/en.json: new cv namespace (74 keys) + header.cv; messages/ru.json: header.cv",
+      "src/components/cv/Cv.ts, src/lib/assemble-cv-ui.ts (reuses services-engine-stubs.html), src/components/CvShell.tsx, src/app/[locale]/cv/page.tsx",
+      "ServicesMotion root lookup → [data-svc-root]; data-svc-root added to services.html and cv.html so both chapters share one motion component",
+      "public/styles/overrides.css: html.is-cv-page + body:has(#home-cv) block (stub collapse, #home-cv container, proof-link styling); no existing rule touched",
+      "structured-data.tsx: page type \"cv\", ProfilePage + ItemList of the 4 live proofs, Person enriched (jobTitle, alumniOf TSU, hasOccupation, knowsAbout ×16)",
+      "header.html: dead /about mega-menu link repurposed to /cv + new desktop nav pill CV",
+      "sitemap.xml, llms.txt, llms-full.txt (Career & education / Engineering stack / Live proof / Confidentiality), NOTES.md, CONTEXT.md",
+      "scripts/patch-engine.mjs patch 18: registered the \"cv\" route → homePage (without it the engine answered 'route not found for path: cv' and redirected to the homepage); public/_astro/engine.js regenerated",
+      "Verified: cv.html balanced + all 55 template keys resolve; npm run build OK (SSG /[locale]/cv); live `next start` — /, /cv, /services, /portfolio = 200, no leftover {{placeholders}}, 5 valid JSON-LD blocks on /cv, overrides.css served with is-cv-page; headless Chrome (swiftshader) on /cv: html class is-cv-page/is-ready, stubs collapsed (hero 0px, featured 0px), #home-cv display block z-index 1, 24 stack items, 6 closed FAQ panels, GSAP initial state applied to [data-svc-item], zero console/page errors; screenshot confirms hero + three header pills render",
+      "Publish: verified remote/origin/main is an ancestor of HEAD (fast-forward), `npx tsc --noEmit` clean, no .env/secrets in the tree; committed the whole sprint and pushed main → origin/main (rodionvitenberg-ui/soshallitbe)"
+    ],
+    "current_task": "None — sprint DONE and pushed to origin/main",
+    "pending_tasks": [
+      "de-press.co proof card is link-only: no screenshot in public/assets (capture one, then run a variant of scripts/convert-new-covers.mjs if a cover is wanted)",
+      "messages/ru.json has no cv namespace — harmless today (request.ts always loads en.json), needed only if RU UI is ever re-enabled",
+      "Optional: if the header row feels crowded at 813-1100px, drop the CV pill from src/fragments/header.html (the mega-menu entry stays)"
+    ]
+  },
+  "discovered_bugs_or_blockers": [
+    "FIXED: engine RouteManager rejected unknown paths — /cv logged 'route not found for path: cv' and bounced the browser to the homepage; patch 18 now registers services, portfolio and cv",
+    "src/fragments/header.html had a dead mega-menu link data-page=\"about\" href=\"/about\" (no such route) — repurposed for /cv",
+    "messages/ru.json is not wired to the UI (src/i18n/request.ts pins routing.defaultLocale), so all locales render the English dictionary — /ru/cv shows English copy by design"
+  ],
+  "latest_observation_summary": "Sprint DONE and published: /cv résumé page shipped on top of the services chapter skeleton (shared .svc-* CSS + ServicesMotion + engine anchors), engine route registered, GEO artifacts updated, verified by build + SSR + headless browser pass with zero console errors; working tree committed and main pushed to origin/main (rodionvitenberg-ui/soshallitbe)."
+}

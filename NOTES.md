@@ -69,6 +69,7 @@ Tunnel/astronaut timeline выключен патчем.
 | Движок / патчи | `vendor/engine/engine.raw.js` → `node scripts/patch-engine.mjs` |
 | Картинки кейсов | `public/assets/projects/<id>/` |
 | Страница портфолио | `src/app/[locale]/portfolio/page.tsx` · `src/lib/assemble-portfolio-ui.ts` · `src/fragments/portfolio-featured.html` |
+| Страница резюме (/cv) | `src/app/[locale]/cv/page.tsx` · `src/lib/assemble-cv-ui.ts` · `src/fragments/cv.html` (та же `.svc-*` разметка, что у `/services`) |
 
 ## Единственный проект
 

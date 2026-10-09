@@ -48,6 +48,10 @@ _Avoid_: generating these during build — they are static assets in `/public`
 `src/fragments/home-about.html` — a crawler-visible «who / what / where / pricing» block assembled inside `#ui` but clipped off-screen by `overrides.css` (`.seo-text-layer`), so the engine's scroll ranges and id bindings are unaffected while search/AI crawlers still read the text.
 _Avoid_: styling it into the live layout, moving/renaming engine anchor ids
 
+**CV chapter**:
+The `/cv` route (`src/fragments/cv.html`) — a résumé page that reuses the services chapter's `.svc-*` vocabulary, container-scoped by `#home-cv` (services uses `#home-services`). Both fragments carry `data-svc-root`, which is what `ServicesMotion` drives; the engine anchors `#home-reel` (inside `.svc-tech`), `#svc-quotes` and `#svc-pre-end-line` must stay present.
+_Avoid_: a second CSS system for the CV, renaming `#svc-quotes` / `#svc-pre-end-line`, per-page motion components
+
 **GEO scope**:
 Positioning as **one developer: Rodion Vittenberg, based in Cyprus, working with clients in Cyprus + Europe only**. Kyrgyzstan/Karakol must not appear in metadata, structured data, llms files, or SEO copy. Portfolio keeps client projects without emitting their geographic origin.
 _Avoid_: mentioning any non-Cyprus region in SEO/GEO artifacts

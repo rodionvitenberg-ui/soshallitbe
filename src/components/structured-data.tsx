@@ -2,7 +2,7 @@ import { PROJECT_PRESENTATIONS } from "@/data/projects";
 
 type Messages = Record<string, unknown>;
 
-export type StructuredDataPage = "home" | "services" | "portfolio";
+export type StructuredDataPage = "home" | "services" | "portfolio" | "cv";
 
 const SITE_URL = "https://soshallitbe.cyou";
 const BRAND = "So Shall It Be";
@@ -14,6 +14,15 @@ const INSTAGRAM = "https://www.instagram.com/derweisseberg5/";
 const LINKEDIN = "https://www.linkedin.com/in/rodion-vitenberg-4200363a4/";
 const LOGO = `${SITE_URL}/logo.png`;
 const SOCIAL_IMAGE = `${SITE_URL}/assets/meta/social_sharing.jpg`;
+
+/** Live proof listed on /cv — text lives in messages under cv.proofs.<key>. */
+const CV_PROOFS: Array<{ key: string; url: string }> = [
+  { key: "p1", url: "https://de-press.co" },
+  { key: "p2", url: "https://careyour.pet" },
+  { key: "p3", url: "https://webdoc.life" },
+  { key: "p4", url: "https://daerdree.bar" },
+];
+
 
 function getByPath(messages: Messages, path: string): unknown {
   return path.split(".").reduce<unknown>((acc, key) => {
@@ -39,7 +48,36 @@ function personJsonLd(): Record<string, unknown> {
     email: EMAIL,
     image: SOCIAL_IMAGE,
     sameAs: [X_HANDLE, INSTAGRAM, LINKEDIN],
+    jobTitle: "Middle+ Full-Stack / Product Engineer",
+    knowsAbout: [
+      "Python",
+      "FastAPI",
+      "Django REST Framework",
+      "Django Ninja",
+      "AsyncIO",
+      "WebSockets",
+      "PostgreSQL",
+      "Redis",
+      "Celery",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Docker",
+      "Nginx",
+      "Linux",
+      "CI/CD",
+    ],
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Tomsk State University (TSU)",
+    },
+    hasOccupation: {
+      "@type": "Occupation",
+      name: "Full-Stack / Product Engineer",
+      occupationLocation: { "@type": "Country", name: "Cyprus" },
+    },
     worksFor: { "@id": `${SITE_URL}/#organization` },
+
     address: {
       "@type": "PostalAddress",
       addressLocality: "Limassol",
@@ -121,6 +159,33 @@ function webSiteJsonLd(): Record<string, unknown> {
   };
 }
 
+function profilePageJsonLd(): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "@id": `${SITE_URL}/cv#profile`,
+    url: `${SITE_URL}/cv`,
+    name: `${PERSON_NAME} — Curriculum Vitae`,
+    about: { "@id": `${SITE_URL}/#person` },
+    mainEntity: { "@id": `${SITE_URL}/#person` },
+  };
+}
+
+function cvProofsJsonLd(messages: Messages): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: str(messages, "cv.proofsTitle"),
+    itemListElement: CV_PROOFS.map((proof, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: str(messages, `cv.proofs.${proof.key}Name`),
+      description: str(messages, `cv.proofs.${proof.key}Body`),
+      url: proof.url,
+    })),
+  };
+}
+
 function faqJsonLd(messages: Messages): Record<string, unknown> {
   const mainEntity: Array<Record<string, unknown>> = [];
   for (let i = 1; i <= 8; i += 1) {
@@ -173,6 +238,9 @@ function buildStructuredData(
   }
   if (page === "services") {
     blocks.push(faqJsonLd(messages));
+  }
+  if (page === "cv") {
+    blocks.push(profilePageJsonLd(), cvProofsJsonLd(messages));
   }
   return blocks;
 }
