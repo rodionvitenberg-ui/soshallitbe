@@ -2,7 +2,7 @@ import { PROJECT_PRESENTATIONS } from "@/data/projects";
 
 type Messages = Record<string, unknown>;
 
-export type StructuredDataPage = "home" | "services" | "portfolio";
+export type StructuredDataPage = "home" | "services";
 
 const SITE_URL = "https://soshallitbe.cyou";
 const BRAND = "So Shall It Be";
@@ -197,7 +197,7 @@ function buildStructuredData(
     organizationJsonLd(messages),
     webSiteJsonLd(),
   ];
-  if (page === "home" || page === "portfolio") {
+  if (page === "home") {
     blocks.push(itemListJsonLd(messages));
   }
   if (page === "services") {

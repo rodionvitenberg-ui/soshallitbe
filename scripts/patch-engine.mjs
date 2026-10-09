@@ -275,14 +275,14 @@ mustReplace(
   "wheel preventDefault softened",
 );
 
-// 18) /services and /portfolio are Next.js pages that reuse the home engine target.
+// 18) /services is a Next.js page that reuses the home engine target.
 //     Without registration, Route.setTarget(path) finds no matchList entry and
 //     redirects to origin ("route not found for path" → window.location.href=origin),
-//     so any full page load of /services or /portfolio bounced back to the homepage.
+//     so any full page load of /services bounced back to the homepage.
 mustReplace(
   "const pagesManager=new PageManager;",
-  'const pagesManager=(()=>{const p=new PageManager;routeManager.addPath("services",homePage);routeManager.addPath("portfolio",homePage);return p})();',
-  "services+portfolio routes → homePage",
+  'const pagesManager=(()=>{const p=new PageManager;routeManager.addPath("services",homePage);return p})();',
+  "services route → homePage",
 );
 
 // 19) Extra Services lines: Line(4) = goal mesh / orange, Line(5) = reel mesh / blue.
@@ -354,7 +354,7 @@ mustReplace(
     "})(),",
   "extraPageLines hook HomePage",
 );
-// 20) /services and /portfolio render no #home-reel section, but HomePage.preInit
+// 20) /services renders no #home-reel section, but HomePage.preInit
 //     unconditionally calls homeReelSection.preInit(), whose first lines write
 //     domTitle._time / domBtn._ratio on null → TypeError → engine boot dies:
 //     no is-ready, no virtual scroll (wheel is a no-op), no WebGL card covers.

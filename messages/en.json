@@ -13,7 +13,6 @@
       "close": "Close",
       "navHome": "Home",
       "navAbout": "About",
-      "navProjects": "Work",
       "navContact": "Contact",
       "newsletterLine1": "Have a project?",
       "newsletterLine2": "Let's talk.",
@@ -66,7 +65,6 @@
       "designTitle": "Design Mastery",
       "wip": "In development",
       "disclaimer": "Selected projects and products I have designed, developed, or worked on. Some professional work cannot be shown publicly because of confidentiality agreements.",
-      "cta": "Portfolio",
       "projects": {
         "oryzo_ai": {
           "name": "Daerdree Bar & Timeclub",
@@ -414,10 +412,6 @@
           "cta": "View the project"
         }
       }
-    },
-    "portfolio": {
-      "metaTitle": "Selected Work — R.Vittenberg",
-      "metaDescription": "Selected projects and products designed and built by Rodion Vittenberg — websites, web apps, e-commerce, booking platforms, and AI systems."
     },
     "services": {
       "metaTitle": "Services — Full-Stack Development",

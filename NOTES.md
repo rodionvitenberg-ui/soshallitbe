@@ -68,7 +68,6 @@ Tunnel/astronaut timeline выключен патчем.
 | Product overrides | `public/styles/overrides.css` |
 | Движок / патчи | `vendor/engine/engine.raw.js` → `node scripts/patch-engine.mjs` |
 | Картинки кейсов | `public/assets/projects/<id>/` |
-| Страница портфолио | `src/app/[locale]/portfolio/page.tsx` · `src/lib/assemble-portfolio-ui.ts` · `src/fragments/portfolio-featured.html` |
 
 ## Единственный проект
 
@@ -83,8 +82,8 @@ Tunnel/astronaut timeline выключен патчем.
 - **Canonical entity**: developer **Rodion Vittenberg** + brand «So Shall It Be» / `soshallitbe.cyou` / email `rodionvitenberg@gmail.com`.
 - **Positioning: one developer (Rodion Vittenberg), based in Cyprus, clients Cyprus + Europe only.** No Kyrgyzstan/Karakol in any SEO/GEO artifact.
 - `public/robots.txt` — allows standard + AI crawlers (GPTBot, ClaudeBot, PerplexityBot, …).
-- `public/sitemap.xml` — `/`, `/services`, `/portfolio`.
-- `src/components/structured-data.tsx` — JSON-LD: Person (Rodion Vittenberg) + ProfessionalService/Organization, WebSite, ItemList (home, portfolio), FAQPage (services).
+- `public/sitemap.xml` — `/`, `/services`.
+- `src/components/structured-data.tsx` — JSON-LD: Person (Rodion Vittenberg) + ProfessionalService/Organization, WebSite, ItemList (home), FAQPage (services).
 - `public/llms.txt` + `public/llms-full.txt` — LLM-readable developer profile (llmstxt.org-style).
 - `src/fragments/home-about.html` — crawler-visible «who/what/where/pricing» SSR block inside `#ui`; visually clipped out by `overrides.css` (no impact on engine scroll math).
 - `docs/geo-checklist.md` — deployment + external-profile consistency checklist.
@@ -105,6 +104,6 @@ Tunnel/astronaut timeline выключен патчем.
 - **Header**: only **Let's talk** (sound/menu hidden stubs).
 - **No** See all projects / CONTINUE TO SCROLL (`#end-bottom`).
 - **Let's work together** sits under project cards.
-- **Portfolio page** (`/portfolio`): the full former homepage featured block (two title groups, all projects, 2-up). Homepage keeps 4 placeholder cards rendered one per row on desktop (`html:not(.is-portfolio-page)` overrides).
-- **Engine routes**: `RouteManager` has no `/services`–`/portfolio` entries → `Route.setTarget` redirected unknown paths to origin. Engine patch registers both (`addPath("services"|"portfolio", homePage)`). Nav links to these pages use `data-link-type="external"` (full page load): the engine cannot swap DOM for same-target routes, so the Next page must render on its own. RU locales are not served publicly (`localePrefix: "never"`).
-- **Reel section null-safe** (patch 20): `/services` и `/portfolio` не содержат `#home-reel`, а `HomePage.preInit` безусловно зовёт `homeReelSection.preInit()`, который на первой строке пишет `domTitle._time` по null → `TypeError` → boot движка умирал (нет `is-ready`, виртуальный скролл мёртв, WebGL-карточки не рисуются). Патч делает секцию no-op, когда в контейнере страницы нет `#home-reel`; главная (где reel есть) не затронута. Этим же закрыт молча сломанный скролл на `/services`.
+- **Featured grid** (`#home-featured`): two title groups (`Selected Work` + `Design Mastery`), 8 projects, 2-up on desktop — the homepage carries the full block again after the `/portfolio` (WORK) page was removed. The former live `#home-featured-cta` link is back to a hidden engine stub.
+- **Engine routes**: `RouteManager` has no `/services` entry → `Route.setTarget` redirected unknown paths to origin. Engine patch registers it (`addPath("services", homePage)`). Nav links to that page use `data-link-type="external"` (full page load): the engine cannot swap DOM for same-target routes, so the Next page must render on its own. RU locales are not served publicly (`localePrefix: "never"`).
+- **Reel section null-safe** (patch 20): `/services` не содержит `#home-reel`, а `HomePage.preInit` безусловно зовёт `homeReelSection.preInit()`, который на первой строке пишет `domTitle._time` по null → `TypeError` → boot движка умирал (нет `is-ready`, виртуальный скролл мёртв, WebGL-карточки не рисуются). Патч делает секцию no-op, когда в контейнере страницы нет `#home-reel`; главная (где reel есть) не затронута. Этим же закрыт молча сломанный скролл на `/services`.

@@ -793,7 +793,8 @@ body {
   display: none !important;
 }
 
-/* CONTINUE TO SCROLL (#home-featured-cta is live on the homepage) */
+/* See all projects / CONTINUE TO SCROLL */
+#home-featured-cta,
 #end-bottom {
   display: none !important;
   pointer-events: none !important;
@@ -802,12 +803,6 @@ body {
   overflow: hidden !important;
   margin: 0 !important;
   padding: 0 !important;
-}
-
-/* Featured CTA: hover in the header-button blue (dot floods into the bg) */
-#home-featured-cta:hover,
-#home-featured-cta:hover #home-featured-cta-dot {
-  background: var(--color-accent-orange) !important;
 }
 
 /* Reel CTA: Services — kept as #home-reel-cta so the engine still binds it */
@@ -2021,39 +2016,4 @@ body:has(#home-services) #home-services {
   clip: rect(0 0 0 0) !important;
   clip-path: inset(50%) !important;
   white-space: nowrap !important;
-}
-
-/* ── Portfolio page (/portfolio) ─────────────────────────────────────
- * Same engine skeleton as home; the hero stub is collapsed to zero
- * (same treatment as the services page), so the project grid leads.
- */
-html.is-portfolio-page #home-hero {
-  height: 0 !important;
-  min-height: 0 !important;
-  max-height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  overflow: hidden !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
-
-/*
- * Homepage featured grid: one full-width project card per row on desktop.
- * Scoped to :not(.is-portfolio-page) — /portfolio renders its own
- * portfolio-featured.html fragment with the original 2-up layout.
- * Mobile (≤812px) is already 1-up and stays untouched.
- */
-@media (min-width: 813px) {
-  html:not(.is-portfolio-page) #home-featured .project-item {
-    grid-column: 1 / span 12 !important;
-  }
-
-  html:not(.is-portfolio-page) #home-featured .project-item:not(:first-child) {
-    margin-top: 5em !important;
-  }
-
-  html:not(.is-portfolio-page) #home-featured .project-item-main {
-    padding-top: 45% !important;
-  }
 }
