@@ -12,8 +12,8 @@ import gsap from "gsap";
  */
 export function ServicesMotion() {
   useEffect(() => {
-    // Shared by /services and /cv — each chapter fragment marks itself with
-    // data-svc-root, so the motion does not depend on one page's section id.
+    // The chapter fragment marks itself with data-svc-root, so the motion does
+    // not depend on one page's section id.
     const root = document.querySelector<HTMLElement>("[data-svc-root]");
     if (!root) return;
 

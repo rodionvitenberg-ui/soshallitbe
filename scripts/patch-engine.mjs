@@ -275,14 +275,14 @@ mustReplace(
   "wheel preventDefault softened",
 );
 
-// 18) /services, /portfolio and /cv are Next.js pages that reuse the home engine target.
+// 18) /services and /portfolio are Next.js pages that reuse the home engine target.
 //     Without registration, Route.setTarget(path) finds no matchList entry and
 //     redirects to origin ("route not found for path" → window.location.href=origin),
-//     so any full page load of /services, /portfolio or /cv bounced back to the homepage.
+//     so any full page load of /services or /portfolio bounced back to the homepage.
 mustReplace(
   "const pagesManager=new PageManager;",
-  'const pagesManager=(()=>{const p=new PageManager;routeManager.addPath("services",homePage);routeManager.addPath("portfolio",homePage);routeManager.addPath("cv",homePage);return p})();',
-  "services+portfolio+cv routes → homePage",
+  'const pagesManager=(()=>{const p=new PageManager;routeManager.addPath("services",homePage);routeManager.addPath("portfolio",homePage);return p})();',
+  "services+portfolio routes → homePage",
 );
 
 // 19) Extra Services lines: Line(4) = goal mesh / orange, Line(5) = reel mesh / blue.
