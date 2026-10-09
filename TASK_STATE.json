@@ -1,7 +1,7 @@
 {
   "$schema_version": "1.0",
   "project": "daydream-home (STUDIO) — So Shall It Be engine site",
-  "active_feature_or_sprint": "Cleanup pass 2 — restore the full 2-up featured grid (the former WORK block) on the homepage and remove the /portfolio (WORK) page with every trace of it",
+  "active_feature_or_sprint": "Cleanup pass 3 — remove dead leftovers: the Lusion HTML dumps (public/assets/sprites, public/assets/team), the reference dump src/fragments/_body.html, the stale duplicate src/styles/overrides.css, and the two unused projects spatial_fusion + spaace (texts + cover folders)",
   "status": "DONE",
   "context": {
     "stack": [
@@ -13,19 +13,13 @@
       "fragments in src/fragments/*.html assembled into #ui"
     ],
     "target_files": [
-      "src/fragments/home-featured.html",
-      "src/fragments/header.html",
-      "src/components/structured-data.tsx",
-      "public/styles/overrides.css",
       "messages/en.json",
       "messages/ru.json",
-      "public/sitemap.xml",
-      "public/llms.txt",
-      "scripts/patch-engine.mjs",
-      "public/_astro/engine.js",
-      "NOTES.md",
       "src/data/projects.ts",
-      "DELETED: src/app/[locale]/portfolio/ (page.tsx), src/lib/assemble-portfolio-ui.ts, src/components/PortfolioShell.tsx, src/fragments/portfolio-featured.html, src/fragments/portfolio-engine-stubs.html",
+      "src/fragments/home-featured.html",
+      "public/styles/overrides.css",
+      "DELETED (pass 3): public/assets/sprites, public/assets/team, src/fragments/_body.html, src/styles/overrides.css, public/assets/projects/spatial_fusion/, public/assets/projects/spaace/",
+      "DELETED (pass 2): src/app/[locale]/portfolio/ (page.tsx), src/lib/assemble-portfolio-ui.ts, src/components/PortfolioShell.tsx, src/fragments/portfolio-featured.html, src/fragments/portfolio-engine-stubs.html",
       "DELETED (pass 1): src/app/[locale]/cv/ (page.tsx), src/lib/assemble-cv-ui.ts, src/components/CvShell.tsx, src/components/cv/Cv.ts, src/fragments/cv.html"
     ],
     "hard_constraints": [
@@ -55,14 +49,15 @@
       "Verified: cv.html balanced + all 55 template keys resolve; npm run build OK (SSG /[locale]/cv); live `next start` — /, /cv, /services, /portfolio = 200, no leftover {{placeholders}}, 5 valid JSON-LD blocks on /cv, overrides.css served with is-cv-page; headless Chrome (swiftshader) on /cv: html class is-cv-page/is-ready, stubs collapsed (hero 0px, featured 0px), #home-cv display block z-index 1, 24 stack items, 6 closed FAQ panels, GSAP initial state applied to [data-svc-item], zero console/page errors; screenshot confirms hero + three header pills render",
       "Publish: verified remote/origin/main is an ancestor of HEAD (fast-forward), `npx tsc --noEmit` clean, no .env/secrets in the tree; committed the whole sprint and pushed main → origin/main (rodionvitenberg-ui/soshallitbe)",
       "Cleanup 1 — deleted /cv entirely: src/app/[locale]/cv/, CvShell.tsx, components/cv/, fragments/cv.html, lib/assemble-cv-ui.ts; removed the header CV nav pill and the mega-menu /cv entry (the old dead /about placeholder); dropped the cv i18n namespace and header.cv from messages/en.json (+ header.cv in ru.json); deleted the overrides.css is-cv-page / #home-cv / .svc-proof-link block; removed the cv branch, CV_PROOFS, ProfilePage and ItemList emitters from structured-data.tsx; removed /cv from sitemap.xml, llms.txt, llms-full.txt, NOTES.md, CONTEXT.md; reverted patch 18 to services+portfolio and regenerated engine.js. Verified: `npx tsc --noEmit` clean, `npm run build` OK with no /cv route, live `next start` — /, /services, /portfolio = 200 and /cv = 404, zero href=\"/cv\" in the SSR header, mega-menu now home/projects/services",
-      "Cleanup 2 — homepage featured grid restored to the full former WORK block (src/fragments/home-featured.html copied from portfolio-featured.html): two title groups (Selected Work + Design Mastery), 8 projects, WIP badge, #home-featured-cta back to a hidden engine stub; deleted the /portfolio route, PortfolioShell.tsx, lib/assemble-portfolio-ui.ts, fragments/portfolio-featured.html and fragments/portfolio-engine-stubs.html; removed the Work nav pill and the mega-menu projects entry from header.html; deleted the html.is-portfolio-page block and the \":not(.is-portfolio-page)\" 1-up media overrides from overrides.css (2-up is back) and put #home-featured-cta back into the display:none rule; dropped page type \"portfolio\" from structured-data.tsx; dropped the portfolio i18n namespace + header.navProjects + featured.cta (en + ru); removed /portfolio from sitemap.xml, llms.txt, NOTES.md; patch 18 now registers only /services and engine.js was regenerated. Verified: tsc clean; build OK (only /[locale] + /[locale]/services); live server / , /services = 200, /portfolio and /cv = 404; headless Chrome CDP: is-desktop/is-ready, 8 project items, 2 per row (span 6 / span 6), 2 title groups, 1 WIP badge, CTA 0x0 display:none, 0 links to /cv or /portfolio"
+      "Cleanup 2 — homepage featured grid restored to the full former WORK block (src/fragments/home-featured.html copied from portfolio-featured.html): two title groups (Selected Work + Design Mastery), 8 projects, WIP badge, #home-featured-cta back to a hidden engine stub; deleted the /portfolio route, PortfolioShell.tsx, lib/assemble-portfolio-ui.ts, fragments/portfolio-featured.html and fragments/portfolio-engine-stubs.html; removed the Work nav pill and the mega-menu projects entry from header.html; deleted the html.is-portfolio-page block and the \":not(.is-portfolio-page)\" 1-up media overrides from overrides.css (2-up is back) and put #home-featured-cta back into the display:none rule; dropped page type \"portfolio\" from structured-data.tsx; dropped the portfolio i18n namespace + header.navProjects + featured.cta (en + ru); removed /portfolio from sitemap.xml, llms.txt, NOTES.md; patch 18 now registers only /services and engine.js was regenerated. Verified: tsc clean; build OK (only /[locale] + /[locale]/services); live server / , /services = 200, /portfolio and /cv = 404; headless Chrome CDP: is-desktop/is-ready, 8 project items, 2 per row (span 6 / span 6), 2 title groups, 1 WIP badge, CTA 0x0 display:none, 0 links to /cv or /portfolio",
+      "Cleanup 3 — removed the dead leftovers: public/assets/sprites + public/assets/team (identical 58 KB HTML dumps of the Lusion site, tracked as files while the engine's SPRITE_PATH/TEAM_PATH point at directories that never existed), the reference dump src/fragments/_body.html (55 KB, referenced nowhere in code), the stale duplicate src/styles/overrides.css (the live file is public/styles/overrides.css, loaded via /styles/overrides.css) and the two unused projects spatial_fusion (careyour.pet) + spaace (proffmusic.shop): their featured.projects.* texts in messages/en|ru.json and their cover folders public/assets/projects/<id>/. Verified: messages valid JSON with 8 featured projects, every remaining card image = 200, removed folders = 404, `npm run build` OK, live server / and /services = 200, headless Chrome CDP: is-ready, 8 cards, 2 per row (span 6/6), CTA hidden"
     ],
-    "current_task": "None — both cleanup passes complete in the working tree (not committed yet)",
+    "current_task": "None — cleanup passes 1-3 complete in the working tree (pass 3 not committed yet)",
     "pending_tasks": [
-      "Commit + push cleanup passes 1 (/cv teardown) and 2 (/portfolio teardown + featured grid restore)",
+      "Commit + push cleanup passes 1 (/cv), 2 (/portfolio + grid restore) and 3 (dead leftovers)",
       "Next user goal: turn the site from a freelance/studio page into a full personal résumé (real employment history, positions held, dates, education, references)",
-      "Dead leftovers found but not touched: featured.projects.spatial_fusion + featured.projects.spaace stay in messages/*.json while src/data/projects.ts has no presentations for them (they also keep asset folders public/assets/projects/spatial_fusion|spaace)",
-      "src/styles/overrides.css is a stale duplicate (6.7 KB) imported by nothing — the live file is public/styles/overrides.css",
+      "Still unused, NOT removed (not requested): public/assets/projects/{karagat, lamaison, maintest, nicks_coffee_bike, soda_experience, of_the_oak} — no data-id in any live fragment and no PROJECT_PRESENTATIONS entry, ~1.8 MB in total; scripts/convert-shallitbe-covers.mjs and scripts/convert-new-covers.mjs still list them as cover sources",
+      "public/llms-full.txt still names careyour.pet (line 41) and Proffmusic.shop (line 69) as experience entries while their cards/assets are gone — decide whether the LLM profile keeps that copy",
       "messages/ru.json is not wired to the UI (src/i18n/request.ts pins routing.defaultLocale) — all locales render the English dictionary"
     ]
   },
@@ -70,9 +65,10 @@
     "FIXED: engine RouteManager rejected unknown paths — /cv and /portfolio logged 'route not found for path' and bounced the browser to the homepage; the engine patch now registers only /services (its last remaining non-home route)",
     "FEATURED GRID: the 9cf72cb sprint moved the full 2-up block to /portfolio and left the homepage with 4 cards rendered 1-up via `:not(.is-portfolio-page)` overrides in overrides.css; removing the page without deleting that media block would have left the homepage permanently 1-up",
     "STUB CTA: with `hidden` alone the engine still set display:flex on #home-featured-cta (its own update() writes opacity/transform), leaving a 45x49 empty white box with ~91px margin — `#home-featured-cta` had to go back into the display:none rule it was removed from when the live CTA was added",
-    "src/fragments/header.html had a dead mega-menu link data-page=\"about\" href=\"/about\" (no such route) — it was later repurposed for /cv and is now removed altogether, so the mega-menu holds only live entries (home, projects, services)",
+    "src/fragments/header.html had a dead mega-menu link data-page=\"about\" href=\"/about\" (no such route) — it was later repurposed for /cv and is now removed altogether, so the mega-menu holds only live entries (home, services)",
+    "ENGINE PATHS: the engine keeps SPRITE_PATH=\"/assets/sprites/\" and TEAM_PATH=\"/assets/team/\" while those directories never existed in git — the tracked public/assets/sprites and public/assets/team were stray 58 KB HTML dumps of the Lusion page, so deleting them changes no runtime behaviour",
     "Removing a route leaves stale generated route types in .next/types — `npx tsc --noEmit` reported TS2307 for the deleted /cv page until .next was cleared (`rm -rf .next`) and the app rebuilt",
     "messages/ru.json is not wired to the UI (src/i18n/request.ts pins routing.defaultLocale), so all locales render the English dictionary — /ru/cv shows English copy by design"
   ],
-  "latest_observation_summary": "Cleanup pass 2 done (uncommitted): the homepage again shows the full former WORK featured block (two title groups, 8 projects, 2-up, WIP badge) and the /portfolio page is gone completely — route, shells, fragments, header entries, CSS blocks (including the 1-up overrides), i18n namespace, sitemap/llms/docs and the engine route registration. Verified end-to-end with headless Chrome: engine is-ready, 8 cards, 2 per row, CTA hidden, zero links to removed routes."
+  "latest_observation_summary": "Cleanup pass 3 done (uncommitted): dead leftovers are gone — the two Lusion HTML dumps (sprites, team), the _body.html reference dump, the stale src/styles/overrides.css duplicate and the unused projects spatial_fusion + spaace with their texts and covers. The featured grid holds exactly the 8 projects that exist in src/data/projects.ts, every card image resolves and the engine still boots to is-ready."
 }
