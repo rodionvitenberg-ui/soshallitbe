@@ -139,6 +139,40 @@
           ],
           "cta": "View the project"
         },
+        "spatial_fusion": {
+          "name": "Careyourpet (PetVet)",
+          "tags": "veterinary CRM • SaaS • PostgreSQL • web • mobile",
+          "overview": {
+            "kicker": "The Brief",
+            "title": "A working CRM for veterinary clinics.",
+            "body": "Careyourpet is a veterinary CRM concept designed around the daily work of clinics: patients, owners, appointments, medical history, prescriptions, and vaccination records."
+          },
+          "sections": [
+            {
+              "kicker": "01 / System",
+              "title": "One patient, one complete record.",
+              "body": "The system brings medical history, visits, prescriptions, and vaccination information into a unified patient record so that important information is available when it is needed."
+            },
+            {
+              "kicker": "02 / Workflow",
+              "title": "Software built around real work.",
+              "body": "Search, scheduling, records, and common actions were designed to minimize unnecessary navigation and keep staff focused on the patient."
+            },
+            {
+              "kicker": "03 / Interface",
+              "title": "Functional without feeling clinical.",
+              "body": "The interface balances information density with a clear visual hierarchy so that the product remains approachable while handling complex data."
+            }
+          ],
+          "stack": [
+            "React",
+            "TypeScript",
+            "PostgreSQL",
+            "Tailwind",
+            "Mobile"
+          ],
+          "cta": "View the project"
+        },
         "ddd_2024": {
           "name": "El-Imperia Shop",
           "tags": "e-commerce • retail • online store • web",

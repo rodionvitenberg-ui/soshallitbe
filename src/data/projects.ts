@@ -11,13 +11,14 @@ export interface ProjectPresentation {
  * Презентации проектов: нетекстовые поля в коде, весь текст —
  * в messages/{en,ru}.json по i18nKey (featured.projects.*).
  *
- * FEATURED (4): oryzo_ai, porsche_dream_machine,
+ * FEATURED (5): oryzo_ai, porsche_dream_machine, spatial_fusion,
  * ddd_2024, synthetic_human.
  * DESIGN CONCEPTS (4): choo_choo_world, agios, devin_ai, leondiana.
  */
 export const PROJECT_PRESENTATIONS: Record<string, ProjectPresentation> = {
   oryzo_ai: { id: "oryzo_ai", i18nKey: "featured.projects.oryzo_ai", url: "https://daerdree.bar/", year: "2026", hero: "/assets/projects/oryzo_ai/home.webp" },
   porsche_dream_machine: { id: "porsche_dream_machine", i18nKey: "featured.projects.porsche_dream_machine", url: "https://iksoft.pro", year: "2026", hero: "/assets/projects/porsche_dream_machine/home.webp" },
+  spatial_fusion: { id: "spatial_fusion", i18nKey: "featured.projects.spatial_fusion", url: "https://careyour.pet/", year: "2026", hero: "/assets/projects/spatial_fusion/home.webp" },
   ddd_2024: { id: "ddd_2024", i18nKey: "featured.projects.ddd_2024", url: "https://el-imperia.shop/", year: "2026", hero: "/assets/projects/ddd_2024/home.webp" },
   synthetic_human: { id: "synthetic_human", i18nKey: "featured.projects.synthetic_human", url: "https://webdoc.life/", year: "2026", hero: "/assets/projects/synthetic_human/home.webp" },
   choo_choo_world: { id: "choo_choo_world", i18nKey: "featured.projects.choo_choo_world", url: "https://gardenhouse.iksoft.pro", year: "2026", hero: "/assets/projects/choo_choo_world/home.webp" },
