@@ -6,7 +6,7 @@
   "handoff": {
     "note": "This plan is frozen and self-contained. The next coder implements phase 1 (hero) without reading any prior conversation: read AGENTS.md / NOTES.md / CONTEXT.md, this file, then the files named in phase 1.",
     "phase_1_owner": "next coder",
-    "repo_state": "main == origin/main (96e711d..41ba73a pushed); working tree clean; only /dennissnellenberg.com/ is untracked and now gitignored"
+    "repo_state": "main == origin/main (cleanup passes 1-4 pushed 96e711d..41ba73a; this plan pushed as 53169bb); working tree clean — /dennissnellenberg.com/ is gitignored (never commit that 83 MB export)"
   },
   "context": {
     "stack": [
